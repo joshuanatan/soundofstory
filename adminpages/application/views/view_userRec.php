@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Admin | Data Tables</title>
-        <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <meta name="description" content="Ela Admin - HTML5 Admin Template">
         <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
@@ -21,7 +20,6 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/ElaAdmin/assets/css/style.css">
 
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-        
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <div id="right-panel" class="right-panel">
@@ -65,20 +63,14 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
-                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            foreach($item as $listItem) { ?>
+                                            foreach($ur as $list) { ?>
                                             <tr>
-                                                <td><?php echo $listItem->id_item ?></td>
-                                                <td><?php echo $listItem->nama_jenis ?></td>
-                                                <td><?php echo $listItem->nama_item ?></td>
-                                                <td><?php echo $listItem->size_item ?></td>
-                                                <td><?php echo $listItem->harga_item ?></td>
-                                                <td><?php echo $listItem->quantity_item ?></td>
-                                                <td><a href="<?php echo base_url().'c_item/edit/'.$listItem->id_item ?>"><button class="btn">EDIT</button></a> || <a href="<?php echo base_url().'c_item/delete/'.$listItem->id_item ?>"><button class="btn">DELETE</button></a></td>
+                                                <td><?php echo $list->id_user_recording ?></td>
+                                                <td><?php echo $list->id_user ?></td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>

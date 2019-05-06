@@ -21,7 +21,6 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/ElaAdmin/assets/css/style.css">
 
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-        
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <div id="right-panel" class="right-panel">
@@ -64,21 +63,23 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Action</th>
+                                                <th>Name</th>
+                                                <th>Recording</th>
+                                                <th>Status</th>
+                                                <th>Join Date</th>
+                                                <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            foreach($item as $listItem) { ?>
+                                            foreach($hist as $list) { ?>
                                             <tr>
-                                                <td><?php echo $listItem->id_item ?></td>
-                                                <td><?php echo $listItem->nama_jenis ?></td>
-                                                <td><?php echo $listItem->nama_item ?></td>
-                                                <td><?php echo $listItem->size_item ?></td>
-                                                <td><?php echo $listItem->harga_item ?></td>
-                                                <td><?php echo $listItem->quantity_item ?></td>
-                                                <td><a href="<?php echo base_url().'c_item/edit/'.$listItem->id_item ?>"><button class="btn">EDIT</button></a> || <a href="<?php echo base_url().'c_item/delete/'.$listItem->id_item ?>"><button class="btn">DELETE</button></a></td>
+                                                <td><?php echo $list->id_history ?></td>
+                                                <td><?php echo $list->id_user ?></td>
+                                                <td><?php echo $list->id_recording ?></td>
+                                                <td><?php echo $list->status_history ?></td>
+                                                <td><?php echo $list->tgl_submit_history ?></td>
+                                                <td><!--<a href="<?php echo base_url().'c_edit/edit/'.$list->id_history ?>"><button class="btn">EDIT</button></a> ||--> <a href="<?php echo base_url().'c_delete/history/'.$list->id_history ?>"><button class="btn">DELETE</button></a></td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>

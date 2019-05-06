@@ -6,76 +6,77 @@
         <title>Admin | Data Tables</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <!-- Bootstrap 3.3.7 -->
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/Admin/bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/Admin/bower_components/font-awesome/css/font-awesome.min.css">
-        <!-- Ionicons -->
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/Admin/bower_components/Ionicons/css/ionicons.min.css">
-        <!-- DataTables -->
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/Admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-        <!-- Theme style -->
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/Admin/dist/css/AdminLTE.min.css">
-        <!-- AdminLTE Skins. Choose a skin from the css/skins
-        folder instead of downloading all of them to reduce the load. -->
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/Admin/dist/css/skins/_all-skins.min.css">
+        <meta name="description" content="Ela Admin - HTML5 Admin Template">
+        <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
+        <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/ElaAdmin/assets/css/cs-skin-elastic.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/ElaAdmin/assets/css/lib/datatable/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/ElaAdmin/assets/css/style.css">
 
-        <!-- Google Font -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
-        <div class="wrapper">
-            <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper">
-                <!-- Content Header (Page header) -->
-                <!--<section class="content-header">
-      <h1>
-        Data Tables
-        <small>advanced tables</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Data tables</li>
-      </ol>
-    </section>-->
-                
-                <!-- Main content -->
-                <section class="content">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="box">
-                                <div class="box-header">
-                                    <h3 class="box-title">Comment</h3>
+        <div id="right-panel" class="right-panel">
+            <div class="breadcrumbs">
+                <div class="breadcrumbs-inner">
+                    <div class="row m-0">
+                        <div class="col-sm-4">
+                            <div class="page-header float-left">
+                                <div class="page-title">
+                                    <h1>Dashboard</h1>
                                 </div>
-                                <br>
-                                <div class="col-xs-2">
-                                    <a href="<?php echo base_url().'Welcome/tmbhComm' ?>"><button class="btn btn-block btn-primary btn-flat">Add Comment</button></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="page-header float-right">
+                                <div class="page-title">
+                                    <ol class="breadcrumb text-right">
+                                        <li><a href="#">Dashboard</a></li>
+                                        <li><a href="#">Table</a></li>
+                                        <li class="active">Data table</li>
+                                    </ol>
                                 </div>
-                                <br><br>
-                                <!-- /.box-header -->
-                                <div class="box-body">
-                                    <table id="example1" class="table table-bordered table-striped table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Recording</th>
-                                                <th>Comment</th>
-                                                <th>Status</th>
-                                                <th>Join Date</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <!--<tbody>
-                                            <?php
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content">
+            <div class="animated fadeIn">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Data Table</strong>
+                                <div class="page-header float-right">
+                                    <a href="<?php echo base_url().'c_edit/editUser/' ?>"><button class="btn">ADD USER</button></a>
+                                </div>
+                                
+                            </div>
+                            <div class="card-body">
+                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Recording</th>
+                                            <th>Comment</th>
+                                            <th>Status</th>
+                                            <th>Join Date</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
                                             foreach($item as $listItem) { ?>
                                             <tr>
                                                 <td><?php echo $listItem->id_item ?></td>
@@ -87,60 +88,54 @@
                                                 <td><a href="<?php echo base_url().'c_item/edit/'.$listItem->id_item ?>"><button class="btn">EDIT</button></a> || <a href="<?php echo base_url().'c_item/delete/'.$listItem->id_item ?>"><button class="btn">DELETE</button></a></td>
                                             </tr>
                                             <?php } ?>
-                                        </tbody>-->
-                                        <tfoot>
-                                        </tfoot>
-                                    </table>
-                                </div>
-                                <!-- /.box-body -->
+                                    </tbody>
+                                </table>
                             </div>
-                            <!-- /.box -->
                         </div>
-                        <!-- /.col -->
                     </div>
-                    <!-- /.row -->
-                </section>
-                <!-- /.content -->
+                </div>
+            </div><!-- .animated -->
+        </div><!-- .content -->
+
+
+        <div class="clearfix"></div>
+
+        <footer class="site-footer">
+            <div class="footer-inner bg-white">
+                <div class="row">
+                    <div class="col-sm-6">
+                        Copyright &copy; 2018 Ela Admin
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        Designed by <a href="https://colorlib.com">Colorlib</a>
+                    </div>
+                </div>
             </div>
-            <!-- /.content-wrapper -->
-            <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
-  </footer>
+        </footer>
         </div>
-        <!-- ./wrapper -->
-        
-        <!-- jQuery 3 -->
-        <script src="<?php echo base_url(); ?>assets/Admin/bower_components/jquery/dist/jquery.min.js"></script>
-        <!-- Bootstrap 3.3.7 -->
-        <script src="<?php echo base_url(); ?>assets/Admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!-- DataTables -->
-        <script src="<?php echo base_url(); ?>assets/Admin/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/Admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-        <!-- SlimScroll -->
-        <script src="<?php echo base_url(); ?>assets/Admin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-        <!-- FastClick -->
-        <script src="<?php echo base_url(); ?>assets/Admin/bower_components/fastclick/lib/fastclick.js"></script>
-        <!-- AdminLTE App -->
-        <script src="<?php echo base_url(); ?>assets/Admin/dist/js/adminlte.min.js"></script>
-        <!-- AdminLTE for demo purposes -->
-        <script src="<?php echo base_url(); ?>assets/Admin/dist/js/demo.js"></script>
-        <!-- page script -->
-        <script>
-            $(function () {
-                $('#example1').DataTable()
-                $('#example2').DataTable({
-                    'paging'      : true,
-                    'lengthChange': false,
-                    'searching'   : false,
-                    'ordering'    : true,
-                    'info'        : true,
-                    'autoWidth'   : false
-                })
-            })
-        </script>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/ElaAdmin/assets/js/main.js"></script>
+
+
+    <script src="<?php echo base_url(); ?>assets/ElaAdmin/assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/ElaAdmin/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/ElaAdmin/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/ElaAdmin/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/ElaAdmin/assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/ElaAdmin/assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="<?php echo base_url(); ?>assets/ElaAdmin/assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/ElaAdmin/assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/ElaAdmin/assets/js/lib/data-table/buttons.colVis.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/ElaAdmin/assets/js/init/datatables-init.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+          $('#bootstrap-data-table-export').DataTable();
+      } );
+  </script>
 </html>

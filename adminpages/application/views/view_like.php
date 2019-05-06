@@ -21,7 +21,6 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/ElaAdmin/assets/css/style.css">
 
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-        
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <div id="right-panel" class="right-panel">
@@ -58,27 +57,33 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Data Table</strong>
+                                <div class="page-header float-right">
+                                    <a href="<?php echo base_url().'Welcome/tmbhLike' ?>"><button class="btn">Add Like</button></a>
+                                </div>
+                                
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Action</th>
+                                                <th>Name</th>
+                                                <th>Recording</th>
+                                                <th>Status</th>
+                                                <th>Join Date</th>
+                                                <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            foreach($item as $listItem) { ?>
+                                            foreach($like as $list) { ?>
                                             <tr>
-                                                <td><?php echo $listItem->id_item ?></td>
-                                                <td><?php echo $listItem->nama_jenis ?></td>
-                                                <td><?php echo $listItem->nama_item ?></td>
-                                                <td><?php echo $listItem->size_item ?></td>
-                                                <td><?php echo $listItem->harga_item ?></td>
-                                                <td><?php echo $listItem->quantity_item ?></td>
-                                                <td><a href="<?php echo base_url().'c_item/edit/'.$listItem->id_item ?>"><button class="btn">EDIT</button></a> || <a href="<?php echo base_url().'c_item/delete/'.$listItem->id_item ?>"><button class="btn">DELETE</button></a></td>
+                                                <td><?php echo $list->id_like ?></td>
+                                                <td><?php echo $list->id_user ?></td>
+                                                <td><?php echo $list->id_recording ?></td>
+                                                <td><?php echo $list->status_like ?></td>
+                                                <td><?php echo $list->tgl_submit_like ?></td>
+                                                <td><a href="<?php echo base_url().'c_edit/like/'.$list->id_like ?>"><button class="btn">EDIT</button></a> || <a href="<?php echo base_url().'c_delete/like/'.$list->id_like ?>"><button class="btn">DELETE</button></a></td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>

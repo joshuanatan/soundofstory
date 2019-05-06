@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/ElaAdmin/assets/css/style.css">
 
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-        
+    
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <div id="right-panel" class="right-panel">
@@ -58,6 +58,10 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Data Table</strong>
+                                <div class="page-header float-right">
+                                    <a href="<?php echo base_url().'Welcome/tmbhUser/' ?>"><button class="btn">ADD USER</button></a>
+                                </div>
+                                
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
@@ -65,20 +69,36 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>Email</th>
+                                            <th>Phone Number</th>
+                                            <th>Photo</th>
+                                            <th>Status</th>
+                                            <th>Join Date</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            foreach($item as $listItem) { ?>
+                                            foreach($user as $listUser) { ?>
                                             <tr>
-                                                <td><?php echo $listItem->id_item ?></td>
-                                                <td><?php echo $listItem->nama_jenis ?></td>
-                                                <td><?php echo $listItem->nama_item ?></td>
-                                                <td><?php echo $listItem->size_item ?></td>
-                                                <td><?php echo $listItem->harga_item ?></td>
-                                                <td><?php echo $listItem->quantity_item ?></td>
-                                                <td><a href="<?php echo base_url().'c_item/edit/'.$listItem->id_item ?>"><button class="btn">EDIT</button></a> || <a href="<?php echo base_url().'c_item/delete/'.$listItem->id_item ?>"><button class="btn">DELETE</button></a></td>
+                                                <td><?php echo $listUser->id_user ?></td>
+                                                <td><?php echo $listUser->nama_user ?></td>
+                                                <?php
+                                                if($listUser->gender_user == '1') {
+                                                    $jk = "Pria";
+                                                }
+                                                else {
+                                                    $jk = "Wanita";
+                                                }
+                                                ?>
+                                                <td><?php echo $jk ?></td>
+                                                <td><?php echo $listUser->email_user ?></td>
+                                                <td><?php echo $listUser->nohp_user ?></td>
+                                                <td><img src='<?php echo base_url().'assets/profiles/images/'.$listUser->quantity_item; ?>'></td>
+                                                <td><?php echo $listUser->status_user ?></td>
+                                                <td><?php echo $listUser->tgl_submit_user ?></td>
+                                                <td><a href="<?php echo base_url().'c_edit/editUser/'.$listUser->id_user ?>"><button class="btn">EDIT</button></a> || <a href="<?php echo base_url().'c_delete/user/'.$listUser->id_user ?>"><button class="btn">DELETE</button></a></td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>

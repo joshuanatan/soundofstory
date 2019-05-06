@@ -21,7 +21,6 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/ElaAdmin/assets/css/style.css">
 
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-        
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <div id="right-panel" class="right-panel">
@@ -64,21 +63,19 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Action</th>
+                                                <th>Name</th>
+                                                <th>Status</th>
+                                                <th>Join Date</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            foreach($item as $listItem) { ?>
+                                            foreach($report as $list) { ?>
                                             <tr>
-                                                <td><?php echo $listItem->id_item ?></td>
-                                                <td><?php echo $listItem->nama_jenis ?></td>
-                                                <td><?php echo $listItem->nama_item ?></td>
-                                                <td><?php echo $listItem->size_item ?></td>
-                                                <td><?php echo $listItem->harga_item ?></td>
-                                                <td><?php echo $listItem->quantity_item ?></td>
-                                                <td><a href="<?php echo base_url().'c_item/edit/'.$listItem->id_item ?>"><button class="btn">EDIT</button></a> || <a href="<?php echo base_url().'c_item/delete/'.$listItem->id_item ?>"><button class="btn">DELETE</button></a></td>
+                                                <td><?php echo $list->id_comment ?></td>
+                                                <td><?php echo $list->id_user_pelapor ?></td>
+                                                <td><?php echo $list->status_report ?></td>
+                                                <td><?php echo $list->tgl_submit_report ?></td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>
@@ -106,6 +103,112 @@
             </div>
         </footer>
         </div>
+        
+        <div class="wrapper">
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <!--<section class="content-header">
+      <h1>
+        Data Tables
+        <small>advanced tables</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Tables</a></li>
+        <li class="active">Data tables</li>
+      </ol>
+    </section>-->
+                
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title">Report</h3>
+                                </div>
+                                <br>
+                                <!--<div class="col-xs-2">
+                                    <a href="<?php echo base_url().'Welcome/tmbhReport' ?>"><button class="btn btn-block btn-primary btn-flat">Add Report</button></a>
+                                </div>
+                                <br><br>-->
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <table id="example1" class="table table-bordered table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Status</th>
+                                                <th>Join Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            foreach($report as $list) { ?>
+                                            <tr>
+                                                <td><?php echo $list->id_comment ?></td>
+                                                <td><?php echo $list->id_user_pelapor ?></td>
+                                                <td><?php echo $list->status_report ?></td>
+                                                <td><?php echo $list->tgl_submit_report ?></td>
+                                            </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                        <tfoot>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                            <!-- /.box -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.4.0
+    </div>
+    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>
+        </div>
+        <!-- ./wrapper -->
+        
+        <!-- jQuery 3 -->
+        <script src="<?php echo base_url(); ?>assets/Admin/bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap 3.3.7 -->
+        <script src="<?php echo base_url(); ?>assets/Admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="<?php echo base_url(); ?>assets/Admin/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/Admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <!-- SlimScroll -->
+        <script src="<?php echo base_url(); ?>assets/Admin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="<?php echo base_url(); ?>assets/Admin/bower_components/fastclick/lib/fastclick.js"></script>
+        <!-- AdminLTE App -->
+        <script src="<?php echo base_url(); ?>assets/Admin/dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="<?php echo base_url(); ?>assets/Admin/dist/js/demo.js"></script>
+        <!-- page script -->
+        <script>
+            $(function () {
+                $('#example1').DataTable()
+                $('#example2').DataTable({
+                    'paging'      : true,
+                    'lengthChange': false,
+                    'searching'   : false,
+                    'ordering'    : true,
+                    'info'        : true,
+                    'autoWidth'   : false
+                })
+            })
+        </script>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
