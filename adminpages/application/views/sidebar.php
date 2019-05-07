@@ -67,7 +67,7 @@
                         <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url().'Welcome/index'; ?>">
+                        <a href="<?php echo base_url().'Welcome/user'; ?>">
                             <i class="menu-icon ti-email"></i>
                             User
                         </a>

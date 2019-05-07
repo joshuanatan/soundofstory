@@ -26,5 +26,10 @@ class M_crud extends CI_Model {
         $this->db->where($where);
         $this->db->update($table, $data);
     }
+    
+    function getID($where)
+    {
+        return $this->db->get_where('user', $where);
+    }
 }
 ?>

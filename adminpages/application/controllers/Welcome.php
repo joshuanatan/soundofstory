@@ -7,7 +7,18 @@ class Welcome extends CI_Controller {
         parent::__construct();
         $this->load->model('m_crud');
     }
-	function index()
+    
+    function index()
+	{
+		$this->load->view('view_admin_login');
+	}
+    
+    function register()
+    {
+        $this->load->view('view_admin_register');
+    }
+    
+	function user()
 	{
         $data['user'] = $this->m_crud->selectData('status_user', 'user')->result();
         $this->load->view('header');
