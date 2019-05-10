@@ -7,7 +7,7 @@
     <div class="home_slider_container">
         
         <!-- Home Slider -->
-        <div class="owl-carousel owl-theme home_slider">
+        <div class="owl-carousel owl-theme home_slider"> <!--ini buat yang premium -->
             
             <!-- Slider Item -->
             <div class="owl-item home_slider_item">
@@ -90,7 +90,7 @@
         <div class="row">
             <div class="col">
                 
-                <h5 style = "font-weight: lighter">Your Favourite</h5><h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">PLAYLIST<a href = "playlist.php"><span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span></a></h3>
+                <h5 style = "font-weight: lighter">Most Favourite</h5><h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">Stories<a href = "playlist.php"><span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span></a></h3>
                 <hr/>
                 <div class="product_grid">
 
@@ -141,7 +141,7 @@
         <div class="row">
             <div class="col">
                 
-                <h5 style = "font-weight: lighter">Latest Published</h5><h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">PLAYLIST<a href = "playlist.php"><span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span></a></h3>
+                <h5 style = "font-weight: lighter">New Release & This Week's Choice</h5><h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">Stories<a href = "playlist.php"><span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span></a></h3>
                 <hr/>
                 <div class="product_grid">
 

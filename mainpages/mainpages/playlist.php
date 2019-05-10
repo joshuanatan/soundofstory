@@ -12,7 +12,12 @@
             <div class="col">
                 <br/>
                 <form class = "form-inline">
-                    <input type = "text" class = "form-control col-lg-12" placeholder="Search Playlist Here..">
+                    <input type = "text" class = "form-control col-lg-7" placeholder="Search Playlist Here..">
+                    <select class = "form-control col-lg-4" style ="margin-left:30px;">
+                        <option value = "">TITLE</option>
+                        <option value = "">GENRE</option>
+                        <option value = "">STYLE</option>
+                    </select>
                 </form>
                 <br/><br/>
                 <!-- Column Titles -->
