@@ -1,1 +1,1 @@
-<link rel = "stylesheet" href = "../styles/message.css">
+<link rel = "stylesheet" href = "<?php echo base_url();?>assets/styles/message.css">

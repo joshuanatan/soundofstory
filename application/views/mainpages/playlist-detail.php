@@ -1,10 +1,6 @@
-<?php include("../req/head-open.php");?>
-<?php include("../req/styles/product-css.php");?>
-<?php include("../req/head-close.php");?>
-<?php include("../req/menu.php");?>
 <div class="home">
     <div class="home_container">
-        <div class="home_background" style="background-image:url(../images/categories.jpg)"></div>
+        <div class="home_background" style="background-image:url(<?php echo base_url();?>assets/images/categories.jpg)"></div>
         <div class="home_content_container">
             <div class="container">
                 <div class="row">
@@ -58,70 +54,70 @@
 
                     <!-- Product -->
                     <div class="product">
-                        <div class="product_image"><img src="../images/product_1.jpg" alt=""></div>
+                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_1.jpg" alt=""></div>
                         <div class="product_content">
-                            <div class="product_title"><a href="listen.php">Chapter Title</a></div>
+                            <div class="product_title"><a href="<?php echo base_url();?>stories/listen">Chapter Title</a></div>
                             <div class="product_price">Chapter 1</div>
                         </div>
                     </div>
 
                     <!-- Product -->
                     <div class="product">
-                        <div class="product_image"><img src="../images/product_2.jpg" alt=""></div>
+                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_2.jpg" alt=""></div>
                         <div class="product_content">
-                            <div class="product_title"><a href="listen.php">Chapter Title</a></div>
+                            <div class="product_title"><a href="<?php echo base_url();?>stories/listen">Chapter Title</a></div>
                             <div class="product_price">Chapter 2</div>
                         </div>
                     </div>
 
                     <!-- Product -->
                     <div class="product">
-                        <div class="product_image"><img src="../images/product_3.jpg" alt=""></div>
+                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_3.jpg" alt=""></div>
                         <div class="product_content">
-                            <div class="product_title"><a href="listen.php">Chapter Title</a></div>
+                            <div class="product_title"><a href="<?php echo base_url();?>stories/listen">Chapter Title</a></div>
                             <div class="product_price">Chapter 3</div>
                         </div>
                     </div>
 
                     <!-- Product -->
                     <div class="product">
-                        <div class="product_image"><img src="../images/product_4.jpg" alt=""></div>
+                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_4.jpg" alt=""></div>
                         <div class="product_content">
-                            <div class="product_title"><a href="listen.php">Chapter Title</a></div>
+                            <div class="product_title"><a href="<?php echo base_url();?>stories/listen">Chapter Title</a></div>
                             <div class="product_price">Chapter 4</div>
                         </div>
                     </div>
                     <div class="product">
-                        <div class="product_image"><img src="../images/product_1.jpg" alt=""></div>
+                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_1.jpg" alt=""></div>
                         <div class="product_content">
-                            <div class="product_title"><a href="listen.php">Chapter Title</a></div>
+                            <div class="product_title"><a href="<?php echo base_url();?>stories/listen">Chapter Title</a></div>
                             <div class="product_price">Chapter 5</div>
                         </div>
                     </div>
 
                     <!-- Product -->
                     <div class="product">
-                        <div class="product_image"><img src="../images/product_2.jpg" alt=""></div>
+                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_2.jpg" alt=""></div>
                         <div class="product_content">
-                            <div class="product_title"><a href="listen.php">Chapter Title</a></div>
+                            <div class="product_title"><a href="<?php echo base_url();?>stories/listen">Chapter Title</a></div>
                             <div class="product_price">Chapter 6</div>
                         </div>
                     </div>
 
                     <!-- Product -->
                     <div class="product">
-                        <div class="product_image"><img src="../images/product_3.jpg" alt=""></div>
+                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_3.jpg" alt=""></div>
                         <div class="product_content">
-                            <div class="product_title"><a href="listen.php">Chapter Title</a></div>
+                            <div class="product_title"><a href="<?php echo base_url();?>stories/listen">Chapter Title</a></div>
                             <div class="product_price">Chapter 7</div>
                         </div>
                     </div>
 
                     <!-- Product -->
                     <div class="product">
-                        <div class="product_image"><img src="../images/product_4.jpg" alt=""></div>
+                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_4.jpg" alt=""></div>
                         <div class="product_content">
-                            <div class="product_title"><a href="listen.php">Chapter Title</a></div>
+                            <div class="product_title"><a href="<?php echo base_url();?>stories/listen">Chapter Title</a></div>
                             <div class="product_price">Chapter 8</div>
                         </div>
                     </div>
@@ -130,5 +126,3 @@
         </div>
     </div>
 </div>
-
-<?php include("../req/close.php");?>

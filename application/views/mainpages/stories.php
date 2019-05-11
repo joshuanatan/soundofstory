@@ -1,11 +1,6 @@
-<?php include("../req/head-open.php");?>
-<?php include("../req/styles/product-css.php");?>
-<?php include("../req/styles/cart-css.php");?>
-<?php include("../req/head-close.php");?>
-<?php include("../req/menu.php");?>
 <div class="home">
     <div class="home_container">
-        <div class="home_background" style="background-image:url(../images/categories.jpg)"></div>
+        <div class="home_background" style="background-image:url(<?php echo base_url();?>assets/images/categories.jpg)"></div>
         <div class="home_content_container">
             <div class="container">
                 <div class="row">
@@ -40,13 +35,13 @@
                 <tbody>
                     <tr>
                         <td class = "align-middle" >
-                            <img src="../images/product_1.jpg" alt="" style = "width:100%">
+                            <img src="<?php echo base_url();?>assets/images/product_1.jpg" alt="" style = "width:100%">
                         </td>
                         <td>
                             <div class="cart_item_name_container">
-                                <div class="cart_item_name"><a href="playlist-detail.php">Robin Hood and the Red Blanket</a></div>
-                                <div class="cart_item_edit"><a href="playlist-detail.php">Chapter 1</a></div><br/>
-                                <div class="cart_item_edit"><a href="playlist-detail.php">Robin hood met a little girl with red blanket covering her eyes hence she could not see the stone under the sea</a></div>
+                                <div class="cart_item_name"><a href="<?php echo base_url();?>stories/detail">Robin Hood and the Red Blanket</a></div>
+                                <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Chapter 1</a></div><br/>
+                                <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Robin hood met a little girl with red blanket covering her eyes hence she could not see the stone under the sea</a></div>
                             </div>
                         </td>
                         <Td class = "align-middle">12:23:34</Td>
@@ -55,13 +50,13 @@
                     </tr>
                     <tr>
                         <td class = "align-middle" >
-                            <img src="../images/product_1.jpg" alt="" style = "width:100%">
+                            <img src="<?php echo base_url();?>assets/images/product_1.jpg" alt="" style = "width:100%">
                         </td>
                         <td>
                             <div class="cart_item_name_container">
-                                <div class="cart_item_name"><a href="playlist-detail.php">Robin Hood and the Red Blanket</a></div>
-                                <div class="cart_item_edit"><a href="playlist-detail.php">Chapter 1</a></div><br/>
-                                <div class="cart_item_edit"><a href="playlist-detail.php">Robin hood met a little girl with red blanket covering her eyes hence she could not see the stone under the sea</a></div>
+                                <div class="cart_item_name"><a href="<?php echo base_url();?>stories/detail">Robin Hood and the Red Blanket</a></div>
+                                <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Chapter 1</a></div><br/>
+                                <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Robin hood met a little girl with red blanket covering her eyes hence she could not see the stone under the sea</a></div>
                             </div>
                         </td>
                         <Td class = "align-middle">12:23:34</Td>
@@ -70,13 +65,13 @@
                     </tr>
                     <tr>
                         <td class = "align-middle" >
-                            <img src="../images/product_1.jpg" alt="" style = "width:100%">
+                            <img src="<?php echo base_url();?>assets/images/product_1.jpg" alt="" style = "width:100%">
                         </td>
                         <td>
                             <div class="cart_item_name_container">
-                                <div class="cart_item_name"><a href="playlist-detail.php">Robin Hood and the Red Blanket</a></div>
-                                <div class="cart_item_edit"><a href="playlist-detail.php">Chapter 1</a></div><br/>
-                                <div class="cart_item_edit"><a href="playlist-detail.php">Robin hood met a little girl with red blanket covering her eyes hence she could not see the stone under the sea</a></div>
+                                <div class="cart_item_name"><a href="<?php echo base_url();?>stories/detail">Robin Hood and the Red Blanket</a></div>
+                                <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Chapter 1</a></div><br/>
+                                <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Robin hood met a little girl with red blanket covering her eyes hence she could not see the stone under the sea</a></div>
                             </div>
                         </td>
                         <Td class = "align-middle">12:23:34</Td>
@@ -91,5 +86,3 @@
 
     </div>
 </div>
-
-<?php include("../req/close.php");?>

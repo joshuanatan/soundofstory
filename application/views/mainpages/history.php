@@ -1,7 +1,3 @@
-<?php include("../req/head-open.php");?>
-<?php include("../req/styles/cart-css.php");?>
-<?php include("../req/head-close.php");?>
-<?php include("../req/menu.php");?>
 <div class="cart_info">
     <div class="container">
         <div class = "row" style = "margin-bottom:50px">
@@ -46,11 +42,11 @@
                     <!-- Name -->
                     <div class="cart_item_product d-flex flex-row align-items-center justify-content-start col-lg-5 col-sm-12">
                         <div class="cart_item_image">
-                            <div><img src="../images/product_1.jpg" alt=""></div>
+                            <div><img src="<?php echo base_url();?>assets/images/product_1.jpg" alt=""></div>
                         </div>
                         <div class="cart_item_name_container">
-                            <div class="cart_item_name"><a href="playlist-detail.php">Chapter Title</a></div>
-                            <div class="cart_item_edit"><a href="playlist-detail.php">Episode 1</a></div>
+                            <div class="cart_item_name"><a href="<?php echo base_url();?>stories/detail">Chapter Title</a></div>
+                            <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Episode 1</a></div>
                         </div>
                     </div>
                     <!-- Price -->
@@ -77,11 +73,11 @@
                     <!-- Name -->
                     <div class="cart_item_product d-flex flex-row align-items-center justify-content-start col-lg-5 col-sm-12">
                         <div class="cart_item_image">
-                            <div><img src="../images/product_2.jpg" alt=""></div>
+                            <div><img src="<?php echo base_url();?>assets/images/product_2.jpg" alt=""></div>
                         </div>
                         <div class="cart_item_name_container">
-                            <div class="cart_item_name"><a href="playlist-detail.php">Chapter Title</a></div>
-                            <div class="cart_item_edit"><a href="playlist-detail.php">Episode 1</a></div>
+                            <div class="cart_item_name"><a href="<?php echo base_url();?>stories/detail">Chapter Title</a></div>
+                            <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Episode 1</a></div>
                         </div>
                     </div>
                     <!-- Price -->
@@ -108,11 +104,11 @@
                     <!-- Name -->
                     <div class="cart_item_product d-flex flex-row align-items-center justify-content-start col-lg-5 col-sm-12">
                         <div class="cart_item_image">
-                            <div><img src="../images/product_3.jpg" alt=""></div>
+                            <div><img src="<?php echo base_url();?>assets/images/product_3.jpg" alt=""></div>
                         </div>
                         <div class="cart_item_name_container">
-                            <div class="cart_item_name"><a href="playlist-detail.php">Chapter Title</a></div>
-                            <div class="cart_item_edit"><a href="playlist-detail.php">Episode 1</a></div>
+                            <div class="cart_item_name"><a href="<?php echo base_url();?>stories/detail">Chapter Title</a></div>
+                            <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Episode 1</a></div>
                         </div>
                     </div>
                     <!-- Price -->
@@ -138,11 +134,11 @@
                     <!-- Name -->
                     <div class="cart_item_product d-flex flex-row align-items-center justify-content-start col-lg-5 col-sm-12">
                         <div class="cart_item_image">
-                            <div><img src="../images/product_4.jpg" alt=""></div>
+                            <div><img src="<?php echo base_url();?>assets/images/product_4.jpg" alt=""></div>
                         </div>
                         <div class="cart_item_name_container">
-                            <div class="cart_item_name"><a href="playlist-detail.php">Chapter Title</a></div>
-                            <div class="cart_item_edit"><a href="playlist-detail.php">Episode 1</a></div>
+                            <div class="cart_item_name"><a href="<?php echo base_url();?>stories/detail">Chapter Title</a></div>
+                            <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Episode 1</a></div>
                         </div>
                     </div>
                     <!-- Price -->
@@ -169,11 +165,11 @@
                     <!-- Name -->
                     <div class="cart_item_product d-flex flex-row align-items-center justify-content-start col-lg-5 col-sm-12">
                         <div class="cart_item_image">
-                            <div><img src="../images/product_5.jpg" alt=""></div>
+                            <div><img src="<?php echo base_url();?>assets/images/product_5.jpg" alt=""></div>
                         </div>
                         <div class="cart_item_name_container">
-                            <div class="cart_item_name"><a href="playlist-detail.php">Chapter Title</a></div>
-                            <div class="cart_item_edit"><a href="playlist-detail.php">Episode 1</a></div>
+                            <div class="cart_item_name"><a href="<?php echo base_url();?>stories/detail">Chapter Title</a></div>
+                            <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Episode 1</a></div>
                         </div>
                     </div>
                     <!-- Price -->
@@ -196,6 +192,3 @@
         <br/>
     </div>		
 </div>
-
-<?php include("../req/footer.php");?>
-<?php include("../req/close.php");?>

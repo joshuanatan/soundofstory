@@ -1,12 +1,6 @@
-
-<?php include("../req/head-open.php");?>
-<?php include("../req/styles/cart-css.php");?>
-<?php include("../req/styles/profile-css.php");?>
-<?php include("../req/head-close.php");?>
-<?php include("../req/menu.php");?>
 <div class="home">
     <div class="home_container">
-        <div class="home_background" style="background-image:url(../images/categories.jpg)"></div>
+        <div class="home_background" style="background-image:url(<?php echo base_url();?>assets/images/categories.jpg)"></div>
         <div class="home_content_container">
             <div class="container">
                 <div class="row">
@@ -156,5 +150,3 @@
         </div>
     </form>           
     </div>
-
-<?php include("../req/close.php");?>

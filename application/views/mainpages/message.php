@@ -1,8 +1,3 @@
-<?php include("../req/head-open.php");?>
-<?php include("../req/styles/message-css.php");?>
-<?php include("../req/styles/cart-css.php");?>
-<?php include("../req/head-close.php");?>
-<?php include("../req/menu.php");?>
 <div class = "container" style = "margin-top:130px;height:650px">
 <div class="sunil-messaging"> 
       <div class="sunil-inbox_msg">
@@ -188,5 +183,3 @@
           </div>
         </div>
         </div>
-<?php //include("../req/footer.php");?>
-<?php include("../req/close.php");?>
