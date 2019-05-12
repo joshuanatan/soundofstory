@@ -1,3 +1,4 @@
+<?php foreach($profile as $list) { ?>
 <div class="home">
     <div class="home_container">
         <div class="home_background" style="background-image:url(<?php echo base_url();?>assets/images/categories.jpg)"></div>
@@ -6,8 +7,8 @@
                 <div class="row">
                     <div class="col">
                         <div class="home_content">
-                            <div class="home_title"><h1 style = "font-weight:bolder; color:white; opacity:0.8">Kshiti Ghelani</h1></div>
-                            <div class="home_text"><p style = "font-weight:lighter; color:white; opacity: 0.6">An individual who loves an action science fiction stories!</p></div>
+                            <div class="home_title"><h1 style = "font-weight:bolder; color:white; opacity:0.8"><?php echo $list->nama_user ?></h1></div>
+                            <div class="home_text"><p style = "font-weight:lighter; color:white; opacity: 0.6"><?php echo $list->description_user ?></p></div>
                         </div>
                     </div>
                 </div>
@@ -21,7 +22,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                    <img src="<?php echo base_url()."assets/profiles/images/".$list->foto_profile_user ?>" alt=""/>
                     <div class="file btn btn-lg btn-primary">
                         Change Photo
                         <input type="file" name="file"/>
@@ -31,10 +32,16 @@
             <div class="col-md-6">
                 <div class="profile-head">
                             <h5>
-                                Kshiti Ghelani
+                                <?php echo $list->nama_user ?>
                             </h5>
                             <h6>
-                                Student - 18 Years Old
+                                <?php
+                                $bod = $list->tgl_lahir_user;
+                                $date = date("Y-m-d");
+                                $diff = abs(strtotime($date) - strtotime($bod));
+                                $years = floor($diff / (365*60*60*24));
+                                echo $years.' years old';
+                                ?>
                             </h6>
                             <p class="proile-rating">Listened Stories: &nbsp;<span>134 Story Episodes</span></p>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -67,7 +74,7 @@
                                 <label>User Id</label>
                             </div>
                             <div class="col-md-6">
-                                <p>Kshiti123</p>
+                                <p>ID USER = <?php echo $list->id_user ?>(kita belom ada username)</p>
                             </div>
                         </div>
                         <div class="row">
@@ -75,7 +82,7 @@
                                 <label>Name</label>
                             </div>
                             <div class="col-md-6">
-                                <p>Kshiti Ghelani</p>
+                                <p><?php echo $list->nama_user ?></p>
                             </div>
                         </div>
                         <div class="row">
@@ -83,7 +90,7 @@
                                 <label>Email</label>
                             </div>
                             <div class="col-md-6">
-                                <p>kshitighelani@gmail.com</p>
+                                <p><?php echo $list->email_user ?></p>
                             </div>
                         </div>
                         <div class="row">
@@ -91,7 +98,7 @@
                                 <label>Phone</label>
                             </div>
                             <div class="col-md-6">
-                                <p>123 456 7890</p>
+                                <p><?php echo $list->nohp_user ?></p>
                             </div>
                         </div>
                         <div class="row">
@@ -99,7 +106,7 @@
                                 <label>Profession</label>
                             </div>
                             <div class="col-md-6">
-                                <p>Web Developer and Designer</p>
+                                <p><?php echo $list->profesi_user ?></p>
                             </div>
                         </div>
                     </div>
@@ -109,7 +116,7 @@
                                 <label>First Join</label>
                             </div>
                             <div class="col-md-6">
-                                <p>23/10/2019</p>
+                                <p><?php echo $list->tgl_submit_user ?></p>
                             </div>
                         </div>
                         <div class="row">
@@ -150,3 +157,4 @@
         </div>
     </form>           
     </div>
+<?php } ?>

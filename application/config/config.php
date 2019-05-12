@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-//$config['base_url'] = 'http://localhost/CI_sound/'; //jovan
-$config['base_url'] = 'http://localhost:8888/project/soundofstory'; //jn
+$config['base_url'] = 'http://localhost/soundofstory/'; //jovan
+//$config['base_url'] = 'http://localhost:8888/project/soundofstory'; //jn
 
 /*
 |--------------------------------------------------------------------------

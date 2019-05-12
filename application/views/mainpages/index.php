@@ -1,3 +1,7 @@
+<?php
+$this->session->set_userdata("id", 1);
+$this->session->set_userdata("nama", "James");
+?>
 <div class="home">
     <div class="home_slider_container">
         
@@ -90,40 +94,15 @@
                 <div class="product_grid">
 
                     <!-- Product -->
+                    <?php foreach($story as $list) { ?>
                     <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_1.jpg" alt=""></div>
+                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/story/<?php echo $list->foto_playlist ?>" alt=""></div>
                         <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories/detail">Playlist Name</a></div>
-                            <div class="product_price">Playlist Description</div>
+                            <div class="product_title"><a href="<?php echo base_url();?>stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->nama_playlist ?></a></div>
+                            <div class="product_price"><?php echo $list->description_playlist ?></div>
                         </div>
                     </div>
-
-                    <!-- Product -->
-                    <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_2.jpg" alt=""></div>
-                        <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories/detail">Playlist Name</a></div>
-                            <div class="product_price">Playlist Description</div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_3.jpg" alt=""></div>
-                        <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories/detail">Playlist Name</a></div>
-                            <div class="product_price">Playlist Description</div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_4.jpg" alt=""></div>
-                        <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories/detail">Playlist Name</a></div>
-                            <div class="product_price">Playlist Description</div>
-                        </div>
-                    </div>
+                    <?php } ?>
 
                 </div>
                     
@@ -141,40 +120,15 @@
                 <div class="product_grid">
 
                     <!-- Product -->
+                    <?php foreach($story as $list) { ?>
                     <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_1.jpg" alt=""></div>
+                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/story/<?php echo $list->foto_playlist ?>" alt=""></div>
                         <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories/detail">Playlist Name</a></div>
-                            <div class="product_price">Playlist Description</div>
+                            <div class="product_title"><a href="<?php echo base_url();?>stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->nama_playlist ?></a></div>
+                            <div class="product_price"><?php echo $list->description_playlist ?></div>
                         </div>
                     </div>
-
-                    <!-- Product -->
-                    <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_2.jpg" alt=""></div>
-                        <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories/detail">Playlist Name</a></div>
-                            <div class="product_price">Playlist Description</div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_3.jpg" alt=""></div>
-                        <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories/detail">Playlist Name</a></div>
-                            <div class="product_price">Playlist Description</div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_4.jpg" alt=""></div>
-                        <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories/detail">Playlist Name</a></div>
-                            <div class="product_price">Playlist Description</div>
-                        </div>
-                    </div>
+                    <?php } ?>
 
                 </div>
                     
@@ -192,78 +146,15 @@
                 <div class="product_grid">
 
                     <!-- Product -->
+                    <?php foreach($episode as $list) { ?>
                     <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_1.jpg" alt=""></div>
+                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/recording/<?php echo $list->foto_recording ?>" alt=""></div>
                         <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories">Chapter title</a></div>
-                            <div class="product_price">Chapter Summary</div>
+                            <div class="product_title"><a href="<?php echo base_url();?>stories/listen/<?php echo $list->id_recording ?>"><?php echo $list->judul_recording ?></a></div>
+                            <div class="product_price"><?php echo $list->description_recording ?></div>
                         </div>
                     </div>
-
-                    <!-- Product -->
-                    <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_2.jpg" alt=""></div>
-                        <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories">Chapter title</a></div>
-                            <div class="product_price">Chapter Summary</div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_3.jpg" alt=""></div>
-                        <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories">Chapter title</a></div>
-                            <div class="product_price">Chapter Summary</div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_4.jpg" alt=""></div>
-                        <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories">Chapter title</a></div>
-                            <div class="product_price">Chapter Summary</div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_5.jpg" alt=""></div>
-                        <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories">Chapter title</a></div>
-                            <div class="product_price">Chapter Summary</div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_6.jpg" alt=""></div>
-                        
-                        <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories">Chapter title</a></div>
-                            <div class="product_price">Chapter Summary</div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_7.jpg" alt=""></div>
-                        <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories">Chapter title</a></div>
-                            <div class="product_price">Chapter Summary</div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/product_8.jpg" alt=""></div>
-                        
-                        <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories">Chapter title</a></div>
-                            <div class="product_price">Chapter Summary</div>
-                        </div>
-                    </div>
+                    <?php } ?>
 
                 </div>
                     

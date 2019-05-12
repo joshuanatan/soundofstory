@@ -15,7 +15,7 @@
                                 <li class="hassubs">
                                     <a href="#" style = "font-size:14px">Stories</a>
                                     <ul style = "width:200px">
-                                        <li><a href="<?php echo base_url();?>stories" style = "font-size:14px">Episode's Journey</a></li>
+                                        <li><a href="<?php echo base_url();?>history" style = "font-size:14px">Episode's Journey</a></li>
                                         <li><a href="#" style = "font-size:14px">Favourites</a></li>
                                     </ul>
                                 </li>
@@ -23,7 +23,7 @@
                                     <a href="#" style = "font-size:14px">Buddy</a>
                                 </li>
                                 <li class="hassubs">
-                                    <a href="#" style = "font-size:14px">Kshiti Ghelanix</a>
+                                    <a href="#" style = "font-size:14px"><?php echo $this->session->userdata("nama") ?></a>
                                     <ul style = "width:200px">
                                         <li><a href="<?php echo base_url();?>profile">Profile</a></li>
                                         <li><a href="<?php echo base_url();?>chatroom">Live Chat</a></li>

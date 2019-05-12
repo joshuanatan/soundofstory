@@ -1,3 +1,4 @@
+<?php foreach($episode as $list) { ?>
 <div class="home">
     <div class="home_container">
         <div class="home_background" style="background-image:url(<?php echo base_url();?>assets/images/categories.jpg)"></div>
@@ -6,8 +7,8 @@
                 <div class="row">
                     <div class="col">
                         <div class="home_content">
-                            <div class="home_title">Story Title<span>.</span></div>
-                            <div class="home_text"><p>Story description in not so long sentence</p></div>
+                            <div class="home_title"><?php echo $list->nama_playlist ?><span>.</span></div>
+                            <div class="home_text"><p><?php echo $list->description_playlist ?></p></div>
                         </div>
                     </div>
                 </div>
@@ -23,23 +24,21 @@
             <!-- Product Content -->
             <div class="col-lg-12">
                 <div class="details_content">
-                    <div class="details_name">Chapter 1</div>
+                    <div class="details_name">Chapter <?php echo $list->chapter_playlist ?></div>
                     <div class="details_text">
-                        <p>Chapter summary in not so long sentence</p>
+                        <p><?php echo $list->description_recording ?></p>
                     </div>
                     <!-- In Stock -->
                     <div class="in_stock_container">
                         <div class="availability">Duration:</div>
-                        <span>00:28:10</span>
+                        <span><?php echo $list->duration_recording.' minutes' ?></span>
                     </div>
                     
 
                     <!-- Share -->
                     <div style = "margin-top:20px">
                         <audio controls style = "width: 100%">
-                            <source src="horse.ogg" type="audio/ogg">
-                            <source src="horse.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
+                            <source src="<?php echo base_url().'assets/audio/'.$list->file_recording ?>" type="audio/mpeg">
                         </audio>
                     </div>
                 </div>
@@ -201,3 +200,4 @@
 
     </div>
 </div>
+<?php } ?>

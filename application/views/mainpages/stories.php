@@ -33,51 +33,23 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach($episode as $list) { ?>
                     <tr>
                         <td class = "align-middle" >
-                            <img src="<?php echo base_url();?>assets/images/product_1.jpg" alt="" style = "width:100%">
+                            <img src="<?php echo base_url();?>assets/images/<?php echo $list->foto_recording ?>" alt="" style = "width:100%">
                         </td>
                         <td>
                             <div class="cart_item_name_container">
-                                <div class="cart_item_name"><a href="<?php echo base_url();?>stories/detail">Robin Hood and the Red Blanket</a></div>
-                                <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Chapter 1</a></div><br/>
-                                <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Robin hood met a little girl with red blanket covering her eyes hence she could not see the stone under the sea</a></div>
+                                <div class="cart_item_name"><a href="<?php echo base_url();?>stories/detail/<?php echo $list->id_recording ?>"><?php echo $list->judul_recording ?></a></div>
+                                <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail/<?php echo $list->id_recording ?>">Chapter <?php echo $list->chapter_playlist ?></a></div><br/>
+                                <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail/<?php echo $list->id_recording ?>"><?php echo $list->description_recording ?></a></div>
                             </div>
                         </td>
-                        <Td class = "align-middle">12:23:34</Td>
-                        <Td class = "align-middle">Story Name Here</Td>
-                        <Td class = "align-middle">23/10/2019</Td>
+                        <Td class = "align-middle"><?php echo $list->duration_recording." minutes" ?></Td>
+                        <Td class = "align-middle"><?php echo $list->nama_playlist ?></Td>
+                        <Td class = "align-middle"><?php echo $list->tgl_user_recording ?></Td>
                     </tr>
-                    <tr>
-                        <td class = "align-middle" >
-                            <img src="<?php echo base_url();?>assets/images/product_1.jpg" alt="" style = "width:100%">
-                        </td>
-                        <td>
-                            <div class="cart_item_name_container">
-                                <div class="cart_item_name"><a href="<?php echo base_url();?>stories/detail">Robin Hood and the Red Blanket</a></div>
-                                <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Chapter 1</a></div><br/>
-                                <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Robin hood met a little girl with red blanket covering her eyes hence she could not see the stone under the sea</a></div>
-                            </div>
-                        </td>
-                        <Td class = "align-middle">12:23:34</Td>
-                        <Td class = "align-middle">Story Name Here</Td>
-                        <Td class = "align-middle">23/10/2019</Td>
-                    </tr>
-                    <tr>
-                        <td class = "align-middle" >
-                            <img src="<?php echo base_url();?>assets/images/product_1.jpg" alt="" style = "width:100%">
-                        </td>
-                        <td>
-                            <div class="cart_item_name_container">
-                                <div class="cart_item_name"><a href="<?php echo base_url();?>stories/detail">Robin Hood and the Red Blanket</a></div>
-                                <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Chapter 1</a></div><br/>
-                                <div class="cart_item_edit"><a href="<?php echo base_url();?>stories/detail">Robin hood met a little girl with red blanket covering her eyes hence she could not see the stone under the sea</a></div>
-                            </div>
-                        </td>
-                        <Td class = "align-middle">12:23:34</Td>
-                        <Td class = "align-middle">Story Name Here</Td>
-                        <Td class = "align-middle">23/10/2019</Td>
-                    </tr>
+                    <?php } ?>
                 </tbody>
             </table>
             <br/><br/><br/>
