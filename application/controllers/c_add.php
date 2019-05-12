@@ -117,8 +117,8 @@ class C_add extends CI_Controller {
         );
         
         $this->m_crud->insertData($data, 'recording');
-        $this->m_crud->insertData($data2, 'user_recording');
-        $this->m_crud->insertData($data3, 'history_recording');
+        //$this->m_crud->insertData($data2, 'user_recording');
+        //$this->m_crud->insertData($data3, 'history_recording');
         
         redirect('Welcome/Rec');
     }
