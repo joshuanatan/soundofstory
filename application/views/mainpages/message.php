@@ -89,7 +89,7 @@
                     $('#parent').append('<div class="sunil-received_msg">');
                     $('#parent').append('<div class="sunil-received_withd_msg">');
                     $('#parent').append('<p>'+data[i].konten+'</p>');
-                    $('#parent').append('<span class="sunil-time_date"> 11:01 AM    |    June 9</span>');
+                    $('#parent').append('<span class="sunil-time_date"> '+data[i].jam_submit_message+'    |    '+data[i].tgl_submit_message+'</span>');
                     $('#parent').append('</div>');
                     $('#parent').append('</div>');
                     $('#parent').append('</div>');
