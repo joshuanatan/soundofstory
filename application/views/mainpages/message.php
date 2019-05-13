@@ -72,6 +72,7 @@
 <script src="<?php echo base_url().'assets/js/jquery.js' ;?>"></script>
 <script>
     function getChat($id) {
+        $("#parent").empty();
         var id = $id;
         console.log(id);
         $.ajax({
