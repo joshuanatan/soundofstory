@@ -56,13 +56,16 @@
                         <div class="sunil-sent_msg">
                             <p>Test which is a new approach to have all
                                 solutions</p>
-                            <span class="sunil-time_date"> 11:01 AM    |    June 9</span> </div>
+                            <span class="sunil-time_date"> 11:01 AM    |    June 9</span> 
+                        </div>
                     </div>
                 </div>
                 <div class="sunil-type_msg">
                     <div class="sunil-input_msg_write">
-                        <input type="text" class="sunil-write_msg" placeholder="Type a message" />
-                        <button class="sunil-msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                        <form action="javascript:sendChat()" method="post">
+                            <input type="text" class="sunil-write_msg" name="msg" id="msg" placeholder="Type a message" />
+                            <button class="sunil-msg_send_btn" type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -81,19 +84,21 @@
             dataType : "JSON",
             data : {id:id},
             success : function(data) {
-                for(i in data) {
-                    //masukin message
-                    console.log(data[i].konten);
-                    $('#parent').append('<div class="sunil-incoming_msg">');
-                    $('#parent').append('<div class="sunil-incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>');
-                    $('#parent').append('<div class="sunil-received_msg">');
-                    $('#parent').append('<div class="sunil-received_withd_msg">');
-                    $('#parent').append('<p>'+data[i].konten+'</p>');
-                    $('#parent').append('<span class="sunil-time_date"> '+data[i].jam_submit_message+'    |    '+data[i].tgl_submit_message+'</span>');
-                    $('#parent').append('</div>');
-                    $('#parent').append('</div>');
-                    $('#parent').append('</div>');
-                }
+                $('#parent').append(data);
+            }
+        });
+    }
+    function sendChat() {
+        var isi = $('input[name=msg]').val();
+        //console.log(isi);
+        $.ajax({
+            type : 'POST',
+            url : "<?php echo base_url().'Chatroom/send/' ?>",
+            dataType : "JSON",
+            data : {isi:isi},
+            success : function(data) {
+                $('#parent').append(data);
+                $('#msg').val('');
             }
         });
     }

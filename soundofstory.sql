@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2019 at 10:36 AM
+-- Generation Time: May 14, 2019 at 08:17 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -151,7 +151,15 @@ CREATE TABLE `message` (
 --
 
 INSERT INTO `message` (`id_message`, `konten`, `id_user_dari`, `id_user_tujuan`, `status_message`, `tgl_submit_message`, `jam_submit_message`) VALUES
-(1, 'Hai', 1, 2, 1, '2019-03-10', '12:24:02');
+(1, 'Hai', 1, 2, 1, '2019-03-10', '12:24:02'),
+(2, 'Apa kabar?', 1, 2, 1, '2019-05-13', '14:28:30'),
+(3, 'asddas', 1, 3, 1, '2019-05-13', '13:00:00'),
+(4, 'Baik', 2, 1, 1, '2019-05-14', '12:07:12'),
+(5, 'Lagi apa?', 1, 2, 1, '2019-05-14', '12:36:23'),
+(6, 'Test', 1, 2, 1, '2019-05-14', '12:36:57'),
+(7, 'woi', 1, 3, 1, '2019-05-14', '13:14:51'),
+(8, 'woi', 1, 2, 1, '2019-05-14', '13:15:03'),
+(9, 'HAHHAA', 1, 3, 1, '2019-05-14', '13:17:11');
 
 -- --------------------------------------------------------
 
@@ -313,7 +321,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `nama_user`, `password_user`, `gender_user`, `email_user`, `nohp_user`, `foto_profile_user`, `status_user`, `tgl_submit_user`) VALUES
 (1, 'James', '827ccb0eea8a706c4c34a16891f84e7b', 1, 'james@gmail.com', '08123456789', 'James.jpg', 1, '2019-03-09'),
-(2, 'Jovan', 'b59c6e9b344bae1a36fe427a42889265', 1, 'hidayatjovan@gmail.com', '081234567890', 'elang.jpg', 1, '2019-05-07');
+(2, 'Jovan', 'b59c6e9b344bae1a36fe427a42889265', 1, 'hidayatjovan@gmail.com', '081234567890', 'elang.jpg', 1, '2019-05-07'),
+(3, 'ASDASDASDS', 'SDDD', 1, 'ADAFAD', '1231312', '123131', 1, '2019-05-13');
 
 -- --------------------------------------------------------
 
@@ -461,7 +470,7 @@ ALTER TABLE `like`
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `playlist`
@@ -497,7 +506,7 @@ ALTER TABLE `report`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user_recording`
