@@ -4,8 +4,19 @@ class M_recording extends CI_Model {
     {
         $this->db->select('*')
             ->from('recording')
+            ->join('user', 'recording.id_user = user.id_user', 'inner')
             ->join('recording_playlist', 'recording_playlist.id_recording = recording.id_recording', 'inner')
             ->join('playlist', 'recording_playlist.id_playlist = playlist.id_playlist', 'inner')
+            ->where($where);
+        $query = $this->db->get();
+        return $query;
+    }
+    
+    function select($where)
+    {
+        $this->db->select('*')
+            ->from('recording')
+            ->join('user', 'recording.id_user = user.id_user', 'inner')
             ->where($where);
         $query = $this->db->get();
         return $query;

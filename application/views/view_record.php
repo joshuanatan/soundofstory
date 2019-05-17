@@ -70,7 +70,6 @@
                                                 <th>Title</th>
                                                 <th>File Name</th>
                                                 <th>User</th>
-                                                <th>Category</th>
                                                 <th>Status</th>
                                                 <th>Join Date</th>
                                                 <th>Action</th>
@@ -83,8 +82,7 @@
                                                 <td><?php echo $list->id_recording ?></td>
                                                 <td><?php echo $list->judul_recording ?></td>
                                                 <td><?php echo $list->file_recording ?></td>
-                                                <td><?php echo $list->id_user ?></td>
-                                                <td><?php echo $list->id_category ?></td>
+                                                <td><?php echo $list->nama_user ?></td>
                                                 <td><?php echo $list->status_recording ?></td>
                                                 <td><?php echo $list->tgl_submit_recording ?></td>
                                                 <td><a href="<?php echo base_url().'c_edit/rec/'.$list->id_recording ?>"><button class="btn">EDIT</button></a> || <a href="<?php echo base_url().'c_delete/rec/'.$list->id_recording ?>"><button class="btn">DELETE</button></a></td>

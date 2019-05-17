@@ -73,7 +73,7 @@
                                             foreach($report as $list) { ?>
                                             <tr>
                                                 <td><?php echo $list->id_comment ?></td>
-                                                <td><?php echo $list->id_user_pelapor ?></td>
+                                                <td><?php echo $list->nama_user ?></td>
                                                 <td><?php echo $list->status_report ?></td>
                                                 <td><?php echo $list->tgl_submit_report ?></td>
                                             </tr>

@@ -79,7 +79,7 @@
                                             foreach($conn as $list) { ?>
                                             <tr>
                                                 <td><?php echo $list->id_connection ?></td>
-                                                <td><?php echo $list->id_user ?></td>
+                                                <td><?php echo $list->nama_user ?></td>
                                                 <td><?php echo $list->id_user_2 ?></td>
                                                 <td><?php echo $list->status_connection ?></td>
                                                 <td><?php echo $list->tgl_submit_connection ?></td>

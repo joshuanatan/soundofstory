@@ -72,6 +72,18 @@
                                         <div class="col col-md-3"><label for="email-input" class=" form-control-label">ID User</label></div>
                                         <div class="col-12 col-md-9"><input type="email" name="id" value="<?php echo $list->id_user ?>" class="form-control"></div>
                                     </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="select" class=" form-control-label">Category</label></div>
+                                        <div class="col-12 col-md-9">
+                                            <select name="cat" class="form-control">
+                                                <?php 
+                                                foreach($cat as $list2) { ?>
+                                                    <option value="<?php echo $list2->id_category ?>"><?php echo $list2->nama_category ?></option>
+                                                <?php }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Submit

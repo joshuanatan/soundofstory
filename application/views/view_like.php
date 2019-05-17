@@ -79,8 +79,8 @@
                                             foreach($like as $list) { ?>
                                             <tr>
                                                 <td><?php echo $list->id_like ?></td>
-                                                <td><?php echo $list->id_user ?></td>
-                                                <td><?php echo $list->id_recording ?></td>
+                                                <td><?php echo $list->nama_user ?></td>
+                                                <td><?php echo $list->judul_recording ?></td>
                                                 <td><?php echo $list->status_like ?></td>
                                                 <td><?php echo $list->tgl_submit_like ?></td>
                                                 <td><a href="<?php echo base_url().'c_edit/like/'.$list->id_like ?>"><button class="btn">EDIT</button></a> || <a href="<?php echo base_url().'c_delete/like/'.$list->id_like ?>"><button class="btn">DELETE</button></a></td>

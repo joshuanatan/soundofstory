@@ -5,6 +5,7 @@ class M_playlist extends CI_Model {
         $this->db->select('*')
             ->from('playlist')
             ->join('category', 'playlist.id_category = category.id_category', 'inner')
+            ->join('user', 'user.id_user = playlist.id_user', 'inner')
             ->where($where);
         $query = $this->db->get();
         return $query;

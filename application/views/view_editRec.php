@@ -73,16 +73,12 @@
                                         <div class="col-12 col-md-9"><input type="text" name="id" class="form-control" value="<?php echo $list->id_user ?>" readonly></div>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="select" class=" form-control-label">Category</label></div>
-                                        <div class="col-12 col-md-9">
-                                            <select name="cat" class="form-control">
-                                                <?php 
-                                                foreach($cat as $list2) { ?>
-                                                    <option value="<?php echo $list2->id_category ?>"><?php echo $list2->nama_category ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                        </div>
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Description</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="desc" class="form-control" value="<?php echo $list->description_recording ?>"></div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Duration</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="duration" class="form-control" value="<?php echo $list->duration_recording ?>"></div>
                                     </div>
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary btn-sm">

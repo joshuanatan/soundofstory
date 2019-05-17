@@ -8,6 +8,11 @@ class Admin extends CI_Controller {
         $this->load->model('m_crud');
     }
     
+    function index()
+	{
+		$this->load->view('view_admin_login');
+	}
+    
     function login()
     {
         $getEmail = $this->input->post('email');
@@ -38,6 +43,11 @@ class Admin extends CI_Controller {
         
     }
     
+    function registerAdmin()
+    {
+        $this->load->view('view_admin_register');
+    }
+    
     function register()
     {
         $getID = "";
@@ -47,8 +57,11 @@ class Admin extends CI_Controller {
         $getEmail = $this->input->post('email');
         $getPhone = $this->input->post('phone');
         $getAdd = $this->input->post('address');
+        $getBod = $this->input->post('bod');
         $getDesc = $this->input->post('desc');
+        $getProf = $this->input->post('prof');
         $date = date("Y-m-d");
+        $bod = date('Y-m-d', strtotime($getBod));
         /*$config = array();
         $config['upload_path'] = 'C:/xampp/htdocs/CI_sound/assets/profiles/images/';
         $config['allowed_types'] = '*'; //'gif|jpg|png';
@@ -56,7 +69,7 @@ class Admin extends CI_Controller {
             $datafile = array('upload_data' => $this->upload->data());
         }*/
         
-        $target_dir = "C:/xampp/htdocs/CI_sound/assets/profiles/images/";
+        $target_dir = "C:/xampp/htdocs/soundofstory/assets/profiles/images/";
         $target_file = $target_dir . basename($_FILES["pic1"]["name"]);
         $photo = basename($_FILES["pic1"]["name"]);
         if (move_uploaded_file($_FILES["pic1"]["tmp_name"], $target_file)) {
@@ -86,16 +99,18 @@ class Admin extends CI_Controller {
         $data2 = array(
             "id_user" => $id,
             "alamat_user" => $getAdd,
-            "description_user" => $getDesc
+            "description_user" => $getDesc,
+            "tgl_lahir_user" => $bod,
+            "profesi_user" => $getProf
         );
         $this->m_crud->insertData($data2, 'profile');
         
-        redirect('Welcome/index');
+        redirect('admin');
     }
     
     function logout() 
     {
         $this->session->sess_destroy();
-        redirect('Welcome');
+        redirect('admin');
     }
 }

@@ -78,7 +78,6 @@ class C_edit extends CI_Controller {
             "id_recording" => $id
         );
         $data['rec'] = $this->m_crud->edit($where, 'recording')->result();
-        $data['cat'] = $this->m_crud->selectData('status_category', 'category')->result();
         $this->load->view('header');
         $this->load->view('sidebar');
 		$this->load->view('view_editRec', $data);
@@ -89,12 +88,14 @@ class C_edit extends CI_Controller {
         $getID = $this->input->post("id");
         $getIDR = $this->input->post("idr");
         $getTitle = $this->input->post("title");
-        $getCat = $this->input->post("cat");
+        $getDesc = $this->input->post("desc");
+        $getDuration = $this->input->post("duration");
         
         $data = array(
             "judul_recording" => $getTitle,
             "id_user" => $getID,
-            "id_category" => $getCat
+            "description_recording" => $getDesc,
+            "duration_recording" => $getDuration
         );
         
         $where = array(

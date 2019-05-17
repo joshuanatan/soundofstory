@@ -68,6 +68,8 @@
                                         <tr>
                                             <th>ID</th>
                                                 <th>Playlist</th>
+                                                <th>Description</th>
+                                                <th>Category</th>
                                                 <th>User</th>
                                                 <th>Status</th>
                                                 <th>Join Date</th>
@@ -79,8 +81,10 @@
                                             foreach($play as $list) { ?>
                                             <tr>
                                                 <td><?php echo $list->id_playlist ?></td>
+                                                <td><?php echo $list->description_playlist ?></td>
+                                                <td><?php echo $list->nama_category ?></td>
                                                 <td><?php echo $list->nama_playlist ?></td>
-                                                <td><?php echo $list->id_user ?></td>
+                                                <td><?php echo $list->nama_user ?></td>
                                                 <td><?php echo $list->status_playlist ?></td>
                                                 <td><?php echo $list->tgl_submit_playlist ?></td>
                                                 <td><a href="<?php echo base_url().'c_edit/play/'.$list->id_playlist ?>"><button class="btn">EDIT</button></a> || <a href="<?php echo base_url().'c_delete/play/'.$list->id_playlist ?>"><button class="btn">DELETE</button></a></td>

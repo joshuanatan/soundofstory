@@ -80,8 +80,8 @@
                                             foreach($rate as $list) { ?>
                                             <tr>
                                                 <td><?php echo $list->id_rating ?></td>
-                                                <td><?php echo $list->id_user ?></td>
-                                                <td><?php echo $list->id_recording ?></td>
+                                                <td><?php echo $list->nama_user ?></td>
+                                                <td><?php echo $list->judul_recording ?></td>
                                                 <td><?php echo $list->jumlah_rating ?> / <b>5</b></td>
                                                 <td><?php echo $list->status_rating ?></td>
                                                 <td><?php echo $list->tgl_submit_rating ?></td>

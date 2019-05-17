@@ -55,6 +55,10 @@
                             <input type="text" name="address" class="form-control" placeholder="Your Address">
                         </div>
                         <div class="form-group">
+                            <label>Birth of Date</label>
+                            <input type="date" name="bod" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label>Gender</label><br>
                             <select name="jk" class="form-control">
                                 <option value="1">Pria</option>
@@ -70,6 +74,10 @@
                             <input type="text" name="desc" class="form-control" placeholder="Your Description/Motto">
                         </div>
                         <div class="form-group">
+                            <label>Profession</label>
+                            <input type="text" name="prof" class="form-control" placeholder="Your Profession">
+                        </div>
+                        <div class="form-group">
                             <label>Your Profile Photo</label>
                             <input type="file" name="pic1" class="form-control">
                         </div>
@@ -79,14 +87,8 @@
                             </label>
                         </div>
                         <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Register</button>
-                        <div class="social-login-content">
-                            <div class="social-button">
-                                <button type="button" class="btn social facebook btn-flat btn-addon mb-3"><i class="ti-facebook"></i>Register with facebook</button>
-                                <button type="button" class="btn social twitter btn-flat btn-addon mt-2"><i class="ti-twitter"></i>Register with twitter</button>
-                            </div>
-                        </div>
                         <div class="register-link m-t-15 text-center">
-                            <p>Already have account ? <a href="<?php echo base_url().'Welcome' ?>"> Sign in</a></p>
+                            <p>Already have account ? <a href="<?php echo base_url().'admin' ?>"> Sign in</a></p>
                         </div>
                     </form>
                 </div>

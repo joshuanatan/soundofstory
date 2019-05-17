@@ -80,8 +80,8 @@
                                             foreach($comm as $list) { ?>
                                             <tr>
                                                 <td><?php echo $list->id_comment ?></td>
-                                                <td><?php echo $list->id_user ?></td>
-                                                <td><?php echo $list->id_recording ?></td>
+                                                <td><?php echo $list->nama_user ?></td>
+                                                <td><?php echo $list->judul_recording ?></td>
                                                 <td><?php echo $list->comment ?></td>
                                                 <td><?php echo $list->status_comment ?></td>
                                                 <td><?php echo $list->tgl_submit_comment ?></td>

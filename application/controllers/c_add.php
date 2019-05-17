@@ -81,11 +81,12 @@ class C_add extends CI_Controller {
     {
         $getID = "";
         $getName = $this->input->post('title');
-        $id = $this->input->post('id');
-        $cat = $this->input->post('cat');
+        $getDesc = $this->input->post('desc');
+        $getDuration = $this->input->post('duration');
         $date = date("Y-m-d");
         
-        $target_dir = "C:/xampp/htdocs/CI_sound/assets/records/";
+        //upload file recording
+        $target_dir = "C:/xampp/htdocs/soundofstory/assets/audio/";
         $target_file = $target_dir . basename($_FILES["file"]["name"]);
         $file = basename($_FILES["file"]["name"]);
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
@@ -93,51 +94,92 @@ class C_add extends CI_Controller {
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
+        
+        //upload foto
+        $target_dir2 = "C:/xampp/htdocs/soundofstory/assets/images/recording/";
+        $target_file2 = $target_dir2 . basename($_FILES["pic1"]["name"]);
+        $photo = basename($_FILES["pic1"]["name"]);
+        if (move_uploaded_file($_FILES["pic1"]["tmp_name"], $target_file2)) {
+            echo "The file ". basename( $_FILES["pic1"]["name"]). " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+        
         $data = array(
             "id_recording" => "",
             "judul_recording" => $getName,
             "file_recording" => $file,
-            "id_user" => $id,
-            "id_category" => $cat,
+            "foto_recording" => $photo,
+            "description_recording" => $getDesc,
+            "duration_recording" => $getDuration,
+            "id_user" => $this->session->userdata("id"),
             "status_recording" => 1,
             "tgl_submit_recording" => $date
         );
         
-        $data2 = array(
-            "id_user_recording" => 0,
-            "id_user" => $id,
-        );
-        
-        $data3 = array(
-            "id_history" => 0,
-            "id_user" => 1,
-            "id_recording" => 1,
-            "status_history" => 1,
-            "tgl_submit_history" => $date
-        );
-        
         $this->m_crud->insertData($data, 'recording');
-        //$this->m_crud->insertData($data2, 'user_recording');
-        //$this->m_crud->insertData($data3, 'history_recording');
         
         redirect('Welcome/Rec');
     }
     
+    //playlist
     function play()
     {
         $getName = $this->input->post('name');
-        $getID = $this->input->post('id');
+        $getCat = $this->input->post('cat');
+        $getDesc = $this->input->post('desc');
+        $getID = $this->session->userdata("id");
         $date = date("Y-m-d");
+        $rec = $this->input->post("rec[]");
+        
+        //upload foto
+        $target_dir2 = "C:/xampp/htdocs/soundofstory/assets/images/story/";
+        $target_file2 = $target_dir2 . basename($_FILES["pic1"]["name"]);
+        $photo = basename($_FILES["pic1"]["name"]);
+        if (move_uploaded_file($_FILES["pic1"]["tmp_name"], $target_file2)) {
+            echo "The file ". basename( $_FILES["pic1"]["name"]). " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
         
         $data = array(
             "id_playlist" => 0,
             "nama_playlist" => $getName,
+            "foto_playlist" => $photo,
+            "description_playlist" => $getDesc,
+            "id_category" => $getCat,
             "id_user" => $getID,
             "status_playlist" => 1,
             "tgl_submit_playlist" => $date
         );
-        
         $this->m_crud->insertData($data, 'playlist');
+        
+        $where = array(
+            "nama_playlist" => $getName,
+            "id_category" => $getCat,
+            "id_user" => $getID,
+            "status_playlist" => 1,
+            "tgl_submit_playlist" => $date
+        );
+        $idp = $this->m_crud->edit($where, 'playlist')->result();
+        foreach($idp as $asas) {
+            $id_playlist = $asas->id_playlist;
+        }
+        
+        foreach($rec as $list) {
+            $data2 = array(
+                "id_recording_playlist" => 0,
+                "id_user" => $getID,
+                "id_recording" => $list,
+                "id_playlist" => $id_playlist,
+                "status_playlist" => 1,
+                "tgl_submit_playlist" => $date
+            );
+            
+            $this->m_crud->insertData($data2, 'recording_playlist');
+        }
+        
+        
         redirect('Welcome/Playlist');
     }
     

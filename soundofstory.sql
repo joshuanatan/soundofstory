@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2019 at 08:17 AM
+-- Generation Time: May 17, 2019 at 09:45 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -205,7 +205,8 @@ CREATE TABLE `profile` (
 
 INSERT INTO `profile` (`id_user`, `alamat_user`, `description_user`, `tgl_lahir_user`, `profesi_user`) VALUES
 (1, 'Indonesia', 'Ganteng', '1990-04-03', 'Writer'),
-(2, 'Tangerang', 'WOW', '1998-05-01', 'CEO');
+(2, 'Tangerang', 'WOW', '1998-05-01', 'CEO'),
+(3, 'Jakarta', 'AHAHA', '1970-01-01', 'Developer');
 
 -- --------------------------------------------------------
 
@@ -252,7 +253,8 @@ CREATE TABLE `recording` (
 --
 
 INSERT INTO `recording` (`id_recording`, `judul_recording`, `file_recording`, `foto_recording`, `description_recording`, `duration_recording`, `id_user`, `status_recording`, `tgl_submit_recording`) VALUES
-(1, 'Pintu di balik pintu', 'AUD-20190314-WA0000.mp3', 'product_5.jpg', 'First', 6, 1, 1, '2019-03-10');
+(1, 'Pintu di balik pintu', 'AUD-20190314-WA0000.mp3', 'product_5.jpg', 'First', 6, 1, 1, '2019-03-10'),
+(2, 'Sucker', 'Jonas Brothers - Sucker (Lyrics).mp3', 'Jonas.jpg', 'Sucker for you ', 3, 3, 1, '2019-05-17');
 
 -- --------------------------------------------------------
 
@@ -322,7 +324,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id_user`, `nama_user`, `password_user`, `gender_user`, `email_user`, `nohp_user`, `foto_profile_user`, `status_user`, `tgl_submit_user`) VALUES
 (1, 'James', '827ccb0eea8a706c4c34a16891f84e7b', 1, 'james@gmail.com', '08123456789', 'James.jpg', 1, '2019-03-09'),
 (2, 'Jovan', 'b59c6e9b344bae1a36fe427a42889265', 1, 'hidayatjovan@gmail.com', '081234567890', 'elang.jpg', 1, '2019-05-07'),
-(3, 'ASDASDASDS', 'SDDD', 1, 'ADAFAD', '1231312', '123131', 1, '2019-05-13');
+(3, 'Joshua', 'd1133275ee2118be63a577af759fc052', 1, 'joshuanatan@gmail.com', '081234567899', 'kyot.jpg', 1, '2019-05-17');
 
 -- --------------------------------------------------------
 
@@ -488,7 +490,7 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT for table `recording`
 --
 ALTER TABLE `recording`
-  MODIFY `id_recording` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_recording` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `recording_playlist`
@@ -506,7 +508,7 @@ ALTER TABLE `report`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user_recording`

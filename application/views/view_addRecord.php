@@ -69,8 +69,17 @@
                                             <small class="form-text text-muted">Please upload your file</small></div>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">ID User</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" name="id" class="form-control" placeholder="Enter ID"><small class="form-text text-muted">Please enter your ID</small></div>
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Photo</label></div>
+                                        <div class="col-12 col-md-9"><input type="file" name="pic1" class="form-control">
+                                            <small class="form-text text-muted">Please upload photo</small></div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Description</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="desc" class="form-control" placeholder="Enter Description"><small class="form-text text-muted">Please enter the description</small></div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Duration</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="duration" class="form-control" placeholder="Enter Duration of Recording"><small class="form-text text-muted">Please enter the duration</small></div>
                                     </div>
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary btn-sm">
