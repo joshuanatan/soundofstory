@@ -85,8 +85,6 @@ class Stories extends CI_Controller{
             "tgl_submit_report" => $date,
             "status_report" => 1
         );
-        
-        
         $this->m_crud->insertData($data2, 'report');
         redirect('Stories/listen/'.$id);
     }
