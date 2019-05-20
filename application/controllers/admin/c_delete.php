@@ -5,7 +5,7 @@ class C_delete extends CI_Controller {
     function __construct() 
     {
         parent::__construct();
-        $this->load->model('m_crud');
+        $this->load->model('M_crud');
     }
     
     function user($id)
@@ -19,8 +19,8 @@ class C_delete extends CI_Controller {
             "id_user" => $id
         );
         
-        $this->m_crud->update_data($where, $data, 'user');
-        redirect('Welcome/index');
+        $this->M_crud->update_data($where, $data, 'user');
+        redirect('admin/welcome/index');
     }
     
     function cate($id)
@@ -34,8 +34,8 @@ class C_delete extends CI_Controller {
             "id_category" => $id
         );
         
-        $this->m_crud->update_data($where, $data, 'category');
-        redirect('Welcome/cate');
+        $this->M_crud->update_data($where, $data, 'category');
+        redirect('admin/welcome/cate');
     }
     
     function rec($id)
@@ -49,8 +49,8 @@ class C_delete extends CI_Controller {
             "id_recording" => $id
         );
         
-        $this->m_crud->update_data($where, $data, 'recording');
-        redirect('Welcome/rec');
+        $this->M_crud->update_data($where, $data, 'recording');
+        redirect('admin/welcome/rec');
     }
     
     function play($id)
@@ -64,8 +64,8 @@ class C_delete extends CI_Controller {
             "id_playlist" => $id
         );
         
-        $this->m_crud->update_data($where, $data, 'playlist');
-        redirect('Welcome/Playlist');
+        $this->M_crud->update_data($where, $data, 'playlist');
+        redirect('admin/welcome/playlist');
     }
     
     function rep($id)
@@ -79,8 +79,8 @@ class C_delete extends CI_Controller {
             "id_recording_playlist" => $id
         );
         
-        $this->m_crud->update_data($where, $data, 'recording_playlist');
-        redirect('Welcome/RecPlay');
+        $this->M_crud->update_data($where, $data, 'recording_playlist');
+        redirect('admin/welcome/recplay');
     }
     
     function rate($id)
@@ -94,8 +94,8 @@ class C_delete extends CI_Controller {
             "id_rating" => $id
         );
         
-        $this->m_crud->update_data($where, $data, 'rating');
-        redirect('Welcome/Rating');
+        $this->M_crud->update_data($where, $data, 'rating');
+        redirect('admin/welcome/rating');
     }
     
     function history($id)
@@ -109,8 +109,8 @@ class C_delete extends CI_Controller {
             "id_history" => $id
         );
         
-        $this->m_crud->update_data($where, $data, 'history_recording');
-        redirect('Welcome/History');
+        $this->M_crud->update_data($where, $data, 'history_recording');
+        redirect('admin/welcome/history');
     }
     
     function like($id)
@@ -124,8 +124,8 @@ class C_delete extends CI_Controller {
             "id_like" => $id
         );
         
-        $this->m_crud->update_data($where, $data, 'like');
-        redirect('Welcome/Like');
+        $this->M_crud->update_data($where, $data, 'like');
+        redirect('admin/welcome/like');
     }
     
     function msg($id)
@@ -139,8 +139,8 @@ class C_delete extends CI_Controller {
             "id_message" => $id
         );
         
-        $this->m_crud->update_data($where, $data, 'message');
-        redirect('Welcome/Msg');
+        $this->M_crud->update_data($where, $data, 'message');
+        redirect('admin/welcome/msg');
     }
     
     function conn($id)
@@ -154,8 +154,8 @@ class C_delete extends CI_Controller {
             "id_connection" => $id
         );
         
-        $this->m_crud->update_data($where, $data, 'connection');
-        redirect('Welcome/Conn');
+        $this->M_crud->update_data($where, $data, 'connection');
+        redirect('admin/welcome/conn');
     }
     
     function comm($id)
@@ -169,7 +169,7 @@ class C_delete extends CI_Controller {
             "id_comment" => $id
         );
         
-        $this->m_crud->update_data($where, $data, 'comment');
-        redirect('Welcome/Comm');
+        $this->M_crud->update_data($where, $data, 'comment');
+        redirect('admin/welcome/comm');
     }
 }

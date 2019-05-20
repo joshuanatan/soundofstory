@@ -37,7 +37,7 @@
                                         <td><?php echo $list->status_message ?></td>
                                         <td><?php echo $list->tgl_submit_message ?></td>
                                         <td><?php echo $list->jam_submit_message ?></td>
-                                        <td><a href="<?php echo base_url().'c_edit/msg/'.$list->id_message ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a><a href="<?php echo base_url().'c_delete/msg/'.$list->id_message ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
+                                        <td><a href="<?php echo base_url().'admin/c_edit/msg/'.$list->id_message ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a><a href="<?php echo base_url().'admin/c_delete/msg/'.$list->id_message ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
                                     </tr>
                                     <?php } ?>
                             </tbody>

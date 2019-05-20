@@ -5,18 +5,31 @@ class C_edit extends CI_Controller {
     function __construct() 
     {
         parent::__construct();
-        $this->load->model('m_crud');
+        $this->load->model('M_crud');
     }
-	
-    function editUser($id)
-    {
+    private function req(){
+        $this->load->view("admin/req/html-open");
+        $this->load->view("admin/req/stylesheet");
+        $this->load->view("admin/req/data-table-css");
+        $this->load->view("admin/req/head-close");
+    }
+    private function close(){
+        $this->load->view("admin/req/script");
+        $this->load->view("admin/req/data-table-js");
+        $this->load->view("admin/req/html-close");
+    }
+	function editUser($id){
+        
         $where = array(
             "id_user" => $id
         );
-        $data['user'] = $this->m_crud->edit($where, 'user')->result();
-        $this->load->view('header');
-        $this->load->view('sidebar');
-		$this->load->view('view_editUser', $data);
+        $data['user'] = $this->M_crud->edit($where, 'user')->result();
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_editUser',$data);
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
     }
     
     function updateUser()
@@ -38,21 +51,22 @@ class C_edit extends CI_Controller {
             "id_user" => $getID
         );
         
-        $this->m_crud->update_data($where, $data, 'user');
-        redirect('Welcome/index');
+        $this->M_crud->update_data($where, $data, 'user');
+        redirect('admin/welcome/user');
     }
-    
-    function cate($id)
-    {
+    function cate($id){
+        
         $where = array(
             "id_category" => $id
         );
-        $data['cat'] = $this->m_crud->edit($where, 'category')->result();
-        $this->load->view('header');
-        $this->load->view('sidebar');
-		$this->load->view('view_editCate', $data);
+        $data['cat'] = $this->M_crud->edit($where, 'category')->result();
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_editCate',$data);
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
     }
-    
     function updateCate()
     {
         $getID = $this->input->post("id");
@@ -68,19 +82,22 @@ class C_edit extends CI_Controller {
             "id_category" => $getIDC
         );
         
-        $this->m_crud->update_data($where, $data, 'category');
-        redirect('Welcome/Cate');
+        $this->M_crud->update_data($where, $data, 'category');
+        redirect('admin/welcome/cate');
     }
-    
-    function rec($id)
-    {
+    function rec($id){
+        
+        
         $where = array(
             "id_recording" => $id
         );
-        $data['rec'] = $this->m_crud->edit($where, 'recording')->result();
-        $this->load->view('header');
-        $this->load->view('sidebar');
-		$this->load->view('view_editRec', $data);
+        $data['rec'] = $this->M_crud->edit($where, 'recording')->result();
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_editRec',$data);
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
     }
     
     function updateRec()
@@ -102,19 +119,22 @@ class C_edit extends CI_Controller {
             "id_recording" => $getIDR
         );
         
-        $this->m_crud->update_data($where, $data, 'recording');
-        redirect('Welcome/Rec');
+        $this->M_crud->update_data($where, $data, 'recording');
+        redirect('admin/welcome/rec');
     }
-    
-    function play($id)
-    {
+    function play($id){
+        
+        
         $where = array(
             "id_playlist" => $id
         );
-        $data['play'] = $this->m_crud->edit($where, 'playlist')->result();
-        $this->load->view('header');
-        $this->load->view('sidebar');
-		$this->load->view('view_editPlaylist', $data);
+        $data['play'] = $this->M_crud->edit($where, 'playlist')->result();
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_editPlaylist',$data);
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
     }
     
     function updatePlay()
@@ -132,19 +152,22 @@ class C_edit extends CI_Controller {
             "id_playlist" => $getIDP
         );
         
-        $this->m_crud->update_data($where, $data, 'playlist');
-        redirect('Welcome/Playlist');
+        $this->M_crud->update_data($where, $data, 'playlist');
+        redirect('admin/welcome/playlist');
     }
-    
-    function rep($id)
-    {
+    function rep($id){
+        
+        
         $where = array(
             "id_recording_playlist" => $id
         );
-        $data['rp'] = $this->m_crud->edit($where, 'recording_playlist')->result();
-        $this->load->view('header');
-        $this->load->view('sidebar');
-		$this->load->view('view_editRP', $data);
+        $data['rp'] = $this->M_crud->edit($where, 'recording_playlist')->result();
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_editRP',$data);
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
     }
     
     function updateRP()
@@ -164,21 +187,23 @@ class C_edit extends CI_Controller {
             "id_recording_playlist" => $getIDRP
         );
         
-        $this->m_crud->update_data($where, $data, 'recording_playlist');
-        redirect('Welcome/RecPlay');
+        $this->M_crud->update_data($where, $data, 'recording_playlist');
+        redirect('admin/welcome/recplay');
     }
-    
-    function rate($id)
-    {
+    function rate($id){
+        
+        
         $where = array(
             "id_rating" => $id
         );
-        $data['rate'] = $this->m_crud->edit($where, 'rating')->result();
-        $this->load->view('header');
-        $this->load->view('sidebar');
-		$this->load->view('view_editRating', $data);
+        $data['rate'] = $this->M_crud->edit($where, 'rating')->result();
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_editRating',$data);
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
     }
-    
     function updateRate()
     {
         $getIDRT = $this->input->post("idrate");
@@ -195,19 +220,22 @@ class C_edit extends CI_Controller {
             "id_rating" => $getIDRT
         );
         
-        $this->m_crud->update_data($where, $data, 'rating');
-        redirect('Welcome/Rating');
+        $this->M_crud->update_data($where, $data, 'rating');
+        redirect('admin/welcome/rating');
     }
-    
-    function like($id)
-    {
+    function like($id){
+        
+        
         $where = array(
             "id_like" => $id
         );
-        $data['like'] = $this->m_crud->selectData('status_like', 'like')->result();
-        $this->load->view('header');
-        $this->load->view('sidebar');
-		$this->load->view('view_editLike', $data);
+        $data['like'] = $this->M_crud->selectData('status_like', 'like')->result();
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_editLike',$data);
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
     }
     
     function updateLike()
@@ -222,19 +250,22 @@ class C_edit extends CI_Controller {
             "id_like" => $getIDL
         );
         
-        $this->m_crud->update_data($where, $data, 'like');
-        redirect('Welcome/Like');
+        $this->M_crud->update_data($where, $data, 'like');
+        redirect('admin/welcome/like');
     }
-    
-    function msg($id)
-    {
+    function msg($id){
+        
+        
         $where = array(
             "id_message" => $id
         );
-        $data['msg'] = $this->m_crud->selectData('status_message', 'message')->result();
-        $this->load->view('header');
-        $this->load->view('sidebar');
-		$this->load->view('view_editMsg', $data);
+        $data['msg'] = $this->M_crud->selectData('status_message', 'message')->result();
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_editMsg',$data);
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
     }
     
     function updateMsg()
@@ -253,19 +284,20 @@ class C_edit extends CI_Controller {
             "id_message" => $getIDM
         );
         
-        $this->m_crud->update_data($where, $data, 'message');
-        redirect('Welcome/Msg');
+        $this->M_crud->update_data($where, $data, 'message');
+        redirect('admin/welcome/msg');
     }
-    
-    function conn($id)
-    {
+    function conn($id){
         $where = array(
             "id_connection" => $id
         );
-        $data['conn'] = $this->m_crud->selectData('status_connection', 'connection')->result();
-        $this->load->view('header');
-        $this->load->view('sidebar');
-		$this->load->view('view_editConn', $data);
+        $data['conn'] = $this->M_crud->selectData('status_connection', 'connection')->result();
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_editConn',$data);
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
     }
     
     function updateConn()
@@ -282,21 +314,23 @@ class C_edit extends CI_Controller {
             "id_connection" => $getIDC
         );
         
-        $this->m_crud->update_data($where, $data, 'connection');
-        redirect('Welcome/Conn');
+        $this->M_crud->update_data($where, $data, 'connection');
+        redirect('admin/welcome/conn');
     }
-    
-    function comm($id)
-    {
+    function comm($id){
         $where = array(
             "id_comment" => $id
         );
-        $data['comm'] = $this->m_crud->selectData('status_comment', 'comment')->result();
-        $data['rec'] = $this->m_crud->selectData('status_recording', 'recording')->result();
-        $this->load->view('header');
-        $this->load->view('sidebar');
-		$this->load->view('view_editComm', $data);
+        $data['comm'] = $this->M_crud->selectData('status_comment', 'comment')->result();
+        $data['rec'] = $this->M_crud->selectData('status_recording', 'recording')->result();
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_editComm',$data);
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
     }
+   
     
     function updateComm()
     {
@@ -311,7 +345,7 @@ class C_edit extends CI_Controller {
             "id_comment" => $getIDC
         );
         
-        $this->m_crud->update_data($where, $data, 'comment');
-        redirect('Welcome/Comm');
+        $this->M_crud->update_data($where, $data, 'comment');
+        redirect('admin/welcome/comm');
     }
 }

@@ -55,7 +55,7 @@ class C_add extends CI_Controller {
         $this->m_crud->insertData($data, 'user');
         $this->m_crud->insertData($data2, 'profile');
         
-        redirect('Welcome/index');
+        redirect('admin/welcome/user');
     }
     
     function cate()
@@ -74,7 +74,7 @@ class C_add extends CI_Controller {
         );
         
         $this->m_crud->insertData($data, 'category');
-        redirect('Welcome/cate');
+        redirect('admin/welcome/cate');
     }
     
     function rec()
@@ -119,7 +119,7 @@ class C_add extends CI_Controller {
         
         $this->m_crud->insertData($data, 'recording');
         
-        redirect('Welcome/Rec');
+        redirect('admin/welcome/Rec');
     }
     
     //playlist
@@ -180,7 +180,7 @@ class C_add extends CI_Controller {
         }
         
         
-        redirect('Welcome/Playlist');
+        redirect('admin/welcome/playlist');
     }
     
     function recplay()
@@ -200,7 +200,7 @@ class C_add extends CI_Controller {
         );
         
         $this->m_crud->insertData($data, 'recording_playlist');
-        redirect('Welcome/RecPlay');
+        redirect('admin/welcome/recplay');
     }
     
     function rate()
@@ -220,7 +220,7 @@ class C_add extends CI_Controller {
         );
         
         $this->m_crud->insertData($data, 'rating');
-        redirect('Welcome/Rating');
+        redirect('admin/welcome/rating');
     }
     
     function like()
@@ -239,7 +239,7 @@ class C_add extends CI_Controller {
         );
         
         $this->m_crud->insertData($data, 'like');
-        redirect('Welcome/Like');
+        redirect('admin/welcome/like');
     }
     
     function msg()
@@ -262,7 +262,7 @@ class C_add extends CI_Controller {
         );
         
         $this->m_crud->insertData($data, 'message');
-        redirect('Welcome/Msg');
+        redirect('admin/welcome/msg');
     }
     
     function conn()
@@ -280,7 +280,7 @@ class C_add extends CI_Controller {
         );
         
         $this->m_crud->insertData($data, 'connection');
-        redirect('Welcome/Conn');
+        redirect('admin/welcome/conn');
     }
     
     function comm()
@@ -308,7 +308,7 @@ class C_add extends CI_Controller {
         
         $this->m_crud->insertData($data, 'comment');
         $this->m_crud->insertData($data2, 'report');
-        redirect('Welcome/Comm');
+        redirect('admin/welcome/comm');
     }
     
 }

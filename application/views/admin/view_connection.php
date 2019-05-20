@@ -33,7 +33,7 @@
                                         <td><?php echo $list->id_user_2 ?></td>
                                         <td><?php echo $list->status_connection ?></td>
                                         <td><?php echo $list->tgl_submit_connection ?></td>
-                                        <td><a href="<?php echo base_url().'c_edit/conn/'.$list->id_connection ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a><a href="<?php echo base_url().'c_delete/conn/'.$list->id_connection ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
+                                        <td><a href="<?php echo base_url().'admin/c_edit/conn/'.$list->id_connection ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a><a href="<?php echo base_url().'admin/c_delete/conn/'.$list->id_connection ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
                                     </tr>
                                     <?php } ?>
                             </tbody>

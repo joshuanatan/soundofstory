@@ -28,7 +28,7 @@
                                         <td><?php echo $list->id_recording ?></td>
                                         <td><?php echo $list->status_history ?></td>
                                         <td><?php echo $list->tgl_submit_history ?></td>
-                                        <td><!--<a href="<?php echo base_url().'c_edit/edit/'.$list->id_history ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a>--> <a href="<?php echo base_url().'c_delete/history/'.$list->id_history ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
+                                        <td><!--<a href="<?php echo base_url().'admin/c_edit/edit/'.$list->id_history ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a>--> <a href="<?php echo base_url().'admin/c_delete/history/'.$list->id_history ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
                                     </tr>
                                     <?php } ?>
                             </tbody>

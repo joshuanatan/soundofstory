@@ -34,7 +34,7 @@
                                         <td><?php echo $list->nama_user ?></td>
                                         <td><?php echo $list->status_recording ?></td>
                                         <td><?php echo $list->tgl_submit_recording ?></td>
-                                        <td><a href="<?php echo base_url().'c_edit/rec/'.$list->id_recording ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a><a href="<?php echo base_url().'c_delete/rec/'.$list->id_recording ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
+                                        <td><a href="<?php echo base_url().'admin/c_edit/rec/'.$list->id_recording ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a><a href="<?php echo base_url().'admin/c_delete/rec/'.$list->id_recording ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
                                     </tr>
                                     <?php } ?>
                             </tbody>

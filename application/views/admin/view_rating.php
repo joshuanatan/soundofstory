@@ -34,7 +34,7 @@
                                         <td><?php echo $list->jumlah_rating ?> / <b>5</b></td>
                                         <td><?php echo $list->status_rating ?></td>
                                         <td><?php echo $list->tgl_submit_rating ?></td>
-                                        <td><a href="<?php echo base_url().'c_edit/rate/'.$list->id_rating ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a><a href="<?php echo base_url().'c_delete/rate/'.$list->id_rating ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
+                                        <td><a href="<?php echo base_url().'admin/c_edit/rate/'.$list->id_rating ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a><a href="<?php echo base_url().'admin/c_delete/rate/'.$list->id_rating ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
                                     </tr>
                                     <?php } ?>
                             </tbody>
