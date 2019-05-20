@@ -49,6 +49,7 @@ class M_recording extends CI_Model {
         $this->db->select('*')
             ->from('comment')
             ->join('user', 'comment.id_user = user.id_user', 'inner')
+            ->order_by("comment.tgl_submit_comment", "desc")
             ->where($where);
         $query = $this->db->get();
         return $query;

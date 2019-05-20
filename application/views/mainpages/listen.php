@@ -54,10 +54,10 @@
                 <div class="row">
                     
                     <div class = "col-lg-12" style = "display:inline-block">
-                        <form>
+                        <form action="<?php echo base_url().'Stories/addComment/'.$list->id_recording; ?>" method="post">
                             <div class = "form-group">
                                 <label>Your Opinion</label>
-                                <textarea class = "form-control col-lg-12"></textarea>
+                                <textarea name="isi" class = "form-control col-lg-12"></textarea>
                             </div>
                             <input type = "submit" class = "btn btn-sm btn-primary">
                         </form>
@@ -65,56 +65,17 @@
                 </div>
                 <hr/>   
                 <div class = "comment-container" style = "height: 330px; overflow-y:scroll; overflow-x:hidden"> 
+                    <?php foreach($comment as $list2) { ?>
                     <div class="row">
                         <div class = "col-lg-1" style = "display:inline-block">
-                            <img src="<?php echo base_url();?>assets/images/product_4.jpg" alt="" style = "width:100%">
+                            <img src="<?php echo base_url();?>assets/profiles/images/<?php echo $list2->foto_profile_user ?>" alt="" style = "width:100%">
                         </div>
                         <div class = "col-lg-11" style = "display:inline-block">
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Phasellus id nisi quis justo tempus mollis sed et dui. In hac habitasse platea dictumst. Suspendisse ultrices mauris diam. Nullam sed aliquet elit. Mauris consequat nisi ut mauris efficitur lacinia.</p>
+                            <p><?php echo $list2->comment ?></p>
                         </div>
                     </div>
-                    <hr/>    
-                    <div class="row">
-                        <div class = "col-lg-1" style = "display:inline-block">
-                            <img src="<?php echo base_url();?>assets/images/product_4.jpg" alt="" style = "width:100%">
-                        </div>
-                        <div class = "col-lg-11" style = "display:inline-block">
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Phasellus id nisi quis justo tempus mollis sed et dui. In hac habitasse platea dictumst. Suspendisse ultrices mauris diam. Nullam sed aliquet elit. Mauris consequat nisi ut mauris efficitur lacinia.</p>
-                        </div>
-                    </div>
-                    <hr/>    
-                    <div class="row">
-                        <div class = "col-lg-1" style = "display:inline-block">
-                            <img src="<?php echo base_url();?>assets/images/product_4.jpg" alt="" style = "width:100%">
-                        </div>
-                        <div class = "col-lg-11" style = "display:inline-block">
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Phasellus id nisi quis justo tempus mollis sed et dui. In hac habitasse platea dictumst. Suspendisse ultrices mauris diam. Nullam sed aliquet elit. Mauris consequat nisi ut mauris efficitur lacinia.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class = "col-lg-1" style = "display:inline-block">
-                            <img src="<?php echo base_url();?>assets/images/product_4.jpg" alt="" style = "width:100%">
-                        </div>
-                        <div class = "col-lg-11" style = "display:inline-block">
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Phasellus id nisi quis justo tempus mollis sed et dui. In hac habitasse platea dictumst. Suspendisse ultrices mauris diam. Nullam sed aliquet elit. Mauris consequat nisi ut mauris efficitur lacinia.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class = "col-lg-1" style = "display:inline-block">
-                            <img src="<?php echo base_url();?>assets/images/product_4.jpg" alt="" style = "width:100%">
-                        </div>
-                        <div class = "col-lg-11" style = "display:inline-block">
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Phasellus id nisi quis justo tempus mollis sed et dui. In hac habitasse platea dictumst. Suspendisse ultrices mauris diam. Nullam sed aliquet elit. Mauris consequat nisi ut mauris efficitur lacinia.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class = "col-lg-1" style = "display:inline-block">
-                            <img src="<?php echo base_url();?>assets/images/product_4.jpg" alt="" style = "width:100%">
-                        </div>
-                        <div class = "col-lg-11" style = "display:inline-block">
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Phasellus id nisi quis justo tempus mollis sed et dui. In hac habitasse platea dictumst. Suspendisse ultrices mauris diam. Nullam sed aliquet elit. Mauris consequat nisi ut mauris efficitur lacinia.</p>
-                        </div>
-                    </div>
+                    <hr/>
+                    <?php } ?>
                 </div>
                 <hr/>    
             </div>

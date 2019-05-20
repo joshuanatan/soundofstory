@@ -51,4 +51,44 @@ class Stories extends CI_Controller{
         $this->load->view("req/close");
     }
     
+    function addComment($id) {
+        $getID = $this->session->userdata("id");
+        $getIDR = $id;
+        $getIsi = $this->input->post('isi');
+        $date = date("Y-m-d");
+        
+        $data = array(
+            "id_comment" => 0,
+            "id_user" => $getID,
+            "comment" => $getIsi,
+            "id_recording" => $getIDR,
+            "tgl_submit_comment" => $date,
+            "status_comment" => 1
+        );
+        
+        $where = array(
+            "comment.id_user" => $getID,
+            "comment" => $getIsi,
+            "comment.id_recording" => $getIDR,
+            "tgl_submit_comment" => $date
+        );
+        $this->m_crud->insertData($data, 'comment');
+        
+        $rep = $this->m_recording->selectComment($where)->result();
+        foreach($rep as $list) {
+            $idcomment = $list->id_comment;
+        }
+        
+        $data2 = array(
+            "id_comment" => $idcomment,
+            "id_user_pelapor" => $getID,
+            "tgl_submit_report" => $date,
+            "status_report" => 1
+        );
+        
+        
+        $this->m_crud->insertData($data2, 'report');
+        redirect('Stories/listen/'.$id);
+    }
+    
 }
