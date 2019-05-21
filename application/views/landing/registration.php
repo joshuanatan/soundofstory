@@ -63,7 +63,7 @@
 					</div>
                 </div>
                 <br/>
-				<form action="<?php echo base_url();?>welcome/register" method="post">
+				<form action="<?php echo base_url();?>welcome/signup" method="post">
                     <div class = "form-group">
                         <h6 style = "color:black">Full Name</h6>
                         <input type = "text" class = "form-control" placeholder="Full Name" name = "nama_user">
