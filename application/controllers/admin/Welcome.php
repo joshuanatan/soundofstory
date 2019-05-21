@@ -18,12 +18,10 @@ class Welcome extends CI_Controller {
     private function req_login(){
         $this->load->view("admin/req/html-open");
         $this->load->view("admin/req/stylesheet");
-        $this->load->view("admin/req/data-table");
         $this->load->view("admin/req/head-close");
     }
     private function close_login(){
         $this->load->view("admin/req/script");
-        $this->load->view("admin/req/data-table-js");
         $this->load->view("admin/req/html-close");
     }
     function index(){
