@@ -362,6 +362,9 @@ class Welcome extends CI_Controller {
         $getProf = $this->input->post('prof');
         $date = date("Y-m-d");
         $bod = date('Y-m-d', strtotime($getBod));
+        /*if($getName == "" && $getPass == "" && $getJk == "" && $getEmail == "" && $getPhone == "" && $getAdd == "" && $getBod == "" && $getDesc == "" && $getProf == "") {
+            $this->load->view("admin/index");
+        }*/
         /*$config = array();
         $config['upload_path'] = 'C:/xampp/htdocs/CI_sound/assets/profiles/images/';
         $config['allowed_types'] = '*'; //'gif|jpg|png';

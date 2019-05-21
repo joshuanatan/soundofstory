@@ -2,7 +2,7 @@
 <div class="content">
     <div class="animated fadeIn">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
                         <strong>Edit</strong>

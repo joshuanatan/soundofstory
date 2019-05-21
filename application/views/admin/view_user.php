@@ -1,4 +1,26 @@
-
+<div class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="<?php echo base_url().'admin/welcome/user' ?>">Dashboard</a></li>
+                            <li>User</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="content">
     <div class="animated fadeIn">
         <div class="row">
@@ -44,7 +66,7 @@
                                         <td><?php echo $listUser->email_user ?></td>
                                         <td><?php echo $listUser->nohp_user ?></td>
                                         <td><img src='<?php echo base_url().'assets/profiles/images/'.$listUser->quantity_item; ?>'></td>
-                                        <td><?php echo $listUser->status_user ?></td>
+                                        <td><?php echo "Active" ?></td>
                                         <td><?php echo $listUser->tgl_submit_user ?></td>
                                         <td>
                                             <a href="<?php echo base_url().'admin/c_edit/editUser/'.$listUser->id_user ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a><a href="<?php echo base_url().'admin/c_delete/user/'.$listUser->id_user ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>

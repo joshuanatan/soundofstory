@@ -2,7 +2,7 @@
 <div class="content">
     <div class="animated fadeIn">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
                         <strong>Add</strong> Comment
@@ -11,16 +11,16 @@
                         <form action="<?php echo base_url().'c_add/comm/' ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">Comment</label></div>
-                                <div class="col-12 col-md-9"><input type="text" name="isi" class="form-control" placeholder="Enter Comment"><small class="form-text text-muted">Please enter your comment</small></div>
+                                <div class="col-12 col-md-9"><input type="text" name="isi" class="form-control" placeholder="Enter Comment" required><small class="form-text text-muted">Please enter your comment</small></div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">ID User</label></div>
-                                <div class="col-12 col-md-9"><input type="text" name="id" class="form-control" placeholder="Enter ID"><small class="form-text text-muted">Please enter your ID</small></div>
+                                <div class="col-12 col-md-9"><input type="text" name="id" class="form-control" placeholder="Enter ID" required><small class="form-text text-muted">Please enter your ID</small></div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="select" class=" form-control-label">Judul Recording</label></div>
                                 <div class="col-12 col-md-9">
-                                    <select name="idr" class="form-control">
+                                    <select name="idr" class="form-control" required>
                                     <?php foreach($rec as $list) { ?>
                                     <option value="<?php echo $list->id_recording ?>"><?php echo $list->judul_recording ?></option>
                                     <?php } ?>
