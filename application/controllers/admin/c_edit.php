@@ -5,7 +5,7 @@ class C_edit extends CI_Controller {
     function __construct() 
     {
         parent::__construct();
-        $this->load->model('M_crud');
+        $this->load->model(array('M_crud', 'M_recording'));
     }
     private function req(){
         $this->load->view("admin/req/html-open");
@@ -166,6 +166,11 @@ class C_edit extends CI_Controller {
             "id_playlist" => $id
         );
         $data['play'] = $this->M_crud->edit($where, 'playlist')->result();
+        $where2 = array(
+            'status_recording' => 1
+        );
+        $data['cat'] = $this->M_crud->selectData('status_category', 'category')->result();
+        $data['rec'] = $this->M_recording->select($where2)->result();
         $this->req();
         $this->load->view('admin/req/sidebar');
         $this->load->view('admin/req/right-panel-open');

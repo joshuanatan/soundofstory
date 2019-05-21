@@ -1,5 +1,14 @@
 <?php
 class M_recording extends CI_Model {
+    function selectLast($where) {
+        $this->db->select('*')
+            ->from('recording')
+            ->order_by("tgl_submit_recording", "desc")
+            ->where($where);
+        $query = $this->db->get();
+        return $query;
+    }
+    
     function selectAll($where)
     {
         $this->db->select('*')

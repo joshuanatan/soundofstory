@@ -34,6 +34,16 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Recording</label></div>
+                                <div class="col-12 col-md-9">
+                                    <?php foreach($rec as $list) {
+                                    ?>
+                                    <input type="checkbox" name="rec[]" value="<?php echo $list->id_recording ?>"><?php echo $list->judul_recording ?><br>
+                                    <?php } ?>
+                                    <small class="form-text text-muted">Please select recording</small>
+                                </div>
+                            </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary btn-sm">
                                     <i class="fa fa-dot-circle-o"></i> Submit

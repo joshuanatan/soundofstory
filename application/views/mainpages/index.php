@@ -1,7 +1,3 @@
-<?php
-$this->session->set_userdata("id", 1);
-$this->session->set_userdata("nama", "James");
-?>
 <div class="home">
     <div class="home_slider_container">
         
@@ -146,7 +142,14 @@ $this->session->set_userdata("nama", "James");
                 <div class="product_grid">
 
                     <!-- Product -->
-                    <?php foreach($episode as $list) { ?>
+                    <?php 
+                    $counter = 0;
+                    foreach($episode as $list) {
+                        if($counter == 5) {
+                            //tampilin 5 terakhir
+                            break;
+                        }
+                    ?>
                     <div class="product">
                         <div class="product_image" style = "height:300px"><img class = "align-middle" src="<?php echo base_url();?>assets/images/recording/<?php echo $list->foto_recording ?>" alt=""></div>
                         <div class="product_content">
@@ -154,7 +157,9 @@ $this->session->set_userdata("nama", "James");
                             <div class="product_price"><?php echo $list->description_recording ?></div>
                         </div>
                     </div>
-                    <?php } ?>
+                    <?php 
+                        $counter++;
+                                               } ?>
 
                 </div>
                     

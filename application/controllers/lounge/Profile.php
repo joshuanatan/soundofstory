@@ -6,7 +6,7 @@ class Profile extends CI_Controller{
     }
     public function index(){
         $where = array(
-            'user.id_user' => $this->session->userdata("id")
+            'user.id_user' => $this->session->userdata("id_user")
         );
         $data['profile'] = $this->m_profile->selectData($where)->result();
         $this->load->view("req/head-open");
