@@ -52,7 +52,7 @@ class Welcome extends CI_Controller {
                 $this->session->set_userdata("foto", $foto);
                 $this->session->set_userdata("email", $email);
                 
-                redirect('lounge/welcome/user');
+                redirect('admin/welcome/user');
             }
         }
     }
