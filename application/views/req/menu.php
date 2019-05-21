@@ -3,19 +3,19 @@
 			<div class="container">
 				<div class="row">
                     <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                        <div class="logo" style = "margin-left:10px;width:20%;margin:10px"><a href="<?php echo base_url();?>welcome"><img style = "width:100%" src = "<?php echo base_url();?>assets/images/logosos.png"></a></div>
+                        <div class="logo" style = "margin-left:10px;width:20%;margin:10px"><a href="<?php echo base_url();?>lounge/welcome"><img style = "width:100%" src = "<?php echo base_url();?>assets/images/logosos.png"></a></div>
                         <nav class="main_nav">
                             <ul>
                                 <li>
-                                    <a href="<?php echo base_url();?>welcome" style = "font-size:14px">Lounge</a>
+                                    <a href="<?php echo base_url();?>lounge/welcome" style = "font-size:14px">Lounge</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url();?>explore" style = "font-size:14px">Explore</a>
+                                    <a href="<?php echo base_url();?>lounge/explore" style = "font-size:14px">Explore</a>
                                 </li>
                                 <li class="hassubs">
                                     <a href="#" style = "font-size:14px">Stories</a>
                                     <ul style = "width:200px">
-                                        <li><a href="<?php echo base_url();?>history" style = "font-size:14px">Episode's Journey</a></li>
+                                        <li><a href="<?php echo base_url();?>lounge/history" style = "font-size:14px">Episode's Journey</a></li>
                                         <li><a href="#" style = "font-size:14px">Favourites</a></li>
                                     </ul>
                                 </li>
@@ -23,11 +23,11 @@
                                     <a href="#" style = "font-size:14px">Buddy</a>
                                 </li>
                                 <li class="hassubs">
-                                    <a href="#" style = "font-size:14px"><?php echo $this->session->userdata("nama") ?></a>
+                                    <a href="#" style = "font-size:14px"><?php echo $this->session->nama_user;?></a>
                                     <ul style = "width:200px">
-                                        <li><a href="<?php echo base_url();?>profile">Profile</a></li>
-                                        <li><a href="<?php echo base_url();?>chatroom">Live Chat</a></li>
-                                        <li><a href="<?php echo base_url();?>profile/logout">Logout</a></li>
+                                        <li><a href="<?php echo base_url();?>lounge/profile">Profile</a></li>
+                                        <li><a href="<?php echo base_url();?>lounge/chatroom">Live Chat</a></li>
+                                        <li><a href="<?php echo base_url();?>lounge/profile/logout">Logout</a></li>
                                     </ul>
                                 </li>
                                 <li>

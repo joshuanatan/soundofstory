@@ -13,7 +13,7 @@
 	<!-- meta character set -->
 	<meta charset="UTF-8">
 	<!-- Site Title -->
-	<title>SOUND OF STORY</title>
+	<title>CellOn</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,300,500" rel="stylesheet">
 		<!--
@@ -37,7 +37,7 @@
 						
 						<div class="main-menubar d-flex align-items-right">
 							<nav class="">
-								<a href="<?php echo base_url();?>welcome/index">Home</a>
+                                <a href="<?php echo base_url();?>welcome/index">Home</a>
 								<a href="<?php echo base_url();?>welcome/login">Sign In</a>
 								<a href="<?php echo base_url();?>welcome/register">Sign Up</a>
 							</nav>
@@ -46,90 +46,61 @@
 				</div>
 			</div>
 		</header>
-		<!-- End Header Area -->
-		<!-- Start Banner Area -->
-		<section class="banner-area relative">
+		
+		<section class="contact-area pt-100 pb-100 relative">
 			<div class="container">
-				<div class="row fullscreen align-items-center justify-content-center">
-					<div class="banner-left col-lg-6">
-						<img  class="d-flex mx-auto img-fluid" src="<?php echo base_url();?>assets/images/logosos.png" alt="">
+				<div class="row justify-content-center text-center">
+					<div class="single-contact col-lg-6 col-md-8">
+						<img src = "<?php echo base_url();?>assets/images/logosos.png" style ="width:100%">
 					</div>
-					<div class="col-lg-6">
-						<div class="story-content">
-							<h1>Reading stories <span class="sp-1">IS FUN</span><br>
-							Listening Stories <span class="sp-1">IS PRODUCTIVE</span></h1>
-						</div>
+                </div>
+				<div class="row justify-content-center text-center">
+					<div class="single-contact col-lg-6 col-md-8">
+						<h2 class="text-black">Audience <span>Registration</span></h2>
+						<p class="text-black" style = "color:black">
+							It helps us to understand you more
+						</p>
 					</div>
-				</div>
-			</div>
-		</section>
-		<section class="feature-area pt-100 pb-100  relative">
-			<div class="overlay" style = "background-color:#5ce1e6"></div>
-			<div class="container">
-				<div class="row">
-				<?php foreach($episode as $list){ ?>
-					<div class="col-lg-4 col-sm-6">
-						<div class="single-feature">
-							<div class="icon" data-toggle="modal" data-target="#songs<?php echo $list->id_recording;?>">
-								<span class="lnr fa fa-play"></span>
-							</div>
-							<div class="desc">
-								<h2 class="text-uppercase"><?php echo $list->nama_playlist;?></h2>
-								<h5><?php echo $list->description_playlist;?></h5>
-								<hr/>
-								<h2><?php echo $list->description_recording;?></h2><p class="text-uppercase"><?php echo "Chapter ".$list->chapter_playlist;?></p>
-							</div>
-						</div>
-					</div>
-					<div class="modal fade" id="songs<?php echo $list->id_recording;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-						<div class="modal-dialog modal-dialog-centered" role="document">
-							<div class="modal-content">
-								
-								<div class="modal-body">
-									
-									<div class="row">
-										<div class="col">
-											<div class="home_content">
-												<div class="home_title"><strong><?php echo $list->nama_playlist ?><span>.</span></strong></div>
-												<div class="home_text"><p><?php echo $list->description_playlist ?></p></div>
-											</div>
-										</div>
-									</div>	
-									<div class="row">
-										<div class="col-lg-12">
-											<div class="details_content">
-												<div class="details_name"><strong>Chapter <?php echo $list->chapter_playlist ?></strong></div>
-												<div class="details_text">
-													<p><?php echo $list->description_recording ?></p>
-												</div>
-												<!-- In Stock -->
-												<div class="in_stock_container">
-													<div class="availability"><strong>Duration:</strong></div>
-													<span><?php echo $list->duration_recording.' minutes' ?></span>
-												</div>
-												
+                </div>
+                <br/>
+				<form action="<?php echo base_url();?>welcome/signup" method="post">
+                    <div class = "form-group">
+                        <h6 style = "color:black">Full Name</h6>
+                        <input type = "text" class = "form-control" placeholder="Full Name" name = "nama_user">
+                    </div>
+                    
+                    <div class = "form-group">
+                        <h6 style = "color:black">Password</h6>
+                        <input type = "password" class = "form-control" placeholder="Password for Further Login" name = "password_user">
+                    </div>
+                    <div class = "form-group">
+                        <h6 style = "color:black">Email</h6>
+                        <input type = "Email" class = "form-control" placeholder="Email ex: username@example.com" name = "email_user">
+                    </div>
 
-												<!-- Share -->
-												<div style = "margin-top:20px">
-													<audio controls style = "width: 100%">
-														<source src="<?php echo base_url().'assets/audio/'.$list->file_recording ?>" type="audio/mpeg">
-													</audio>
-												</div>
-											</div>
-										</div>
-									</div>
-									
-								</div>
-							</div>
-						</div>
-					</div>
-					<?php
-					}
-					?>
-					
-				</div>
+                    <div class = "form-group">
+                        <h6 style = "color:black">Mobile Number</h6>
+                        <input type = "number" class = "form-control" placeholder="Mobile Number ex: 0896xxxxxx" name = "nohp_user">
+                    </div>
+                    <div class = "form-group">
+                        <h6 style = "color:black">Gender</h6>
+                        <Br/>
+                        <div class="radio">
+                            <label><input type="radio" name="gender_user" checked><span style = "color:black"> Female</span></label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="gender_user"><span style = " color:black"> Male</span></label>
+                        </div>
+                    </div>
+                    <div class = "form-group" style = "margin-top:20px">
+                        <button type = "submit" class = "col-lg-2 btn btn-primary">REGISTER</button>
+                        <a type = "button" href = "<?php echo base_url();?>welcome" class = "col-lg-2 btn btn-primary">BACK</a>
+                    </div>
+				</form>
 			</div>
 		</section>
+		<!-- End Conatct- Area -->
+		<!-- Strat Footer Area -->
 		<footer class="section-gap">
 			<div class="container">
 				<div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap">
