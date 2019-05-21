@@ -98,7 +98,7 @@ $this->session->set_userdata("nama", "James");
                     <div class="product">
                         <div class="product_image"><img src="<?php echo base_url();?>assets/images/story/<?php echo $list->foto_playlist ?>" alt=""></div>
                         <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->nama_playlist ?></a></div>
+                            <div class="product_title"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->nama_playlist ?></a></div>
                             <div class="product_price"><?php echo $list->description_playlist ?></div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@ $this->session->set_userdata("nama", "James");
                     <div class="product">
                         <div class="product_image"><img src="<?php echo base_url();?>assets/images/story/<?php echo $list->foto_playlist ?>" alt=""></div>
                         <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->nama_playlist ?></a></div>
+                            <div class="product_title"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->nama_playlist ?></a></div>
                             <div class="product_price"><?php echo $list->description_playlist ?></div>
                         </div>
                     </div>

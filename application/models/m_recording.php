@@ -54,5 +54,13 @@ class M_recording extends CI_Model {
         $query = $this->db->get();
         return $query;
     }
+    function selectTop3($where){
+        $this->db->limit(3);
+        $this->db->join('user', 'recording.id_user = user.id_user', 'inner');
+        $this->db->join('recording_playlist', 'recording_playlist.id_recording = recording.id_recording', 'inner');
+        $this->db->join('playlist', 'recording_playlist.id_playlist = playlist.id_playlist', 'inner');
+       
+        return $this->db->get_where("recording",$where);
+    }
 }
 ?>

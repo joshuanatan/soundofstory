@@ -38,13 +38,6 @@
 
                     <!-- Share -->
                     <div class="details_share">
-                        <span>Share:</span>
-                        <ul>
-                            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -61,7 +54,7 @@
                     <div class="product">
                         <div class="product_image"><img src="<?php echo base_url();?>assets/images/recording/<?php echo $list->foto_recording ?>" alt=""></div>
                         <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories/<?php echo $list->id_recording ?>"><?php echo $list->judul_recording ?></a></div>
+                            <div class="product_title"><a href="<?php echo base_url();?>lounge/stories/listen/<?php echo $list->id_recording ?>"><?php echo $list->judul_recording ?></a></div>
                             <div class="product_price"><?php echo $list->description_recording ?></div>
                         </div>
                     </div>
