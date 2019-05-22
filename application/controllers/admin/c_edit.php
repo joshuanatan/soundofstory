@@ -6,6 +6,16 @@ class C_edit extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('M_crud');
+        $this->load->model('M_comment');
+        $this->load->model('M_connection');
+        $this->load->model('M_like');
+        $this->load->model('M_message');
+        $this->load->model('M_playlist');
+        $this->load->model('M_profile');
+        $this->load->model('M_rating');
+        $this->load->model('M_recording');
+        $this->load->model('M_report');
+    
     }
     private function req(){
         $this->load->view("admin/req/html-open");

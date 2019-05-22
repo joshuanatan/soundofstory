@@ -5,9 +5,29 @@ class C_add extends CI_Controller {
     function __construct() 
     {
         parent::__construct();
-        $this->load->model('m_crud');
-    }
+        $this->load->model('M_crud');
+        $this->load->model('M_comment');
+        $this->load->model('M_connection');
+        $this->load->model('M_like');
+        $this->load->model('M_message');
+        $this->load->model('M_playlist');
+        $this->load->model('M_profile');
+        $this->load->model('M_rating');
+        $this->load->model('M_recording');
+        $this->load->model('M_report');
     
+    }
+    private function req(){
+        $this->load->view("admin/req/html-open");
+        $this->load->view("admin/req/stylesheet");
+        $this->load->view("admin/req/data-table-css");
+        $this->load->view("admin/req/head-close");
+    }
+    private function close(){
+        $this->load->view("admin/req/script");
+        $this->load->view("admin/req/data-table-js");
+        $this->load->view("admin/req/html-close");
+    }
     function user()
     {
         $getID = "";
@@ -26,7 +46,7 @@ class C_add extends CI_Controller {
             $datafile = array('upload_data' => $this->upload->data());
         }*/
         
-        $target_dir = "C:/xampp/htdocs/CI_sound/assets/profiles/images/";
+        $target_dir = base_url()."assets/profiles/images/";
         $target_file = $target_dir . basename($_FILES["pic1"]["name"]);
         $photo = basename($_FILES["pic1"]["name"]);
         if (move_uploaded_file($_FILES["pic1"]["tmp_name"], $target_file)) {
@@ -52,8 +72,8 @@ class C_add extends CI_Controller {
             "description_user" => $getDesc
         );
         
-        $this->m_crud->insertData($data, 'user');
-        $this->m_crud->insertData($data2, 'profile');
+        $this->M_crud->insertData($data, 'user');
+        $this->M_crud->insertData($data2, 'profile');
         
         redirect('admin/welcome/user');
     }
@@ -82,7 +102,7 @@ class C_add extends CI_Controller {
                 "status_category" => 1
             );
         
-            $this->m_crud->insertData($data, 'category');
+            $this->M_crud->insertData($data, 'category');
             redirect('admin/welcome/cate');
         }
     }
@@ -106,7 +126,7 @@ class C_add extends CI_Controller {
         
         else {
             //upload file recording
-            $target_dir = "C:/xampp/htdocs/soundofstory/assets/audio/";
+            $target_dir = base_url()."assets/audio/";
             $target_file = $target_dir . basename($_FILES["file"]["name"]);
             $file = basename($_FILES["file"]["name"]);
             if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
@@ -116,7 +136,7 @@ class C_add extends CI_Controller {
             }
             
             //upload foto
-            $target_dir2 = "C:/xampp/htdocs/soundofstory/assets/images/recording/";
+            $target_dir2 = base_url()."assets/images/recording/";
             $target_file2 = $target_dir2 . basename($_FILES["pic1"]["name"]);
             $photo = basename($_FILES["pic1"]["name"]);
             if (move_uploaded_file($_FILES["pic1"]["tmp_name"], $target_file2)) {
@@ -137,7 +157,7 @@ class C_add extends CI_Controller {
                 "tgl_submit_recording" => $date
             );
 
-            $this->m_crud->insertData($data, 'recording');
+            $this->M_crud->insertData($data, 'recording');
 
             redirect('admin/welcome/Rec');
         }
@@ -168,7 +188,7 @@ class C_add extends CI_Controller {
         }
         else {
             //upload foto
-            $target_dir2 = "C:/xampp/htdocs/soundofstory/assets/images/story/";
+            $target_dir2 = base_url()."assets/images/story/";
             $target_file2 = $target_dir2 . basename($_FILES["pic1"]["name"]);
             $photo = basename($_FILES["pic1"]["name"]);
             if (move_uploaded_file($_FILES["pic1"]["tmp_name"], $target_file2)) {
@@ -187,7 +207,7 @@ class C_add extends CI_Controller {
                 "status_playlist" => 1,
                 "tgl_submit_playlist" => $date
             );
-            $this->m_crud->insertData($data, 'playlist');
+            $this->M_crud->insertData($data, 'playlist');
 
             $where = array(
                 "nama_playlist" => $getName,
@@ -196,7 +216,7 @@ class C_add extends CI_Controller {
                 "status_playlist" => 1,
                 "tgl_submit_playlist" => $date
             );
-            $idp = $this->m_crud->edit($where, 'playlist')->result();
+            $idp = $this->M_crud->edit($where, 'playlist')->result();
             foreach($idp as $asas) {
                 $id_playlist = $asas->id_playlist;
             }
@@ -211,7 +231,7 @@ class C_add extends CI_Controller {
                     "tgl_submit_playlist" => $date
                 );
 
-                $this->m_crud->insertData($data2, 'recording_playlist');
+                $this->M_crud->insertData($data2, 'recording_playlist');
             }
 
 
@@ -244,7 +264,7 @@ class C_add extends CI_Controller {
                 "tgl_submit_playlist" => $date
             );
 
-            $this->m_crud->insertData($data, 'recording_playlist');
+            $this->M_crud->insertData($data, 'recording_playlist');
             redirect('admin/welcome/recplay');
         }
     }
@@ -275,7 +295,7 @@ class C_add extends CI_Controller {
                 "tgl_submit_rating" => $date
             );
 
-            $this->m_crud->insertData($data, 'rating');
+            $this->M_crud->insertData($data, 'rating');
             redirect('admin/welcome/rating');
         }
     }
@@ -305,7 +325,7 @@ class C_add extends CI_Controller {
                 "tgl_submit_like" => $date
             );
 
-            $this->m_crud->insertData($data, 'like');
+            $this->M_crud->insertData($data, 'like');
             redirect('admin/welcome/like');
         }
     }
@@ -338,7 +358,7 @@ class C_add extends CI_Controller {
                 "jam_submit_message" => $time
             );
 
-            $this->m_crud->insertData($data, 'message');
+            $this->M_crud->insertData($data, 'message');
             redirect('admin/welcome/msg');
         }
     }
@@ -366,7 +386,7 @@ class C_add extends CI_Controller {
                 "tgl_submit_connection" => $date
             );
 
-            $this->m_crud->insertData($data, 'connection');
+            $this->M_crud->insertData($data, 'connection');
             redirect('admin/welcome/conn');
         }
     }
@@ -404,8 +424,8 @@ class C_add extends CI_Controller {
                 "status_report" => 1
             );
 
-            $this->m_crud->insertData($data, 'comment');
-            $this->m_crud->insertData($data2, 'report');
+            $this->M_crud->insertData($data, 'comment');
+            $this->M_crud->insertData($data2, 'report');
             redirect('admin/welcome/comm');
         }
     }
