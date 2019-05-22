@@ -14,7 +14,11 @@ class Welcome extends CI_Controller{
         $where = array(
             'status_recording' => 1
         );
+        $where2 = array(
+            'status_playlist' => 1
+        );
         $data['episode'] = $this->m_recording->selectLast($where)->result();
+        $data['play'] = $this->m_recording->selectLast2($where2)->result();
         $data['story'] = $this->m_crud->selectData('status_playlist', 'playlist')->result();
         $this->req();
         $this->load->view("mainpages/index", $data);

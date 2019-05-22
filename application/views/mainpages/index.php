@@ -5,59 +5,32 @@
         <div class="owl-carousel owl-theme home_slider"> <!--ini buat yang premium -->
             
             <!-- Slider Item -->
+            <?php 
+            $count = 0;
+            foreach($play as $list) {
+            if($count == 5) {
+                break;
+            }
+            ?>
             <div class="owl-item home_slider_item">
-                <div class="home_slider_background" style="background-image:url(<?php echo base_url();?>assets/images/home_slider_1.jpg)"></div>
+                <div class="home_slider_background" style="background-image:url(<?php echo base_url();?>assets/images/story/<?php echo $list->foto_playlist; ?>)"></div>
                 <div class="home_slider_content_container">
                     <div class="container">
                         <div class="row">
                             <div class="col">
                                 <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-                                    <div class="home_slider_title">Story Title</div>
-                                    <div class="home_slider_subtitle">It is good to tell the audience what the story is or at least give them a little insight about the story hence you don't waste your audience time by make them disappointed</div>
-                                    <div class="button button_light home_button"><a href="<?php echo base_url();?>stories/listen">Listen Now</a></div>
+                                    <div class="home_slider_title"><?php echo $list->nama_playlist ?></div>
+                                    <div class="home_slider_subtitle"><?php echo $list->description_playlist ?></div>
+                                    <div class="button button_light home_button"><a href="<?php echo base_url();?>lounge/Stories/detail/<?php echo $list->id_playlist ?>">Listen Now</a></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Slider Item -->
-            <div class="owl-item home_slider_item">
-                <div class="home_slider_background" style="background-image:url(<?php echo base_url();?>assets/images/home_slider_1.jpg)"></div>
-                <div class="home_slider_content_container">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-                                    <div class="home_slider_title">Story Title</div>
-                                    <div class="home_slider_subtitle">It is good to tell the audience what the story is or at least give them a little insight about the story hence you don't waste your audience time by make them disappointed</div>
-                                    <div class="button button_light home_button"><a href="<?php echo base_url();?>stories/listen">Listen Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slider Item -->
-            <div class="owl-item home_slider_item">
-                <div class="home_slider_background" style="background-image:url(<?php echo base_url();?>assets/images/home_slider_1.jpg)"></div>
-                <div class="home_slider_content_container">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-                                    <div class="home_slider_title">Story Title</div>
-                                    <div class="home_slider_subtitle">It is good to tell the audience what the story is or at least give them a little insight about the story hence you don't waste your audience time by make them disappointed</div>
-                                    <div class="button button_light home_button"><a href="<?php echo base_url();?>stories/listen">Listen Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <?php 
+                $count++;;
+            } ?>
         </div>
 
         <!-- Home Slider Dots -->
@@ -68,9 +41,22 @@
                     <div class="col">
                         <div class="home_slider_dots">
                             <ul id="home_slider_custom_dots" class="home_slider_custom_dots">
+                                <?php 
+                                $count = 0;
+                                foreach($play as $list) {
+                                    if($count == 5) {
+                                        break;
+                                    }
+                                    if($count == 0) { ?>
                                 <li class="home_slider_custom_dot active">01.</li>
-                                <li class="home_slider_custom_dot">02.</li>
-                                <li class="home_slider_custom_dot">03.</li>
+                                <?php }
+                                    else {
+                                ?>
+                                <li class="home_slider_custom_dot">0<?php echo $count; ?>.</li>
+                                <?php 
+                                    }
+                                    $count++;;
+                                } ?>
                             </ul>
                         </div>
                     </div>
@@ -145,8 +131,8 @@
                     <?php 
                     $counter = 0;
                     foreach($episode as $list) {
-                        if($counter == 5) {
-                            //tampilin 5 terakhir
+                        if($counter == 8) {
+                            //tampilin 8 terakhir
                             break;
                         }
                     ?>
