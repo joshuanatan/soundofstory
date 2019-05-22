@@ -80,7 +80,7 @@
         console.log(id);
         $.ajax({
             type : 'POST',
-            url : "<?php echo base_url().'Chatroom/ajax/'?>",
+            url : "<?php echo base_url().'lounge/Chatroom/ajax/'?>",
             dataType : "JSON",
             data : {id:id},
             success : function(data) {
@@ -93,7 +93,7 @@
         //console.log(isi);
         $.ajax({
             type : 'POST',
-            url : "<?php echo base_url().'Chatroom/send/' ?>",
+            url : "<?php echo base_url().'lounge/Chatroom/send/' ?>",
             dataType : "JSON",
             data : {isi:isi},
             success : function(data) {

@@ -1,5 +1,14 @@
 <?php
 class M_recording extends CI_Model {
+    function selectLast($where) {
+        $this->db->select('*')
+            ->from('recording')
+            ->order_by("tgl_submit_recording", "desc")
+            ->where($where);
+        $query = $this->db->get();
+        return $query;
+    }
+    
     function selectAll($where)
     {
         $this->db->select('*')
@@ -61,6 +70,18 @@ class M_recording extends CI_Model {
         $this->db->join('playlist', 'recording_playlist.id_playlist = playlist.id_playlist', 'inner');
        
         return $this->db->get_where("recording",$where);
+    }
+    
+    function search($where) {
+        $this->db->select('*')
+            ->from('recording')
+            ->join('user', 'recording.id_user = user.id_user', 'inner')
+            ->join('recording_playlist', 'recording_playlist.id_recording = recording.id_recording', 'inner')
+            ->join('playlist', 'recording_playlist.id_playlist = playlist.id_playlist', 'inner')
+            ->join('category', 'category.id_category = playlist.id_category', 'inner')
+            ->like($where);
+        $query = $this->db->get();
+        return $query;
     }
 }
 ?>

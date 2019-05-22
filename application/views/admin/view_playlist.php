@@ -38,13 +38,13 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                        <th>Playlist</th>
-                                        <th>Description</th>
-                                        <th>Category</th>
-                                        <th>User</th>
-                                        <th>Status</th>
-                                        <th>Join Date</th>
-                                        <th>Action</th>
+                                    <th>Playlist</th>
+                                    <th>Description</th>
+                                    <th>Category</th>
+                                    <th>User</th>
+                                    <th>Status</th>
+                                    <th>Join Date</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -52,9 +52,9 @@
                                     foreach($play as $list) { ?>
                                     <tr>
                                         <td><?php echo $list->id_playlist ?></td>
+                                        <td><?php echo $list->nama_playlist ?></td>
                                         <td><?php echo $list->description_playlist ?></td>
                                         <td><?php echo $list->nama_category ?></td>
-                                        <td><?php echo $list->nama_playlist ?></td>
                                         <td><?php echo $list->nama_user ?></td>
                                         <td><?php echo "Active" ?></td>
                                         <td><?php echo $list->tgl_submit_playlist ?></td>

@@ -6,7 +6,7 @@ class Chatroom extends CI_Controller{
     }
     public function index(){
         $where = array(
-            'id_user_dari' => $this->session->userdata("id"),
+            'id_user_dari' => $this->session->userdata("id_user"),
             'status_message' => 1
         );
         $data['message'] = $this->m_message->selectData($where)->result();

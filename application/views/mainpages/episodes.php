@@ -7,12 +7,12 @@
         <div class="row">
             <div class="col">
                 <br/>
-                <form class = "form-inline">
-                    <input type = "text" class = "form-control col-lg-6" placeholder="Search Playlist Here..">
-                    <select class = "form-control col-lg-2" style ="margin-left:30px; color:black">
-                        <option value = "">TITLE</option>
-                        <option value = "">GENRE</option>
-                        <option value = "">STYLE</option>
+                <form class = "form-inline" action="<?php echo base_url().'lounge/explore/search/' ?>" method="post">
+                    <input type = "text" class = "form-control col-lg-6" name="key" placeholder="Search Playlist Here..">
+                    <select class = "form-control col-lg-2" style ="margin-left:30px; color:black" name="from">
+                        <option value = "1">TITLE (Recording)</option>
+                        <option value = "2">TITLE (Playlist)</option>
+                        <option value = "3">CATEGORY</option>
                     </select>
                     <button type = "submit" class = "btn btn-outline-dark col-lg-3" style ="margin-left:30px;">SEARCH</button>
                 </form>

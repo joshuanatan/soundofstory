@@ -11,7 +11,10 @@ class Welcome extends CI_Controller{
         $this->load->view("req/menu");
     }
     public function index(){
-        $data['episode'] = $this->m_crud->selectData('status_recording', 'recording')->result();
+        $where = array(
+            'status_recording' => 1
+        );
+        $data['episode'] = $this->m_recording->selectLast($where)->result();
         $data['story'] = $this->m_crud->selectData('status_playlist', 'playlist')->result();
         $this->req();
         $this->load->view("mainpages/index", $data);
