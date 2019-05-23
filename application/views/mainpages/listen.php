@@ -54,7 +54,7 @@
                 <div class="row">
                     
                     <div class = "col-lg-12" style = "display:inline-block">
-                        <form action="<?php echo base_url().'Stories/addComment/'.$list->id_recording; ?>" method="post">
+                        <form action="<?php echo base_url().'lounge/Stories/addComment/'.$list->id_recording; ?>" method="post">
                             <div class = "form-group">
                                 <label>Your Opinion</label>
                                 <textarea name="isi" class = "form-control col-lg-12"></textarea>
@@ -65,7 +65,10 @@
                 </div>
                 <hr/>   
                 <div class = "comment-container" style = "height: 330px; overflow-y:scroll; overflow-x:hidden"> 
-                    <?php foreach($comment as $list2) { ?>
+                    <?php foreach($comment as $list2) { 
+                    $date = date_create($list2->tgl_submit_comment);
+                    ?>
+                    <label><?php echo $list2->nama_user;?> - <?php echo date_format($date,"d/m/Y"); ?></label>
                     <div class="row">
                         <div class = "col-lg-1" style = "display:inline-block">
                             <img src="<?php echo base_url();?>assets/profiles/images/<?php echo $list2->foto_profile_user ?>" alt="" style = "width:100%">

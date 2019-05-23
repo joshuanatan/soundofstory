@@ -20,7 +20,7 @@ class Profile extends CI_Controller{
         $this->load->view("req/close");
     }
     public function logout(){
-        
+        redirect("welcome");
     }
     
 }

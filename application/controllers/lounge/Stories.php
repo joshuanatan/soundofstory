@@ -52,7 +52,7 @@ class Stories extends CI_Controller{
     }
     
     function addComment($id) {
-        $getID = $this->session->userdata("id");
+        $getID = $this->session->userdata("id_user");
         $getIDR = $id;
         $getIsi = $this->input->post('isi');
         $date = date("Y-m-d");
@@ -86,7 +86,7 @@ class Stories extends CI_Controller{
             "status_report" => 1
         );
         $this->m_crud->insertData($data2, 'report');
-        redirect('Stories/listen/'.$id);
+        redirect('lounge/Stories/listen/'.$id);
     }
     
 }

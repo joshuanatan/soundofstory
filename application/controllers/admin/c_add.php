@@ -39,20 +39,15 @@ class C_add extends CI_Controller {
         $getAdd = $this->input->post('address');
         $getDesc = $this->input->post('desc');
         $date = date("Y-m-d");
-        /*$config = array();
-        $config['upload_path'] = 'C:/xampp/htdocs/CI_sound/assets/profiles/images/';
-        $config['allowed_types'] = '*'; //'gif|jpg|png';
+
+        $config['upload_path'] = base_url()."assets/profiles/images/";
+        $config['allowed_types'] = 'gif|jpg|png'; 
+        $config['max_size'] = 0;
+        $config['max_width'] = 2048;
+        $config['max_height'] = 2048;
+        $this->load->library('upload', $config);
         if ($this->upload->do_upload('pic1')) {
             $datafile = array('upload_data' => $this->upload->data());
-        }*/
-        
-        $target_dir = base_url()."assets/profiles/images/";
-        $target_file = $target_dir . basename($_FILES["pic1"]["name"]);
-        $photo = basename($_FILES["pic1"]["name"]);
-        if (move_uploaded_file($_FILES["pic1"]["tmp_name"], $target_file)) {
-            echo "The file ". basename( $_FILES["pic1"]["name"]). " has been uploaded.";
-        } else {
-            echo "Sorry, there was an error uploading your file.";
         }
         $data = array(
             "id_user" => "",
@@ -126,16 +121,27 @@ class C_add extends CI_Controller {
         
         else {
             //upload file recording
-            $target_dir = base_url()."assets/audio/";
-            $target_file = $target_dir . basename($_FILES["file"]["name"]);
-            $file = basename($_FILES["file"]["name"]);
-            if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-                echo "The file ". basename( $_FILES["file"]["name"]). " has been uploaded.";
-            } else {
-                echo "Sorry, there was an error uploading your file.";
+
+            $config['upload_path'] = base_url()."assets/audio";
+            $config['allowed_types'] = 'mp3|wav'; 
+            $config['max_size'] = 0;
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload('pic1')) {
+                $upload_data = $this->upload->data('file_name');
             }
-            
+
             //upload foto
+
+            $config['upload_path'] = base_url()."assets/images/recording";
+            $config['allowed_types'] = 'gif|jpg|png'; 
+            $config['max_size'] = 0;
+            $config['max_width'] = 2048;
+            $config['max_height'] = 2048;
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload('pic1')) {
+                $upload_data = $this->upload->data('file_name');
+            }
+
             $target_dir2 = base_url()."assets/images/recording/";
             $target_file2 = $target_dir2 . basename($_FILES["pic1"]["name"]);
             $photo = basename($_FILES["pic1"]["name"]);
@@ -148,7 +154,7 @@ class C_add extends CI_Controller {
             $data = array(
                 "id_recording" => "",
                 "judul_recording" => $getName,
-                "file_recording" => $file,
+                "file_recording" => $upload_data,
                 "foto_recording" => $photo,
                 "description_recording" => $getDesc,
                 "duration_recording" => $getDuration,

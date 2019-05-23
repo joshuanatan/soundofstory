@@ -6,6 +6,7 @@ class Welcome extends CI_Controller{
         $this->load->model("M_crud");
     }
     public function index(){
+        $this->session->sess_destroy();
         $where = array(
             'recording.status_recording' => 1
         );

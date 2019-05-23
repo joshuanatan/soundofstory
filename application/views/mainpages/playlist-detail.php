@@ -28,10 +28,6 @@
                 <div class="details_content">
                     <div class="details_name"><?php echo $list->nama_playlist ?></div>
                     <!-- In Stock -->
-                    <div class="in_stock_container">
-                        <div class="availability">Audience:</div>
-                        <span>30 Audience</span>
-                    </div>
                     <div class="details_text">
                         <p><?php echo $list->description_playlist ?></p>
                     </div>
