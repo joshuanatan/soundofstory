@@ -15,10 +15,6 @@
                                 <div class="col-12 col-md-9"><input type="text" name="idc" class="form-control" value="<?php echo $list->id_category ?>" readonly></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">ID User</label></div>
-                                <div class="col-12 col-md-9"><input type="text" name="id" class="form-control" value="<?php echo $list->id_user_category ?>"></div>
-                            </div>
-                            <div class="row form-group">
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">Category Name</label></div>
                                 <div class="col-12 col-md-9"><input type="text" name="name" class="form-control" value="<?php echo $list->nama_category ?>"></div>
                             </div>

@@ -93,7 +93,7 @@ class C_edit extends CI_Controller {
     }
     function updateCate()
     {
-        $getID = $this->input->post("id");
+        $getID = $this->session->userdata("id");
         $getIDC = $this->input->post("idc");
         $getName = $this->input->post("name");
         if($getID == "" || $getIDC == "" || $getName == "") {

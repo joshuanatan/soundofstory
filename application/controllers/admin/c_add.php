@@ -76,7 +76,7 @@ class C_add extends CI_Controller {
     function cate()
     {
         $id = 0;
-        $getID = $this->input->post('id');
+        $getID = $this->session->userdata("id");
         $getName = $this->input->post('name');
         $date = date("Y-m-d");
         
