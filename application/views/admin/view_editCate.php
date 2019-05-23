@@ -9,7 +9,7 @@
                     </div>
                     <div class="card-body card-block">
                         <?php foreach($cat as $list) { ?>
-                        <form action="<?php echo base_url().'c_edit/updateCate/' ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form action="<?php echo base_url().'admin/c_edit/updateCate/' ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">ID Category</label></div>
                                 <div class="col-12 col-md-9"><input type="text" name="idc" class="form-control" value="<?php echo $list->id_category ?>" readonly></div>
