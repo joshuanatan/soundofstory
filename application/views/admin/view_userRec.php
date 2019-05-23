@@ -35,6 +35,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
+                                    <th>Recording</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,7 +43,8 @@
                                     foreach($ur as $list) { ?>
                                     <tr>
                                         <td><?php echo $list->id_user_recording ?></td>
-                                        <td><?php echo $list->id_user ?></td>
+                                        <td><?php echo $list->nama_user ?></td>
+                                        <td><?php echo $list->judul_recording ?></td>
                                     </tr>
                                     <?php } ?>
                             </tbody>

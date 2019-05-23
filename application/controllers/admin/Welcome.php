@@ -14,6 +14,8 @@ class Welcome extends CI_Controller {
         $this->load->model('M_rating');
         $this->load->model('M_recording');
         $this->load->model('M_report');
+        $this->load->model('M_category');
+        $this->load->model('M_history');
     }
     private function req_login(){
         $this->load->view("admin/req/html-open");
@@ -78,7 +80,10 @@ class Welcome extends CI_Controller {
         $this->close();
 	}
     function cate(){
-        $data['cat'] = $this->M_crud->selectData('status_category', 'category')->result();
+        $where = array(
+            'status_category' => 1
+        );
+        $data['cat'] = $this->M_category->selectData($where)->result();
         $this->req();
         $this->load->view('admin/req/sidebar');
         $this->load->view('admin/req/right-panel-open');
@@ -135,7 +140,7 @@ class Welcome extends CI_Controller {
 	}
     
     function userrec(){
-        $data['ur'] = $this->M_crud->selectAll('user_recording')->result();
+        $data['ur'] = $this->M_history->select()->result();
         $this->req();
         $this->load->view('admin/req/sidebar');
         $this->load->view('admin/req/right-panel-open');
@@ -144,7 +149,10 @@ class Welcome extends CI_Controller {
         $this->close();
 	}
     function recplay(){
-        $data['rep'] = $this->M_crud->selectData('status_playlist', 'recording_playlist')->result();
+        $where = array(
+            'recording_playlist.status_playlist' => 1
+        );
+        $data['rep'] = $this->M_recording->selectByRecPlay($where)->result();
         $this->req();
         $this->load->view('admin/req/sidebar');
         $this->load->view('admin/req/right-panel-open');
@@ -166,7 +174,10 @@ class Welcome extends CI_Controller {
         $this->close();
 	}
     function history(){
-        $data['hist'] = $this->M_crud->selectData('status_history', 'history_recording')->result();
+        $where = array(
+            'history_recording.status_history' =>1
+        );
+        $data['hist'] = $this->M_history->selectData($where)->result();
         $this->req();
         $this->load->view('admin/req/sidebar');
         $this->load->view('admin/req/right-panel-open');

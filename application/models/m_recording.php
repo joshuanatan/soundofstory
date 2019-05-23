@@ -50,6 +50,18 @@ class M_recording extends CI_Model {
         return $query;
     }
     
+    function selectByRecPlay($where)
+    {
+        $this->db->select('*')
+            ->from('recording_playlist')
+            ->join('recording', 'recording_playlist.id_recording = recording.id_recording', 'inner')
+            ->join('user', 'recording_playlist.id_user = user.id_user', 'inner')
+            ->join('playlist', 'recording_playlist.id_playlist = playlist.id_playlist', 'inner')
+            ->where($where);
+        $query = $this->db->get();
+        return $query;
+    }
+    
     function selectByUser($where)
     {
         $this->db->select('*')
