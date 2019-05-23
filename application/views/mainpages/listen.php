@@ -1,5 +1,5 @@
 <?php
-if($this->session->userdata("id") == "") {
+if($this->session->userdata("id_user") == "") {
     redirect("welcome");
 } 
 foreach($episode as $list) { ?>
