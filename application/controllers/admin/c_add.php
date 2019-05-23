@@ -120,42 +120,32 @@ class C_add extends CI_Controller {
         }
         
         else {
-            //upload file recording
-
-            $config['upload_path'] = base_url()."assets/audio";
-            $config['allowed_types'] = 'mp3|wav'; 
-            $config['max_size'] = 0;
-            $this->load->library('upload', $config);
-            if ($this->upload->do_upload('pic1')) {
-                $upload_data = $this->upload->data('file_name');
-            }
-
-            //upload foto
-
-            $config['upload_path'] = base_url()."assets/images/recording";
-            $config['allowed_types'] = 'gif|jpg|png'; 
-            $config['max_size'] = 0;
+            $config['upload_path'] ="./assets/recording";
+            $config['allowed_types'] = '*';
+            $config['max_size'] = 2048000;
+            $config['overwrite'] = TRUE;
             $config['max_width'] = 2048;
             $config['max_height'] = 2048;
             $this->load->library('upload', $config);
             if ($this->upload->do_upload('pic1')) {
-                $upload_data = $this->upload->data('file_name');
+                $imagefile = $this->upload->data('file_name');
+            }
+            else{
+                echo $this->upload->display_errors();
             }
 
-            $target_dir2 = base_url()."assets/images/recording/";
-            $target_file2 = $target_dir2 . basename($_FILES["pic1"]["name"]);
-            $photo = basename($_FILES["pic1"]["name"]);
-            if (move_uploaded_file($_FILES["pic1"]["tmp_name"], $target_file2)) {
-                echo "The file ". basename( $_FILES["pic1"]["name"]). " has been uploaded.";
-            } else {
-                echo "Sorry, there was an error uploading your file.";
+            if ($this->upload->do_upload('file')) {
+                $recordfile = $this->upload->data('file_name');
             }
-            
+            else{
+                echo $this->upload->display_errors();
+            }
+
             $data = array(
                 "id_recording" => "",
                 "judul_recording" => $getName,
-                "file_recording" => $upload_data,
-                "foto_recording" => $photo,
+                "file_recording" => $recordfile,
+                "foto_recording" => $imagefile,
                 "description_recording" => $getDesc,
                 "duration_recording" => $getDuration,
                 "id_user" => $this->session->userdata("id"),
@@ -194,19 +184,24 @@ class C_add extends CI_Controller {
         }
         else {
             //upload foto
-            $target_dir2 = base_url()."assets/images/story/";
-            $target_file2 = $target_dir2 . basename($_FILES["pic1"]["name"]);
-            $photo = basename($_FILES["pic1"]["name"]);
-            if (move_uploaded_file($_FILES["pic1"]["tmp_name"], $target_file2)) {
-                echo "The file ". basename( $_FILES["pic1"]["name"]). " has been uploaded.";
-            } else {
-                echo "Sorry, there was an error uploading your file.";
+            $config['upload_path'] ="./assets/images/story";
+            $config['allowed_types'] = '*';
+            $config['max_size'] = 2048000;
+            $config['overwrite'] = TRUE;
+            $config['max_width'] = 2048;
+            $config['max_height'] = 2048;
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload('pic1')) {
+                $imagefile = $this->upload->data('file_name');
+            }
+            else{
+                echo $this->upload->display_errors();
             }
 
             $data = array(
                 "id_playlist" => 0,
                 "nama_playlist" => $getName,
-                "foto_playlist" => $photo,
+                "foto_playlist" => $imagefile,
                 "description_playlist" => $getDesc,
                 "id_category" => $getCat,
                 "id_user" => $getID,
