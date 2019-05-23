@@ -51,7 +51,7 @@
                                     <tr>
                                         <td><?php echo $list->id_category ?></td>
                                         <td><?php echo $list->nama_category ?></td>
-                                        <td><?php echo $list->id_user_category ?></td>
+                                        <td><?php echo $list->nama_user ?></td>
                                         <td><?php echo "Active" ?></td>
                                         <td><?php echo $list->tgl_submit_category ?></td>
                                         <td><a href="<?php echo base_url().'admin/c_edit/cate/'.$list->id_category ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a><a href="<?php echo base_url().'admin/c_delete/cate/'.$list->id_category ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
