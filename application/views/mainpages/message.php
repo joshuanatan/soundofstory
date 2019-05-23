@@ -1,3 +1,8 @@
+<?php
+if($this->session->userdata("id") == "") {
+    redirect("welcome");
+}
+?>
 <div class = "container" style = "margin-top:130px;height:650px">
     <div class="sunil-messaging"> 
         <div class="sunil-inbox_msg">

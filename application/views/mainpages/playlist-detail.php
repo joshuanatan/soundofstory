@@ -1,3 +1,8 @@
+<?php
+if($this->session->userdata("id") == "") {
+    redirect("welcome");
+}
+?>
 <div class="home">
     <div class="home_container">
         <div class="home_background" style="background-image:url(<?php echo base_url();?>assets/images/categories.jpg)"></div>
