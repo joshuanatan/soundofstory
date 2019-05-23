@@ -1,3 +1,8 @@
+<?php
+if($this->session->userdata("id_user") == "") {
+    redirect("welcome");
+}
+?>
 <div class="home">
     <div class="home_slider_container">
         

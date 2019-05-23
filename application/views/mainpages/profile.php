@@ -1,4 +1,8 @@
-<?php foreach($profile as $list) { ?>
+<?php
+if($this->session->userdata("id_user") == "") {
+    redirect("welcome");
+} 
+foreach($profile as $list) { ?>
 <div class="home">
     <div class="home_container">
         <div class="home_background" style="background-image:url(<?php echo base_url();?>assets/images/categories.jpg)"></div>
@@ -22,11 +26,14 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-img">
-                    <img src="<?php echo base_url()."assets/profiles/images/".$list->foto_profile_user ?>" alt=""/>
-                    <div class="file btn btn-lg btn-primary">
+                    <form method="post" enctype="multipart/form-data">
+                        <img src="<?php echo base_url()."assets/profiles/images/".$list->foto_profile_user ?>" alt=""/>
+                    
+                        <input type="file" name="file" class="file btn btn-lg btn-primary">
+                    </form>
+                    <!--<div class="file btn btn-lg btn-primary">
                         Change Photo
-                        <input type="file" name="file"/>
-                    </div>
+                    </div>-->
                 </div>
             </div>
             <div class="col-md-6">
@@ -74,7 +81,8 @@
                                 <label>User Id</label>
                             </div>
                             <div class="col-md-6">
-                                <p>ID USER = <?php echo $list->id_user ?>(kita belom ada username)</p>
+                                <!--<p>ID USER = <?php echo $list->id_user ?>(kita belom ada username)</p>-->
+                                <input type="text" name="id" value="<?php echo $list->id_user ?>">
                             </div>
                         </div>
                         <div class="row">
@@ -82,7 +90,7 @@
                                 <label>Name</label>
                             </div>
                             <div class="col-md-6">
-                                <p><?php echo $list->nama_user ?></p>
+                                <input type="text" name="nama" value="<?php echo $list->nama_user ?>">
                             </div>
                         </div>
                         <div class="row">
@@ -90,7 +98,7 @@
                                 <label>Email</label>
                             </div>
                             <div class="col-md-6">
-                                <p><?php echo $list->email_user ?></p>
+                                <input type="text" name="email" value="<?php echo $list->email_user ?>">
                             </div>
                         </div>
                         <div class="row">
@@ -98,7 +106,7 @@
                                 <label>Phone</label>
                             </div>
                             <div class="col-md-6">
-                                <p><?php echo $list->nohp_user ?></p>
+                                <input type="text" name="phone" value="<?php echo $list->nohp_user ?>">
                             </div>
                         </div>
                         <div class="row">
@@ -106,7 +114,7 @@
                                 <label>Profession</label>
                             </div>
                             <div class="col-md-6">
-                                <p><?php echo $list->profesi_user ?></p>
+                                <input type="text" name="prof" value="<?php echo $list->profesi_user ?>">
                             </div>
                         </div>
                     </div>
@@ -116,7 +124,7 @@
                                 <label>First Join</label>
                             </div>
                             <div class="col-md-6">
-                                <p><?php echo $list->tgl_submit_user ?></p>
+                                <input type="text" name="join" value="<?php echo $list->tgl_submit_user ?>">
                             </div>
                         </div>
                         <div class="row">
@@ -124,7 +132,7 @@
                                 <label>First Story Heard</label>
                             </div>
                             <div class="col-md-6">
-                                <p>Robin Hood with Black Eyes</p>
+                                <input type="text" name="fstory" value="<?php echo 'Robin Hood with Black Eyes' ?>">
                             </div>
                         </div>
                         <div class="row">
@@ -132,7 +140,7 @@
                                 <label>Latest Favourite Genre</label>
                             </div>
                             <div class="col-md-6">
-                                <p>Romance</p>
+                                <input type="text" name="fav" value="<?php echo 'Romance' ?>">
                             </div>
                         </div>
                         <div class="row">
@@ -140,7 +148,7 @@
                                 <label>Main Language</label>
                             </div>
                             <div class="col-md-6">
-                                <p>English</p>
+                                <input type="text" name="lang" value="<?php echo 'English' ?>">
                             </div>
                         </div>
                         <div class="row">
@@ -148,7 +156,7 @@
                                 <label>Nationality</label>
                             </div>
                             <div class="col-md-6">
-                                <p>Indonesia</p>
+                                <input type="text" name="nat" value="<?php echo 'Indonesia' ?>">
                             </div>
                         </div>
                     </div>

@@ -1,3 +1,8 @@
+<?php
+if($this->session->userdata("id_user") == "") {
+    redirect("welcome");
+}
+?>
 <div class="cart_info">
     <div class="container">
         <div class = "row" style = "margin-bottom:50px">
