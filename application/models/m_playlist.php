@@ -10,5 +10,13 @@ class M_playlist extends CI_Model {
         $query = $this->db->get();
         return $query;
     }
+    function getMaxChapter($where){
+        $this->db->select("max(chapter_playlist) as 'chapter'");
+        $result = $this->db->get_where("recording_playlist",$where);
+        foreach($result->result() as $a){
+            if($a->chapter == "") return 1;
+            else return $a->chapter+1;
+        }
+    }
 }
 ?>

@@ -10,7 +10,9 @@ class M_history extends CI_Model {
         $query = $this->db->get();
         return $query;
     }
-    
+    function insert($data){
+        $this->db->insert("history_recording",$data);
+    }
     function select()
     {
         $this->db->select('*')

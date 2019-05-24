@@ -67,6 +67,7 @@ class Welcome extends CI_Controller {
     private function close(){
         $this->load->view("admin/req/script");
         $this->load->view("admin/req/data-table-js");
+        $this->load->view("admin/req/ajax-request");
         $this->load->view("admin/req/html-close");
     }
     
@@ -289,11 +290,22 @@ class Welcome extends CI_Controller {
         $this->close();
 	}
     function tmbhRecPlay(){
-        
+        $where = array(
+            "recording" => array(
+                "recording.status_recording" => 1
+            ),
+            "playlist" => array(
+                "playlist.status_playlist" => 1
+            )
+        );
+        $data = array(
+            "recording" => $this->M_recording->select($where["recording"]),
+            "playlist" => $this->M_playlist->selectData($where["playlist"]),
+        );
         $this->req();
         $this->load->view('admin/req/sidebar');
         $this->load->view('admin/req/right-panel-open');
-        $this->load->view('admin/view_addRecPlay');
+        $this->load->view('admin/view_addRecPlay',$data);
         $this->load->view('admin/req/right-panel-close');
         $this->close();
 	}

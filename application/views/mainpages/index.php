@@ -13,20 +13,23 @@ if($this->session->userdata("id_user") == "") {
             <?php 
             $count = 0;
             foreach($play as $list) {
+                $color = array("#5ce1e6","#ffde59");
             if($count == 5) {
                 break;
             }
             ?>
             <div class="owl-item home_slider_item">
-                <div class="home_slider_background" style="background-image:url(<?php echo base_url();?>assets/images/story/<?php echo $list->foto_playlist; ?>)"></div>
+                <div class="home_slider_background" style="background-image:url(<?php echo base_url();?>assets/recording/<?php echo $list->foto_playlist; ?>); background-size:contain; opacity:0.5"></div>
+                <div class="home_slider_background" style="background-color:<?php echo $color[$count%2];?>; opacity:0.5"></div>
+                
                 <div class="home_slider_content_container">
                     <div class="container">
                         <div class="row">
                             <div class="col">
                                 <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-                                    <div class="home_slider_title"><?php echo $list->nama_playlist ?></div>
-                                    <div class="home_slider_subtitle"><?php echo $list->description_playlist ?></div>
-                                    <div class="button button_light home_button"><a href="<?php echo base_url();?>lounge/Stories/detail/<?php echo $list->id_playlist ?>">Listen Now</a></div>
+                                    <div class="home_slider_title" style = "color:#545454"><?php echo $list->nama_playlist ?></div>
+                                    <div class="home_slider_subtitle" style = "color:#545454"><?php echo $list->description_playlist ?></div>
+                                    <div class="button button_dark home_button" style = "color:#545454"><a class = "Btn btn-dark btn-outline col-lg-12" href="<?php echo base_url();?>lounge/Stories/detail/<?php echo $list->id_playlist ?>">Listen Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -47,21 +50,11 @@ if($this->session->userdata("id_user") == "") {
                         <div class="home_slider_dots">
                             <ul id="home_slider_custom_dots" class="home_slider_custom_dots">
                                 <?php 
-                                $count = 0;
-                                foreach($play as $list) {
-                                    if($count == 5) {
-                                        break;
-                                    }
-                                    if($count == 0) { ?>
-                                <li class="home_slider_custom_dot active">01.</li>
-                                <?php }
-                                    else {
-                                ?>
-                                <li class="home_slider_custom_dot">0<?php echo $count; ?>.</li>
-                                <?php 
-                                    }
-                                    $count++;;
-                                } ?>
+                                $count = 1;
+                                foreach($play as $list) { ?>
+                                    <li class="home_slider_custom_dot">0<?php echo $count; ?>.</li>
+                                    
+                                <?php $count++;} ?>
                             </ul>
                         </div>
                     </div>
@@ -83,7 +76,7 @@ if($this->session->userdata("id_user") == "") {
                     <!-- Product -->
                     <?php foreach($story as $list) { ?>
                     <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/story/<?php echo $list->foto_playlist ?>" alt=""></div>
+                        <div class="product_image" style = "height:300px; overflow:hidden;"><img src="<?php echo base_url();?>assets/recording/<?php echo $list->foto_playlist ?>" alt=""></div>
                         <div class="product_content">
                             <div class="product_title"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->nama_playlist ?></a></div>
                             <div class="product_price"><?php echo $list->description_playlist ?></div>
@@ -109,12 +102,13 @@ if($this->session->userdata("id_user") == "") {
                     <!-- Product -->
                     <?php foreach($story as $list) { ?>
                     <div class="product">
-                        <div class="product_image"><img src="<?php echo base_url();?>assets/images/story/<?php echo $list->foto_playlist ?>" alt=""></div>
+                        <div class="product_image" style = "height:300px; overflow:hidden;"><img src="<?php echo base_url();?>assets/recording/<?php echo $list->foto_playlist ?>" alt=""></div>
                         <div class="product_content">
                             <div class="product_title"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->nama_playlist ?></a></div>
                             <div class="product_price"><?php echo $list->description_playlist ?></div>
                         </div>
                     </div>
+                    
                     <?php } ?>
 
                 </div>
@@ -127,7 +121,6 @@ if($this->session->userdata("id_user") == "") {
     <div class="container">
         <div class="row">
             <div class="col">
-                
                 <h5 style = "font-weight: lighter">Latest</h5><h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">Stories Episodes<a href = "<?php echo base_url();?>lounge/stories"><span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span></a></h3>
                 <hr/>
                 <div class="product_grid">
@@ -141,16 +134,19 @@ if($this->session->userdata("id_user") == "") {
                             break;
                         }
                     ?>
-                    <div class="product">
-                        <div class="product_image" style = "height:300px"><img class = "align-middle" src="<?php echo base_url();?>assets/images/recording/<?php echo $list->foto_recording ?>" alt=""></div>
+                    <div class="product col-lg-3">
+                        <div class="product_image" style = "height:300px; overflow:hidden;">
+                            <img class = "align-middle" src="<?php echo base_url();?>assets/recording/<?php echo $list->foto_recording; ?>" alt="">
+                        </div>
+                        
                         <div class="product_content">
-                            <div class="product_title"><a href="<?php echo base_url();?>stories/listen/<?php echo $list->id_recording ?>"><?php echo $list->judul_recording ?></a></div>
+                            <div class="product_title"><a href="<?php echo base_url();?>lounge/stories/listen/<?php echo $list->id_recording ?>"><?php echo $list->judul_recording ?></a></div>
                             <div class="product_price"><?php echo $list->description_recording ?></div>
                         </div>
                     </div>
                     <?php 
                         $counter++;
-                                               } ?>
+                    } ?>
 
                 </div>
                     

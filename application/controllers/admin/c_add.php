@@ -129,6 +129,7 @@ class C_add extends CI_Controller {
             $this->load->library('upload', $config);
             if ($this->upload->do_upload('pic1')) {
                 $imagefile = $this->upload->data('file_name');
+                
             }
             else{
                 echo $this->upload->display_errors();
@@ -136,6 +137,12 @@ class C_add extends CI_Controller {
 
             if ($this->upload->do_upload('file')) {
                 $recordfile = $this->upload->data('file_name');
+                $params = array(
+                    "filename" => base_url()."assets/recording/".$recordfile
+                );
+                $this->load->library("mp3",$params);
+                $duration2 = $this->mp3->getDuration();
+                $getDuration = $this->mp3->formatTime($duration2);
             }
             else{
                 echo $this->upload->display_errors();
@@ -242,27 +249,44 @@ class C_add extends CI_Controller {
     
     function recplay()
     {
-        $getID = $this->input->post('id');
         $getIDR = $this->input->post('idr');
         $getIDP = $this->input->post('idp');
         $date = date("Y-m-d");
         
-        if($getID == "" || $getIDR == "" || $getIDP == "") {
+        if($getIDR == "" || $getIDP == "") {
+            $where = array(
+                "recording" => array(
+                    "recording.status_recording" => 1
+                ),
+                "playlist" => array(
+                    "playlist.status_playlist" => 1
+                )
+            );
+            $data = array(
+                "recording" => $this->M_recording->select($where["recording"]),
+                "playlist" => $this->M_playlist->selectData($where["playlist"]),
+            );
             $this->req();
             $this->load->view('admin/req/sidebar');
             $this->load->view('admin/req/right-panel-open');
-            $this->load->view('admin/view_addRecPlay');
+            $this->load->view('admin/view_addRecPlay',$data);
             $this->load->view('admin/req/right-panel-close');
             $this->close();
         }
         else {
+            $where = array(
+                "id_recording" => $getIDR,
+                "status_playlist" => 1,
+            );
+            $max = $this->M_playlist->getMaxChapter($where);
             $data = array(
                 "id_recording_playlist" => 0,
-                "id_user" => $getID,
+                "id_user" => $this->session->id,
                 "id_recording" => $getIDR,
                 "id_playlist" => $getIDP,
                 "status_playlist" => 1,
-                "tgl_submit_playlist" => $date
+                "tgl_submit_playlist" => $date,
+                "chapter_playlist" => $max
             );
 
             $this->M_crud->insertData($data, 'recording_playlist');

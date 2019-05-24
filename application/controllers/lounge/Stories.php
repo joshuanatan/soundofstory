@@ -2,9 +2,11 @@
 class Stories extends CI_Controller{
     public function __construct(){
         parent::__construct();
-        $this->load->model(array('m_crud', 'm_playlist', 'm_recording'));
+        $this->load->model(array('M_crud', 'M_playlist', 'M_recording','M_history'));
     }
     public function index(){
+        
+
         $this->load->view("req/head-open");
         $this->load->view("req/styles/cart-css");
         $this->load->view("req/head-close");
@@ -19,8 +21,9 @@ class Stories extends CI_Controller{
             'id_playlist' => $id,
             'status_playlist' => 1
         );
-        $data['story'] = $this->m_playlist->selectData($where)->result();
-        $data['episode'] = $this->m_recording->selectByPlaylist($where)->result();
+        $data['story'] = $this->M_playlist->selectData($where)->result();
+        $data['episode'] = $this->M_recording->selectByPlaylist($where)->result();
+        $data['totalDuration'] = $this->M_recording->totalDuration($where);
         $this->load->view("req/head-open");
         $this->load->view("req/styles/product-css");
         $this->load->view("req/head-close");
@@ -31,16 +34,27 @@ class Stories extends CI_Controller{
         $this->load->view("req/close");
     }
     public function listen($id){
+        $data = array(
+            "id_user" => $this->session->id_user,
+            "id_recording" =>  $id
+        );
+        $this->M_history->insert($data);
         $where = array(
             'recording.id_recording' => $id,
             'recording.status_recording' => 1
         );
-        $data['episode'] = $this->m_recording->selectAll($where)->result();
+        $data['episode'] = $this->M_recording->selectAll($where)->result();
         $where2 = array(
             'comment.id_recording' => $id,
             'comment.status_comment' => 1
         );
-        $data['comment'] = $this->m_recording->selectComment($where2)->result();
+        $data['comment'] = $this->M_recording->selectComment($where2)->result();
+        $where = array(
+            'recording_playlist.id_recording' => $id,
+            'recording.status_recording' => 1,
+            'recording_playlist.status_playlist' => 1
+        );
+        $data['episodes'] = $this->M_recording->selectEpisodes($where)->result();
         $this->load->view("req/head-open");
         $this->load->view("req/styles/product-css");
         $this->load->view("req/head-close");
@@ -72,9 +86,9 @@ class Stories extends CI_Controller{
             "comment.id_recording" => $getIDR,
             "tgl_submit_comment" => $date
         );
-        $this->m_crud->insertData($data, 'comment');
+        $this->M_crud->insertData($data, 'comment');
         
-        $rep = $this->m_recording->selectComment($where)->result();
+        $rep = $this->M_recording->selectComment($where)->result();
         foreach($rep as $list) {
             $idcomment = $list->id_comment;
         }
@@ -85,7 +99,7 @@ class Stories extends CI_Controller{
             "tgl_submit_report" => $date,
             "status_report" => 1
         );
-        $this->m_crud->insertData($data2, 'report');
+        $this->M_crud->insertData($data2, 'report');
         redirect('lounge/Stories/listen/'.$id);
     }
     
