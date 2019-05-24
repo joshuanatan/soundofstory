@@ -32,6 +32,8 @@ if($this->session->userdata("id_user") == "") {
                     <div class="details_name">GENRE<p><?php echo $list->nama_category ?></p></div>
                     <br/>
                     <div class="details_name">TOTAL DURATION<p><?php echo $totalDuration ?></p></div>
+                    <br/>
+                    <div class="details_name">PLAYS<p><?php echo $totalPlayed ?></p></div>
                     <div class="details_share">
                     </div>
                 </div>

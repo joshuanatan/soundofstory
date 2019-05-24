@@ -2,14 +2,13 @@
 class Chatroom extends CI_Controller{
     public function __construct(){
         parent::__construct();
-        $this->load->model(array('m_crud', 'm_message'));
+        $this->load->model(array('M_crud', 'M_message'));
     }
     public function index(){
         $where = array(
-            'id_user_dari' => $this->session->userdata("id_user"),
             'status_message' => 1
         );
-        $data['message'] = $this->m_message->selectData($where)->result();
+        $data['message'] = $this->M_message->selectData($where)->result();
         $this->load->view("req/head-open");
         $this->load->view("req/styles/cart-css");
         $this->load->view("req/styles/message-css.php");
@@ -31,7 +30,7 @@ class Chatroom extends CI_Controller{
         $where2 = array(
             'id_user_dari' => $id_user
         );
-        $data = $this->m_message->selectChat($where, $where2)->result();
+        $data = $this->M_message->selectChat($where, $where2)->result();
         $html = "";
         foreach($data as $list) {
             if($id_user == $list->id_user_dari) {
@@ -40,7 +39,7 @@ class Chatroom extends CI_Controller{
                         <div class="sunil-received_msg">
                             <div class="sunil-received_withd_msg">
                                     <p>'.$list->konten.'</p>
-                                <span class="sunil-time_date"> '.$list->jam_submit_message.'    |    '.$list->tgl_submit_message.'</span>
+                                <span class="sunil-time_date"> '.$list->jaM_submit_message.'    |    '.$list->tgl_submit_message.'</span>
                             </div>
                         </div>
                     </div>';
@@ -49,7 +48,7 @@ class Chatroom extends CI_Controller{
                 $html .= '<div class="sunil-outgoing_msg">
                         <div class="sunil-sent_msg">
                             <p>'.$list->konten.'</p>
-                            <span class="sunil-time_date"> '.$list->jam_submit_message.'    |    '.$list->tgl_submit_message.'</span>
+                            <span class="sunil-time_date"> '.$list->jaM_submit_message.'    |    '.$list->tgl_submit_message.'</span>
                         </div>
                     </div>';
             }
@@ -66,13 +65,12 @@ class Chatroom extends CI_Controller{
         $data = array(
             'id_message' => 0,
             'konten' => $isi,
-            'id_user_dari' => $this->session->userdata("id"),
-            'id_user_tujuan' => $this->session->userdata("tujuan"),
+            'id_user_dari' => $this->session->id_user,
             'status_message' => 1,
             'tgl_submit_message' => $date,
-            'jam_submit_message' => $time
+            'jaM_submit_message' => $time
         );
-        $this->m_crud->insertData($data, 'message');
+        $this->M_crud->insertData($data, 'message');
         $html = '<div class="sunil-outgoing_msg">
                         <div class="sunil-sent_msg">
                             <p>'.$isi.'</p>

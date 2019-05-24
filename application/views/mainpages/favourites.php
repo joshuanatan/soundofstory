@@ -25,13 +25,13 @@ if($this->session->userdata("id_user") == "") {
         </div>
         <br/><br/>
         <div class = "row">
-            <table class = "table table-stripped">
+            <table class = "table table-stripped" >
                 <thead>
                     <tr>
-                        <th style = "width:45%">Episodes</th>
-                        <th style = "width:15%">Duration</th>
+                        <th style = "width:40%">Story</th>
                         <th style = "width:20%">Genre</th>
-                        <th style = "width:20%">Story</th>
+                        <th style = "width:20%">Time Spent</th>
+                        <th style = "width:20%">Replays</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,19 +39,19 @@ if($this->session->userdata("id_user") == "") {
                     <tr>
                         <td>
                             <div class="cart_item_product d-flex flex-row align-items-center justify-content-start " style = "width:100%">
-                                <div class="cart_item_image">
-                                    <div><img src="<?php echo base_url();?>assets/recording/<?php echo $list->foto_recording ?>" alt=""></div>
+                                <div class="cart_item_image col-lg-3">
+                                    <img style = "width:100%" src="<?php echo base_url();?>assets/recording/<?php echo $list->foto_recording ?>" alt="">
                                 </div>
-                                <div class="cart_item_name_container">
+                                <div class="cart_item_name_container col-lg-9">
                                     <div class="cart_item_name"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->judul_recording ?></a></div>
                                     <div class="cart_item_edit"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>">Chapter <?php echo $list->chapter_playlist ?></a></div><br/>
                                     <div class="cart_item_edit"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->description_recording ?></a></div>
                                 </div>
                             </div>
                         </td>
-                        <Td class = "align-middle"><h4><?php echo $list->duration_recording;?></h4></Td>
-                        <Td class = "align-middle"><h4><?php echo $list->nama_category;?></h4></Td>
-                        <Td class = "align-middle"><h4><strong><?php echo $list->nama_playlist ?></strong></h4></Td>
+                        <Td class = "align-middle"><h4><strong><?php echo $list->nama_category ?></strong></h4></Td>
+                        <Td class = "align-middle"><h4><strong><?php echo $list->total_durasi ?></strong></h4></Td>
+                        <Td class = "align-middle"><h4><?php echo $list->countAudience;?> Times</h4></Td>
                     </tr>
                     <?php } ?>
                 </tbody>

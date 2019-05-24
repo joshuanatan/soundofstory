@@ -29,14 +29,16 @@ foreach($episode as $list) { ?>
             <!-- Product Content -->
             <div class="col-lg-12">
                 <div class="details_content">
-                    <div class="details_name">Chapter <?php echo $list->chapter_playlist ?></div>
+                    <div class="details_name">Chapter <?php echo $list->chapter_playlist;?> - <?php echo $list->judul_recording;?></div>
                     <div class="details_text">
-                        <p><?php echo $list->description_recording ?></p>
+                        <h3><?php echo $list->description_recording ?></h3>
                     </div>
                     <!-- In Stock -->
                     <div class="in_stock_container">
                         <div class="availability">Duration:</div>
-                        <span><?php echo $list->duration_recording.' minutes' ?></span>
+                        <span style = "font-size:20px;color:black"><?php echo $list->duration_recording.' minutes' ?></span><br/><br/>
+                        <div class="availability">Seen:</div>
+                        <span style = "font-size:20px;color:black"><?php echo $audience.' Times' ?></span>
                     </div>
                     
 
@@ -101,7 +103,7 @@ foreach($episode as $list) { ?>
                         </div>
                         <div class="product_content">
                             <div class="product_title">
-                                <a href="<?php echo base_url();?>stories/listen/<?php echo $a->id_recording;?>"><?php echo $a->judul_recording;?></a>
+                                <a href="<?php echo base_url();?>lounge/stories/listen/<?php echo $a->id_recording;?>"><?php echo $a->judul_recording;?></a>
                             </div>
                             <div class="product_price">Chapter <?php echo $a->chapter_playlist;?></div>
                         </div>

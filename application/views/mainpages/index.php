@@ -69,12 +69,12 @@ if($this->session->userdata("id_user") == "") {
         <div class="row">
             <div class="col">
                 
-                <h5 style = "font-weight: lighter">Most Favourite</h5><h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">Stories<a href = "<?php echo base_url();?>lounge/stories"><span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span></a></h3>
+                <h5 style = "font-weight: lighter">Most Favourite</h5><h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">Stories<a href = "<?php echo base_url();?>lounge/explore"><span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span></a></h3>
                 <hr/>
                 <div class="product_grid">
 
                     <!-- Product -->
-                    <?php foreach($story as $list) { ?>
+                    <?php foreach($favourite as $list) { ?>
                     <div class="product">
                         <div class="product_image" style = "height:300px; overflow:hidden;"><img src="<?php echo base_url();?>assets/recording/<?php echo $list->foto_playlist ?>" alt=""></div>
                         <div class="product_content">
@@ -95,7 +95,7 @@ if($this->session->userdata("id_user") == "") {
         <div class="row">
             <div class="col">
                 
-                <h5 style = "font-weight: lighter">New Release & This Week's Choice</h5><h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">Stories<a href = "<?php echo base_url();?>lounge/stories"><span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span></a></h3>
+                <h5 style = "font-weight: lighter">New Release & This Week's Choice</h5><h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">Stories<a href = "<?php echo base_url();?>lounge/explore"><span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span></a></h3>
                 <hr/>
                 <div class="product_grid">
 
@@ -121,7 +121,7 @@ if($this->session->userdata("id_user") == "") {
     <div class="container">
         <div class="row">
             <div class="col">
-                <h5 style = "font-weight: lighter">Latest</h5><h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">Stories Episodes<a href = "<?php echo base_url();?>lounge/stories"><span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span></a></h3>
+                <h5 style = "font-weight: lighter">Latest</h5><h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">Stories Episodes<a href = "<?php echo base_url();?>lounge/explore"><span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span></a></h3>
                 <hr/>
                 <div class="product_grid">
 

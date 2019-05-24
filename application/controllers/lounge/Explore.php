@@ -2,13 +2,13 @@
 class Explore extends CI_Controller{
     public function __construct(){
         parent::__construct();
-        $this->load->model(array('m_crud', 'm_recording'));
+        $this->load->model(array('M_crud', 'M_recording'));
     }
     public function index(){
         $where = array(
             'status_recording' => 1
         );
-        $data['episode'] = $this->m_recording->selectAll($where)->result();
+        $data['episode'] = $this->M_recording->search($where)->result();
         $this->load->view("req/head-open");
         $this->load->view("req/styles/cart-css");
         $this->load->view("req/head-close");
@@ -26,7 +26,7 @@ class Explore extends CI_Controller{
             $where = array(
                 'judul_recording' => $getKey
             );
-            $data['episode'] = $this->m_recording->search($where)->result();
+            $data['episode'] = $this->M_recording->search($where)->result();
             $this->load->view("req/head-open");
             $this->load->view("req/styles/cart-css");
             $this->load->view("req/head-close");
@@ -40,7 +40,7 @@ class Explore extends CI_Controller{
             $where = array(
                 'nama_playlist' => $getKey
             );
-            $data['episode'] = $this->m_recording->search($where)->result();
+            $data['episode'] = $this->M_recording->search($where)->result();
             $this->load->view("req/head-open");
             $this->load->view("req/styles/cart-css");
             $this->load->view("req/head-close");
@@ -54,7 +54,7 @@ class Explore extends CI_Controller{
             $where = array(
                 'nama_category' => $getKey
             );
-            $data['episode'] = $this->m_recording->search($where)->result();
+            $data['episode'] = $this->M_recording->search($where)->result();
             $this->load->view("req/head-open");
             $this->load->view("req/styles/cart-css");
             $this->load->view("req/head-close");

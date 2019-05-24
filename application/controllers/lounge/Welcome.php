@@ -2,7 +2,7 @@
 class Welcome extends CI_Controller{
     public function __construct(){
         parent::__construct();
-        $this->load->model(array('m_crud', 'm_recording', 'm_playlist', 'm_rating', 'm_report', 'm_like', 'm_message', 'm_connection', 'm_comment'));
+        $this->load->model(array('M_crud', 'M_recording', 'M_playlist', 'M_rating', 'M_report', 'M_like', 'M_message','M_history', 'M_connection', 'M_comment'));
     }
     public function req(){
         $this->load->view("req/head-open");
@@ -17,9 +17,15 @@ class Welcome extends CI_Controller{
         $where2 = array(
             'status_playlist' => 1
         );
-        $data['episode'] = $this->m_recording->selectLast($where)->result();
-        $data['play'] = $this->m_recording->selectLast2($where2)->result();
-        $data['story'] = $this->m_crud->selectData('status_playlist', 'playlist')->result();
+        $where3 = array(
+            'recording.status_recording' => 1,
+            'recording_playlist.status_playlist' => 1,
+            'playlist.status_playlist' => 1
+        );
+        $data['episode'] = $this->M_recording->selectLast($where)->result();
+        $data['play'] = $this->M_recording->selectLast2($where2)->result();
+        $data['story'] = $this->M_playlist->selectLastToNow($where2)->result();
+        $data['favourite'] = $this->M_history->orderByHistory($where3)->result();
         $this->req();
         $this->load->view("mainpages/index", $data);
         $this->close();

@@ -18,5 +18,9 @@ class M_playlist extends CI_Model {
             else return $a->chapter+1;
         }
     }
+    function selectLastToNow($where){
+        $this->db->order_by("tgl_submit_playlist",'DESC');
+        return $this->db->get_where("playlist",$where);
+    }
 }
 ?>

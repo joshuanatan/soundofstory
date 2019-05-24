@@ -16,7 +16,7 @@
                                     <a href="#" style = "font-size:14px">Stories</a>
                                     <ul style = "width:200px">
                                         <li><a href="<?php echo base_url();?>lounge/history" style = "font-size:14px">Episode's Journey</a></li>
-                                        <li><a href="#" style = "font-size:14px">Favourites</a></li>
+                                        <li><a href="<?php echo base_url();?>lounge/favourites" style = "font-size:14px">Favourites</a></li>
                                     </ul>
                                 </li>
                                 <li>

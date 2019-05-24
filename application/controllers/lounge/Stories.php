@@ -24,6 +24,11 @@ class Stories extends CI_Controller{
         $data['story'] = $this->M_playlist->selectData($where)->result();
         $data['episode'] = $this->M_recording->selectByPlaylist($where)->result();
         $data['totalDuration'] = $this->M_recording->totalDuration($where);
+        $where = array(
+            'id_playlist' => $id,
+            'status_playlist' => 1
+        );
+        $data['totalPlayed'] = $this->M_history->countHistory($where);
         $this->load->view("req/head-open");
         $this->load->view("req/styles/product-css");
         $this->load->view("req/head-close");
@@ -55,6 +60,10 @@ class Stories extends CI_Controller{
             'recording_playlist.status_playlist' => 1
         );
         $data['episodes'] = $this->M_recording->selectEpisodes($where)->result();
+        $where = array(
+            "history_recording.id_recording" => $id
+        );
+        $data['audience'] = $this->M_history->countHistory($where);
         $this->load->view("req/head-open");
         $this->load->view("req/styles/product-css");
         $this->load->view("req/head-close");
