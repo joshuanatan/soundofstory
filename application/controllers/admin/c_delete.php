@@ -29,7 +29,7 @@ class C_delete extends CI_Controller {
         );
         
         $this->M_crud->update_data($where, $data, 'user');
-        redirect('admin/welcome/index');
+        redirect('admin/welcome/user');
     }
     
     function cate($id)

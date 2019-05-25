@@ -14,6 +14,7 @@ class M_crud extends CI_Model {
     
     function insertData($data, $where) {
         $this->db->insert($where, $data);
+        return $this->db->insert_id();
     }
     
     function edit($where, $table)

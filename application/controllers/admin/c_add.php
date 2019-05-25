@@ -36,18 +36,24 @@ class C_add extends CI_Controller {
         $getJk = $this->input->post('jk');
         $getEmail = $this->input->post('email');
         $getPhone = $this->input->post('phone');
-        $getAdd = $this->input->post('address');
-        $getDesc = $this->input->post('desc');
+        $getAdd = "-";
+        $getDesc = "-";
         $date = date("Y-m-d");
 
-        $config['upload_path'] = base_url()."assets/profiles/images/";
+        $config['upload_path'] = "./assets/profiles/images/";
         $config['allowed_types'] = 'gif|jpg|png'; 
         $config['max_size'] = 0;
         $config['max_width'] = 2048;
         $config['max_height'] = 2048;
         $this->load->library('upload', $config);
         if ($this->upload->do_upload('pic1')) {
-            $datafile = array('upload_data' => $this->upload->data());
+            $datafiles = $this->upload->data();
+            echo "pass".$getPass;
+            $datafile = $datafiles['file_name'];
+        }
+        else{
+            echo $this->upload->display_errors();
+            $datafile = "default.jpg";
         }
         $data = array(
             "id_user" => "",
@@ -56,21 +62,22 @@ class C_add extends CI_Controller {
             "gender_user" => $getJk,
             "email_user" => $getEmail,
             "nohp_user" => $getPhone,
-            "foto_profile_user" => $photo,
+            "foto_profile_user" => $datafile,
             "status_user" => 1,
             "tgl_submit_user" => $date
         );
         
+        
+        $id_user = $this->M_crud->insertData($data, 'user');
+        
         $data2 = array(
-            "id_user" => "",
+            "id_user" => $id_user,
             "alamat_user" => $getAdd,
             "description_user" => $getDesc
         );
-        
-        $this->M_crud->insertData($data, 'user');
         $this->M_crud->insertData($data2, 'profile');
         
-        redirect('admin/welcome/user');
+        //redirect('admin/welcome/user');
     }
     
     function cate()

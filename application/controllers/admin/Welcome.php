@@ -36,7 +36,8 @@ class Welcome extends CI_Controller {
         $getPass = $this->input->post('pass');
         $where = array(
             'email_user' => $getEmail,
-            'password_user' => md5($getPass)
+            'password_user' => md5($getPass),
+            'status_user' => 1
         );
         $data = $this->M_crud->edit($where, 'user')->result();
         $num = $this->M_crud->edit($where, 'user')->num_rows();

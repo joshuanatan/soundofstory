@@ -41,7 +41,25 @@ class C_edit extends CI_Controller {
         $this->load->view('admin/req/right-panel-close');
         $this->close();
     }
-    
+    function password(){
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_editPass');
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
+    }
+    function updatePassword(){
+        $where = array(
+            "id_user" => $this->session->id,
+        );
+        $data = array(
+            "password_user" => md5($this->input->post("password"))
+        );
+        echo $this->input->post("password");
+        $this->M_crud->update_data($where,$data,"user");
+        redirect("admin/welcome/user");
+    }
     function updateUser()
     {
         $getID = $this->input->post("id");

@@ -33,6 +33,7 @@
                         <span>Recording Playlist</span>
                         </a>
                     </li>
+                    <!--
                     <li>
                         <a href="<?php echo base_url().'admin/welcome/History'; ?>">
                             <i class="menu-icon fa fa-road"></i>
@@ -45,13 +46,15 @@
                             <span>User Recording</span>
                         </a>
                     </li>
-                    
+                    -->
                     <li>
-                        <a href="<?php echo base_url().'admin/welcome/Msg'; ?>">
+                        <!--<a href="<?php echo base_url().'admin/welcome/Msg'; ?>">-->
+                        <a href="#">
                             <i class="menu-icon ti-email"></i>
                             <span>Message</span>
                         </a>
                     </li>
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

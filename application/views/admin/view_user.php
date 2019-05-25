@@ -65,7 +65,7 @@
                                         <td><?php echo $jk ?></td>
                                         <td><?php echo $listUser->email_user ?></td>
                                         <td><?php echo $listUser->nohp_user ?></td>
-                                        <td><img src='<?php echo base_url().'assets/profiles/images/'.$listUser->quantity_item; ?>'></td>
+                                        <td><img style = "height:40%" src='<?php echo base_url().'assets/profiles/images/'.$listUser->foto_profile_user; ?>'></td>
                                         <td><?php echo "Active" ?></td>
                                         <td><?php echo $listUser->tgl_submit_user ?></td>
                                         <td>
