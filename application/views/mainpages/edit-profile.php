@@ -22,15 +22,15 @@ foreach($profile as $list) { ?>
 </div>
 <!-- Contact -->
 <div class="container emp-profile">
-    <form method="post">
+    <form action="<?php echo base_url().'lounge/Profile/save/' ?>" method="post">
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-img">
-                    <form method="post" enctype="multipart/form-data">
+                    <!-- FORM DALAM FORM<form method="post" enctype="multipart/form-data">-->
                         <img src="<?php echo base_url()."assets/profiles/images/".$list->foto_profile_user ?>" alt=""/>
                     
                         <input type="file" name="file" class="file btn btn-lg btn-primary">
-                    </form>
+                    <!--</form>-->
                     <!--<div class="file btn btn-lg btn-primary">
                         Change Photo
                     </div>-->
@@ -43,7 +43,7 @@ foreach($profile as $list) { ?>
                             </h3>
                             <h5>
                                 <?php echo $list->description_user ?>
-                            </h3>
+                            </h5>
                             <h6>
                                 <?php
                                 $bod = $list->tgl_lahir_user;
@@ -60,7 +60,7 @@ foreach($profile as $list) { ?>
                 </div>
             </div>
             <div class="col-md-2">
-                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Save Profile"/>
             </div>
         </div>
         <div class="row">
@@ -76,7 +76,7 @@ foreach($profile as $list) { ?>
                             </div>
                             <div class="col-md-6">
                                 <!--<p>ID USER = <?php echo $list->id_user ?>(kita belom ada username)</p>-->
-                                <input type="hidden" name="id" value="<?php echo $list->id_user ?>">
+                                <input type="hidden" name="id" value="<?php echo $list->id_user ?>" required>
                             </div>
                         </div>
                         <div class="row">
@@ -84,7 +84,7 @@ foreach($profile as $list) { ?>
                                 <label>Name</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" name="nama" value="<?php echo $list->nama_user ?>">
+                                <input type="text" name="nama" value="<?php echo $list->nama_user ?>" required>
                             </div>
                         </div>
                         <div class="row">
@@ -92,7 +92,7 @@ foreach($profile as $list) { ?>
                                 <label>Email</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" name="email" value="<?php echo $list->email_user ?>">
+                                <input type="text" name="email" value="<?php echo $list->email_user ?>" required>
                             </div>
                         </div>
                         <div class="row">
@@ -100,7 +100,7 @@ foreach($profile as $list) { ?>
                                 <label>Phone</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" name="phone" value="<?php echo $list->nohp_user ?>">
+                                <input type="text" name="phone" value="<?php echo $list->nohp_user ?>" required>
                             </div>
                         </div>
                         <div class="row">
@@ -108,9 +108,10 @@ foreach($profile as $list) { ?>
                                 <label>Profession</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" name="prof" value="<?php echo $list->profesi_user ?>">
+                                <input type="text" name="prof" value="<?php echo $list->profesi_user ?>" required>
                             </div>
                         </div>
+                        <!--<input type="submit" class="profile-edit-btn" name="btnAddMore" value="Save Profile"/>-->
                     </div>
                 </div>
             </div>

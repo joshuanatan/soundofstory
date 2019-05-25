@@ -22,7 +22,7 @@ foreach($profile as $list) { ?>
 </div>
 <!-- Contact -->
 <div class="container emp-profile">
-    <form method="post">
+    <form action="<?php echo base_url().'lounge/Profile/edit/' ?>" method="post">
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-img">
@@ -43,7 +43,7 @@ foreach($profile as $list) { ?>
                             </h3>
                             <h5>
                                 <?php echo $list->description_user ?>
-                            </h3>
+                            </h5>
                             <h6>
                                 <?php
                                 $bod = $list->tgl_lahir_user;
@@ -75,8 +75,8 @@ foreach($profile as $list) { ?>
                             <div class="col-md-6">
                             </div>
                             <div class="col-md-6">
-                                <!--<p>ID USER = <?php echo $list->id_user ?>(kita belom ada username)</p>-->
-                                <input type="hidden" name="id" value="<?php echo $list->id_user ?>">
+                                <p>ID USER = <?php echo $list->id_user ?>(kita belom ada username)</p>
+                                <input type="text" name="id" value="<?php echo $list->id_user ?>" hidden>
                             </div>
                         </div>
                         <div class="row">
@@ -84,7 +84,7 @@ foreach($profile as $list) { ?>
                                 <label>Name</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" name="nama" value="<?php echo $list->nama_user ?>">
+                                <p><?php echo $list->nama_user ?></p>
                             </div>
                         </div>
                         <div class="row">
@@ -92,7 +92,7 @@ foreach($profile as $list) { ?>
                                 <label>Email</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" name="email" value="<?php echo $list->email_user ?>">
+                                <p><?php echo $list->email_user ?></p>
                             </div>
                         </div>
                         <div class="row">
@@ -100,7 +100,7 @@ foreach($profile as $list) { ?>
                                 <label>Phone</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" name="phone" value="<?php echo $list->nohp_user ?>">
+                                <p><?php echo $list->nohp_user ?></p>
                             </div>
                         </div>
                         <div class="row">
@@ -108,7 +108,7 @@ foreach($profile as $list) { ?>
                                 <label>Profession</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" name="prof" value="<?php echo $list->profesi_user ?>">
+                                <p><?php echo $list->profesi_user ?></p>
                             </div>
                         </div>
                     </div>
