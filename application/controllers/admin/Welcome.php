@@ -37,6 +37,7 @@ class Welcome extends CI_Controller {
         $where = array(
             'email_user' => $getEmail,
             'password_user' => md5($getPass),
+            'role' => 1,
             'status_user' => 1
         );
         $data = $this->M_crud->edit($where, 'user')->result();
