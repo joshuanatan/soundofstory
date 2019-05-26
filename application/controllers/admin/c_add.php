@@ -80,6 +80,18 @@ class C_add extends CI_Controller {
         //redirect('admin/welcome/user');
     }
     
+    function premium($id) {
+        $where = array(
+            'id_user' => $id
+        );
+        $data = array(
+            'premium' => 1
+        );
+        
+        $this->m_crud->update_data($where, $data, 'user');
+        redirect('admin/welcome');
+    }
+    
     function cate()
     {
         $id = 0;

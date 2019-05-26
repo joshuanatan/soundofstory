@@ -69,7 +69,22 @@
                                         <td><?php echo "Active" ?></td>
                                         <td><?php echo $listUser->tgl_submit_user ?></td>
                                         <td>
-                                            <a href="<?php echo base_url().'admin/c_edit/editUser/'.$listUser->id_user ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a><a href="<?php echo base_url().'admin/c_delete/user/'.$listUser->id_user ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
+                                            <a href="<?php echo base_url().'admin/c_add/premium/'.$listUser->id_user ?>">
+                                                <button class="btn btn-primary btn-outline">
+                                                    Premium
+                                                </button>
+                                            </a>
+                                            <a href="<?php echo base_url().'admin/c_edit/editUser/'.$listUser->id_user ?>">
+                                                <button class="btn btn-primary btn-outline">
+                                                    <i class = "fa fa-edit"></i>
+                                                </button>
+                                            </a>
+                                            <a href="<?php echo base_url().'admin/c_delete/user/'.$listUser->id_user ?>">
+                                                <button class="btn btn-danger btn-outline">
+                                                    <i class = "fa fa-trash"></i>
+                                                </button>
+                                            </a>
+                                        </td>
                                     </tr>
                                     <?php } ?>
                             </tbody>
