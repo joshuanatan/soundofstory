@@ -16,6 +16,7 @@ class Favourites extends CI_Controller{
         $this->load->view("req/styles/product-css");
         $this->load->view("req/head-close");
         $this->load->view("req/menu");
+        $this->load->view("req/audio");
         /*--------------------------------------*/
         $this->load->view("mainpages/favourites", $data);
         /*--------------------------------------*/

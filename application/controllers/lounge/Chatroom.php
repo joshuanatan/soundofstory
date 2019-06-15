@@ -14,6 +14,7 @@ class Chatroom extends CI_Controller{
         $this->load->view("req/styles/message-css.php");
         $this->load->view("req/head-close");
         $this->load->view("req/menu");
+        $this->load->view("req/audio");
         /*--------------------------------------*/
         $this->load->view("mainpages/message", $data);
         /*--------------------------------------*/

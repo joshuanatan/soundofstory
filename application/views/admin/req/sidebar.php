@@ -54,7 +54,18 @@
                             <span>Message</span>
                         </a>
                     </li>
-
+                    <li>
+                    <a href="<?php echo base_url().'admin/welcome/RecPlay'; ?>">
+                        <i class="menu-icon ti-email"></i>
+                        <span>FAQ</span>
+                        </a>
+                    </li>
+                    <li>
+                    <a href="<?php echo base_url().'admin/welcome/RecPlay'; ?>">
+                        <i class="menu-icon ti-email"></i>
+                        <span>Contact Us</span>
+                        </a>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

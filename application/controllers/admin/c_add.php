@@ -473,4 +473,31 @@ class C_add extends CI_Controller {
             redirect('admin/welcome/comm');
         }
     }
+    
+    function faq()
+    {
+        $getQuestion = $this->input->post('question');
+        $getAnswer = $this->input->post('answer');
+        $date = date("Y-m-d");
+        
+        if($getQuestion == "" || $getAnswer == "") {
+            $this->req();
+            $this->load->view('admin/req/sidebar');
+            $this->load->view('admin/req/right-panel-open');
+            $this->load->view('admin/view_addFaq');
+            $this->load->view('admin/req/right-panel-close');
+            $this->close();
+        }
+        else {
+            $data = array(
+                "id_faq" => 0,
+                "question_faq" => $getQuestion,
+                "answer_faq" => $getAnswer,
+                "status_faq" => 1
+            );
+
+            $this->M_crud->insertData($data, 'faq');
+            redirect('admin/welcome/faq');
+        }
+    }
 }
