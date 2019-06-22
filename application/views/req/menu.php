@@ -20,7 +20,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#" style = "font-size:14px">Buddy</a>
+                                    <a href="<?php echo base_url();?>lounge/buddy" style = "font-size:14px">Buddy</a>
                                 </li>
                                 <li class="hassubs">
                                     <a href="#" style = "font-size:14px"><?php echo $this->session->nama_user;?></a>
@@ -51,7 +51,7 @@
 </header>
 
 <!-- Menu -->
-
+<!--
 <div class="menu menu_mm trans_300">
     <div class="menu_container menu_mm">
         <div class="page_menu_content">
@@ -89,3 +89,4 @@
     <div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
 
 </div>
+-->
