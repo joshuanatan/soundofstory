@@ -9,6 +9,7 @@ class Welcome extends CI_Controller{
         $this->load->view("req/styles/main-css");
         $this->load->view("req/head-close");
         $this->load->view("req/menu");
+        $this->load->view("req/audio");
     }
     public function index(){
         $where = array(
@@ -33,7 +34,4 @@ class Welcome extends CI_Controller{
     public function close(){
         $this->load->view("req/close");
     }
-    
-    
-    
 }

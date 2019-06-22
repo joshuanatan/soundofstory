@@ -1915,9 +1915,22 @@ nav {
         right: 0;
         top: 47px;
         text-align: right;
+        padding: 30px 0;
+        z-index: 5;
+        background: #5ce1e6;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        margin-right: 0;
+        position: absolute;
+        right: -20px;
+        top: 47px;
+        text-align: right;
         padding: 20px 0;
         z-index: 5;
-        background: #5ce1e6
+        background: #5ce1e6;
     }
 }
 
@@ -1950,8 +1963,9 @@ body {
 
 .oz-body-wrap {
     box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
-    margin: 50px;
-    position: relative
+    margin: 25px 30px 0px 30px;
+    position: relative;
+    overflow: hidden;
 }
 
 @media (max-width: 767px) {
@@ -1966,8 +1980,9 @@ body {
     }
 }
 
+
 .section-gap {
-    padding: 100px 0
+    padding: 50px 0
 }
 
 .section-title {
@@ -2053,7 +2068,8 @@ body {
 }
 
 .banner-area {
-    background: #fff
+    background: #fff;
+    height: 380px;
 }
 
 @media (max-width: 767px) {
@@ -2221,8 +2237,22 @@ body {
 }
 
 .feature-area {
-    background: url(../img/video-bg.jpg) no-repeat center center/cover
+    /*background: url(../img/video-bg.jpg) no-repeat center center/cover*/
+    margin-top: -180px;
 }
+
+@media (max-width: 600px) {
+    .feature-area {
+        margin-top: 0px;
+        
+    }
+
+    .oz-body-wrap {
+        overflow: scroll;
+    }
+
+}
+
 
 .feature-area .overlay-bg {
     background: rgba(108, 187, 35, 0.85)
@@ -2254,13 +2284,12 @@ body {
 }
 
 .feature-area .desc {
-    margin-top: 30px
+    margin-top: 20px
 }
 
 .feature-area .desc h2 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
-    margin-bottom: 10px;
     letter-spacing: 2.5px
 }
 
@@ -2269,9 +2298,9 @@ body {
 }
 
 .single-feature {
-    background-color: #fff;
+    background-color: #5ce1e6;
     padding: 30px;
-    margin-bottom: 30px
+    margin-bottom: 10px;
 }
 
 .faq-area {
@@ -2441,7 +2470,7 @@ footer .footer-nav li a:hover {
 }
 
 .footer-bottom {
-    border-top: 1px solid #eeeeee;
+    /*border-top: 1px solid #eeeeee;*/
     padding-top: 40px
 }
 

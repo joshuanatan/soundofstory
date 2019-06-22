@@ -512,4 +512,48 @@ class C_edit extends CI_Controller {
             redirect('admin/welcome/comm');
         }
     }
+    
+    function faq($id){
+        $where = array(
+            "id_faq" => $id
+        );
+        $data['faq'] = $this->M_crud->edit($where, 'faq')->result();
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_editFaq',$data);
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
+    }
+    function updateFaq()
+    {
+        $getID = $this->input->post("id");
+        $getQuestion = $this->input->post('question');
+        $getAnswer = $this->input->post('answer');
+        $data = array(
+            "question_faq" => $getQuestion,
+            "answer_faq" => $getAnswer
+        );
+        
+        if($getQuestion == "" || $getAnswer == "") {
+            $where = array(
+            "id_faq" => $getID
+        );
+        $data['faq'] = $this->M_crud->edit($where, 'faq')->result();
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_editFaq',$data);
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
+        }
+        else {
+            $where = array(
+                "id_faq" => $getID
+            );
+
+            $this->M_crud->update_data($where, $data, 'faq');
+            redirect('admin/welcome/faq');
+        }
+    }
 }

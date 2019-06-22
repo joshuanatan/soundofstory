@@ -73,6 +73,26 @@ class Welcome extends CI_Controller {
         $this->load->view("admin/req/html-close");
     }
     
+    function contact(){
+        $data['contact'] = $this->M_crud->selectData('status_contact', 'contact')->result();
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_contact', $data);
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
+	}
+    
+    function faq(){
+        $data['faq'] = $this->M_crud->selectData('status_faq', 'faq')->result();
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_faq', $data);
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
+	}
+    
     function user(){
         $data['user'] = $this->M_crud->selectData('status_user', 'user')->result();
         $this->req();
@@ -221,6 +241,16 @@ class Welcome extends CI_Controller {
         $this->load->view('admin/req/sidebar');
         $this->load->view('admin/req/right-panel-open');
         $this->load->view('admin/view_record', $data);
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
+	}
+    
+    function tmbhFaq(){
+        
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_addFaq');
         $this->load->view('admin/req/right-panel-close');
         $this->close();
 	}
