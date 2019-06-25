@@ -9,6 +9,7 @@ if($this->session->userdata("id_user") == "") {
         <br/>
         <br/>
         <br/>
+        <?php foreach($faq->result() as $a):?>
         <div class = "row" style = "margin-bottom:50px">
             <h2>
                 Frequently Asked Questions</h2>
@@ -16,23 +17,11 @@ if($this->session->userdata("id_user") == "") {
         <br/><br/>
         <div class = "row">
             <div class = "form-group">
-                <h5><strong>Question 1</strong></h5>
-                <h4>Answer 1</h4>
+                <h5><strong>Question: <?php echo $a->question_faq; ?></strong></h5>
+                <h4>Answer: <?php echo $a->answer_faq; ?></h4>
             </div>
         </div>
         <hr/>
-        <div class = "row">
-            <div class = "form-group">
-                <h5><strong>Question 2</strong></h5>
-                <h4>Answer 2</h4>
-            </div>
-        </div>
-        <hr/>
-        <div class = "row">
-            <div class = "form-group">
-                <h5><strong>Question 3</strong></h5>
-                <h4>Answer 3</h4>
-            </div>
-        </div>
+        <?php endforeach;?>
     </div>		
 </div>
