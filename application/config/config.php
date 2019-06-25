@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://localhost/soundofstory/'; //jovan
-$config['base_url'] = 'http://localhost:8888/project/soundofstory'; //jn
+$config['base_url'] = 'http://localhost/soundofstory'; //vina
 
 /*
 |--------------------------------------------------------------------------

@@ -8,65 +8,34 @@ if($this->session->userdata("id_user") == "") {
 			<div class="row">
 
 				<!-- Get in touch -->
-				<div class="col-lg-8 contact_col">
+				<div class="col-lg-12 contact_col">
 					<div class="get_in_touch">
 						<div class="section_title">Get in Touch</div>
-						<div class="section_subtitle">Say hello</div>
+						<div class="section_subtitle col-lg-12">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
 						<div class="contact_form_container">
-							<form action="#" id="contact_form" class="contact_form">
-								<div class="row">
-									<div class="col-xl-6">
-										<!-- Name -->
-										<label for="contact_name">First Name*</label>
-										<input type="text" id="contact_name" class="contact_input" required="required">
-									</div>
-									<div class="col-xl-6 last_name_col">
-										<!-- Last Name -->
-										<label for="contact_last_name">Last Name*</label>
-										<input type="text" id="contact_last_name" class="contact_input" required="required">
-									</div>
-								</div>
-								<div>
+							<form action="<?= base_url('lounge/message/insertMessage')?>" method="post" id="contact_form" class="contact_form">
+								<div class="col-lg-6">
 									<!-- Subject -->
 									<label for="contact_company">Subject</label>
-									<input type="text" id="contact_company" class="contact_input">
+									<select name="subject" class="contact_input" id="subject">
+										<option value="Halo">Halo</option>
+										<option value="Helo">Helo</option>
+									</select>
 								</div>
-								<div>
+								<div class="col-lg-12">
 									<label for="contact_textarea">Message*</label>
-									<textarea id="contact_textarea" class="contact_input contact_textarea" required="required"></textarea>
+									<textarea id="contact_textarea" name="konten" class="contact_input contact_textarea" required="required"></textarea>
 								</div>
-								<button class="button contact_button"><span>Send Message</span></button>
+								<div class="col-lg-12">
+									<button class="button contact_button col-lg-12"><span>Send Message</span></button>
+								</div>
 							</form>
 						</div>
 					</div>
 				</div>
 
 				<!-- Contact Info -->
-				<div class="col-lg-3 offset-xl-1 contact_col">
-					<div class="contact_info">
-						<div class="contact_info_section">
-							<div class="contact_info_title">Marketing</div>
-							<ul>
-								<li>Phone: <span>+53 345 7953 3245</span></li>
-								<li>Email: <span>yourmail@gmail.com</span></li>
-							</ul>
-						</div>
-						<div class="contact_info_section">
-							<div class="contact_info_title">Shippiing & Returns</div>
-							<ul>
-								<li>Phone: <span>+53 345 7953 3245</span></li>
-								<li>Email: <span>yourmail@gmail.com</span></li>
-							</ul>
-						</div>
-						<div class="contact_info_section">
-							<div class="contact_info_title">Information</div>
-							<ul>
-								<li>Phone: <span>+53 345 7953 3245</span></li>
-								<li>Email: <span>yourmail@gmail.com</span></li>
-							</ul>
-						</div>
-					</div>
-				</div>
+				
 			</div>
 			<div class="row map_row">
 				<div class="col">
