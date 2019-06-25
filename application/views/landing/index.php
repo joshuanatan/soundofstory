@@ -29,25 +29,6 @@
 	</head>
 	<body>
 	<div class="oz-body-wrap">
-		<!-- Start Header Area -->
-		<header class="default-header">
-			<div class="container-fluid">
-				<div class="header-wrap">
-					<div class="header-top d-flex justify-content-between align-items-center">
-						
-						<div class="main-menubar d-flex align-items-right">
-							<nav class="">
-								<a href="<?php echo base_url();?>welcome/index">Home</a>
-								<a href="<?php echo base_url();?>welcome/login">Sign In</a>
-								<a href="<?php echo base_url();?>welcome/register">Sign Up</a>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-		<!-- End Header Area -->
-		<!-- Start Banner Area -->
 		<section class="banner-area relative">
 			<div class="container">
 				<div class="row fullscreen align-items-center justify-content-center">
@@ -55,7 +36,9 @@
 						<img  class="d-flex mx-auto img-fluid" src="<?php echo base_url();?>assets/images/logosos.png" width="40%" alt="">
 					</div>
 					<div class="col-lg-12 feature-area">
+						
 						<div class="container">
+							
 							<div class="row">
 							<?php foreach($episode as $list){ ?>
 								<div class="col-lg-4 col-sm-6">
@@ -111,20 +94,16 @@
 								}
 								?>
 							</div>
-				</div>
+							<div class = "row">
+								<a href = "<?php echo base_url();?>welcome/login" class = "btn btn-outline btn-light" style = "margin:auto">LAUNCH</a>
+							</div>
+						</div>
 					</div>
+				</div>
+				<div class = "row">
 				</div>
 			</div>
 		</section>
-		<footer class="section-gap">
-			<div class="container">
-				<div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					<p class="footer-text m-0" style = "color:White">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i style = "color:white" class="fa fa-heart-o" aria-hidden="true"></i> by <a style = "color:white" href="https://colorlib.com" target="_blank">Colorlib</a></p>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-				</div>
-			</div>
-		</footer>
 		<!-- End Footer Area -->
 	</div>
 

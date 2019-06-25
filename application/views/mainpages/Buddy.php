@@ -16,10 +16,12 @@ if($this->session->userdata("id_user") == "") {
 							<form action="<?= base_url('lounge/message/insertMessage')?>" method="post" id="contact_form" class="contact_form">
 								<div class="col-lg-6">
 									<!-- Subject -->
-									<label for="contact_company">Subject</label>
+									<label for="contact_company">I Want to Be Your..</label>
 									<select name="subject" class="contact_input" id="subject">
-										<option value="Halo">Halo</option>
-										<option value="Helo">Helo</option>
+										<option value="Halo">Story Teller</option>
+										<option value="Halo">Designer</option>
+										<option value="Halo">Audio Experts</option>
+										<option value="Halo">Story Creator</option>
 									</select>
 								</div>
 								<div class="col-lg-12">
