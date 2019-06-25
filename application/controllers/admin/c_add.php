@@ -210,7 +210,7 @@ class C_add extends CI_Controller {
         }
         else {
             //upload foto
-            $config['upload_path'] ="./assets/images/story";
+            $config['upload_path'] ="./assets/images/story/";
             $config['allowed_types'] = '*';
             $config['max_size'] = 2048000;
             $config['overwrite'] = TRUE;

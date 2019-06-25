@@ -14,6 +14,7 @@
                             </div>
                             <div class="col-12 col-md-9">
                                 <select name="idp" id="id_playlist" class="form-control" onchange = "loadRecordingNotInPlaylist()" required>
+                                    <option selected disabled>CHOOSE PLAYLIST</option>
                                     <?php foreach($playlist->result() as $a){ ?> 
                                     <option value = "<?php echo $a->id_playlist;?>"><?php echo $a->nama_playlist;?></option>
                                     <?php } ?>
@@ -35,9 +36,7 @@
                             </div>
                             <div class="col-12 col-md-9">
                                 <select name="idr" class="form-control" id = "idRec" onchange = "loadRecordingDetail()" required>
-                                    <?php foreach($recording->result() as $a){ ?> 
-                                    <option value = "<?php echo $a->id_recording;?>"><?php echo $a->judul_recording;?></option>    
-                                    <?php } ?>
+                                    <option selected disabled>CHOOSE PLAYLIST FIRST</option>
                                 </select>
                             </div>
                         </div>

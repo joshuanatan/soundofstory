@@ -6,7 +6,7 @@ class Contact extends CI_Controller{
     }
     public function index(){
         $this->load->view("req/head-open");
-        $this->load->view("req/styles/cart-css");
+        $this->load->view("req/styles/contact-css");
         $this->load->view("req/head-close");
         $this->load->view("req/menu");
         $this->load->view("req/audio");

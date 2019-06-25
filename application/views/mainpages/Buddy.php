@@ -4,8 +4,8 @@ if($this->session->userdata("id_user") == "") {
 }
 ?>
 <div class="contact">
-		<div class="container">
-			<div class="row">
+	<div class="container">
+		<div class="row">
 
 				<!-- Get in touch -->
 				<div class="col-lg-12 contact_col">
@@ -46,10 +46,20 @@ if($this->session->userdata("id_user") == "") {
 							<div class="map_container">
 								<div id="map"></div>
 							</div>
-						</div>
+							<div>
+								<!-- Subject -->
+								<label for="contact_company">Subject</label>
+								<input type="text" id="contact_company" class="contact_input">
+							</div>
+							<div>
+								<label for="contact_textarea">Message*</label>
+								<textarea id="contact_textarea" class="contact_input contact_textarea" required="required"></textarea>
+							</div>
+							<button class="button contact_button"><span>Send Message</span></button>
+						</form>
 					</div>
-
 				</div>
 			</div>
 		</div>
 	</div>
+</div>

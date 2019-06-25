@@ -67,16 +67,23 @@ if($this->session->userdata("id_user") == "") {
 <div class="products">
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class = "col-lg-3" style = "border-right:1px solid lightgray" style = "padding-top:50%">
+
+                <h5 style = "font-weight: lighter">Most Favourite</h5>
+                <h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">Stories
+                    <a href = "<?php echo base_url();?>lounge/explore">
+                        <span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span>
+                    </a>
+                </h3>
+            </div>
+            <div class="col-lg-9">
                 
-                <h5 style = "font-weight: lighter">Most Favourite</h5><h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">Stories<a href = "<?php echo base_url();?>lounge/explore"><span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span></a></h3>
-                <hr/>
                 <div class="product_grid">
 
                     <!-- Product -->
                     <?php foreach($favourite as $list) { ?>
                     <div class="product">
-                        <div class="product_image" style = "height:300px; overflow:hidden;"><img src="<?php echo base_url();?>assets/recording/<?php echo $list->foto_playlist ?>" alt=""></div>
+                        <div class="product_image" style = "height:150px; overflow:hidden;"><img src="<?php echo base_url();?>assets/recording/<?php echo $list->foto_playlist ?>" alt=""></div>
                         <div class="product_content">
                             <div class="product_title"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->nama_playlist ?></a></div>
                             <div class="product_price"><?php echo $list->description_playlist ?></div>
@@ -93,16 +100,21 @@ if($this->session->userdata("id_user") == "") {
 <div class="products">
     <div class="container">
         <div class="row">
-            <div class="col">
-                
-                <h5 style = "font-weight: lighter">New Release & This Week's Choice</h5><h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">Stories<a href = "<?php echo base_url();?>lounge/explore"><span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span></a></h3>
-                <hr/>
+            <div class = "col-lg-3" style = "border-right:1px solid lightgray">
+                <h5 style = "font-weight: lighter">New Release & This Week's Choice</h5>
+                <h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">Stories
+                    <a href = "<?php echo base_url();?>lounge/explore">
+                        <span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span>
+                    </a>
+                </h3>
+            </div>
+            <div class="col-lg-9">
                 <div class="product_grid">
 
                     <!-- Product -->
                     <?php foreach($story as $list) { ?>
                     <div class="product">
-                        <div class="product_image" style = "height:300px; overflow:hidden;"><img src="<?php echo base_url();?>assets/recording/<?php echo $list->foto_playlist ?>" alt=""></div>
+                        <div class="product_image" style = "height:150px; overflow:hidden;"><img src="<?php echo base_url();?>assets/recording/<?php echo $list->foto_playlist ?>" alt=""></div>
                         <div class="product_content">
                             <div class="product_title"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->nama_playlist ?></a></div>
                             <div class="product_price"><?php echo $list->description_playlist ?></div>
@@ -120,9 +132,16 @@ if($this->session->userdata("id_user") == "") {
 <div class="products">
     <div class="container">
         <div class="row">
-            <div class="col">
-                <h5 style = "font-weight: lighter">Latest</h5><h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">Stories Episodes<a href = "<?php echo base_url();?>lounge/explore"><span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span></a></h3>
-                <hr/>
+            <div class = "col-lg-3" style = "border-right:1px solid lightgray">
+                <h5 style = "font-weight: lighter">Latest</h5>
+                <h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">Stories Episodes
+                    <a href = "<?php echo base_url();?>lounge/explore">
+                        <span style = "font-size:13px; font-weight:bold; margin-left:10px">SEE MORE</span>
+                    </a>
+                </h3>
+            </div>
+            <div class="col-lg-9">
+                
                 <div class="product_grid">
 
                     <!-- Product -->
@@ -135,7 +154,7 @@ if($this->session->userdata("id_user") == "") {
                         }
                     ?>
                     <div class="product col-lg-3">
-                        <div class="product_image" style = "height:300px; overflow:hidden;">
+                        <div class="product_image" style = "height:150px; overflow:hidden;">
                             <img class = "align-middle" src="<?php echo base_url();?>assets/recording/<?php echo $list->foto_recording; ?>" alt="">
                         </div>
                         
