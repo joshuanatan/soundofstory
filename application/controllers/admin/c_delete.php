@@ -181,4 +181,14 @@ class C_delete extends CI_Controller {
         $this->M_crud->update_data($where, $data, 'comment');
         redirect('admin/welcome/comm');
     }
+    function faq($id){
+        $data = array(
+            "status_faq" => 1
+        );
+        $where = array(
+            "id_faq" => $id
+        );
+        $this->M_crud->update_Data($where,$data,"faq");
+        redirect("admin/welcome/faq");
+    }
 }

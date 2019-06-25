@@ -16,7 +16,11 @@ class M_crud extends CI_Model {
         $this->db->insert($where, $data);
         return $this->db->insert_id();
     }
-    
+    function selectJeenPesan($table,$where){
+        /*method ini dibuat karena method yang ada tidak fleksibel sehingga mengganti kodingannya akan membuat program menjadi tidak baik*/
+        $this->db->join("user","user.id_user = pesan.id_user_add","inner");
+        return $this->db->get_where($table,$where);
+    }
     function edit($where, $table)
     {
         return $this->db->get_where($table, $where);

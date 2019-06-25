@@ -33,35 +33,21 @@
                         <span>Recording Playlist</span>
                         </a>
                     </li>
-                    <!--
                     <li>
-                        <a href="<?php echo base_url().'admin/welcome/History'; ?>">
-                            <i class="menu-icon fa fa-road"></i>
-                            <span>History Recording</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url().'admin/welcome/UserRec'; ?>">
-                            <i class="menu-icon fa fa-th-list"></i>
-                            <span>User Recording</span>
-                        </a>
-                    </li>
-                    -->
-                    <li>
-                        <!--<a href="<?php echo base_url().'admin/welcome/Msg'; ?>">-->
-                        <a href="#">
+                        <!--<a href="">-->
+                        <a href="<?php echo base_url().'admin/welcome/Msg'; ?>">
                             <i class="menu-icon ti-email"></i>
-                            <span>Message</span>
+                            <span>Buddy Message</span>
                         </a>
                     </li>
                     <li>
-                    <a href="<?php echo base_url().'admin/welcome/RecPlay'; ?>">
+                    <a href="<?php echo base_url().'admin/welcome/faq'; ?>">
                         <i class="menu-icon ti-email"></i>
                         <span>FAQ</span>
                         </a>
                     </li>
                     <li>
-                    <a href="<?php echo base_url().'admin/welcome/RecPlay'; ?>">
+                    <a href="<?php echo base_url().'admin/welcome/contact'; ?>">
                         <i class="menu-icon ti-email"></i>
                         <span>Contact Us</span>
                         </a>

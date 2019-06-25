@@ -13,15 +13,15 @@ if($this->session->userdata("id_user") == "") {
 						<div class="section_title">Get in Touch</div>
 						<div class="section_subtitle col-lg-12">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
 						<div class="contact_form_container">
-							<form action="<?= base_url('lounge/message/insertMessage')?>" method="post" id="contact_form" class="contact_form">
+							<form action="<?= base_url('lounge/message/insertBuddy')?>" method="post" id="contact_form" class="contact_form">
 								<div class="col-lg-6">
 									<!-- Subject -->
 									<label for="contact_company">I Want to Be Your..</label>
 									<select name="subject" class="contact_input" id="subject">
-										<option value="Halo">Story Teller</option>
-										<option value="Halo">Designer</option>
-										<option value="Halo">Audio Experts</option>
-										<option value="Halo">Story Creator</option>
+										<option value="Story Teller Applicants">Story Teller</option>
+										<option value="Designer Applicants">Designer</option>
+										<option value="Audio Experts Applicants">Audio Experts</option>
+										<option value="Story Creator Applicants">Story Creator</option>
 									</select>
 								</div>
 								<div class="col-lg-12">

@@ -74,7 +74,11 @@ class Welcome extends CI_Controller {
     }
     
     function contact(){
-        $data['contact'] = $this->M_crud->selectData('status_contact', 'contact')->result();
+        $where = array(
+            "status_message" => 0,
+            "sumber_message" =>"ASK"
+        );
+        $data['contact'] = $this->M_crud->selectJeenPesan("pesan",$where)->result();
         $this->req();
         $this->load->view('admin/req/sidebar');
         $this->load->view('admin/req/right-panel-open');
@@ -84,7 +88,7 @@ class Welcome extends CI_Controller {
 	}
     
     function faq(){
-        $data['faq'] = $this->M_crud->selectData('status_faq', 'faq')->result();
+        $data['faq'] = $this->M_crud->selectData(array('status_faq' => 0),"faq")->result();
         $this->req();
         $this->load->view('admin/req/sidebar');
         $this->load->view('admin/req/right-panel-open');
@@ -141,7 +145,11 @@ class Welcome extends CI_Controller {
 	}
     
     function msg(){
-        $data['msg'] = $this->M_crud->selectData('status_message', 'message')->result();
+        $where = array(
+            "status_message" => 0,
+            "sumber_message" =>"BUDDY"
+        );
+        $data['contact'] = $this->M_crud->selectJeenPesan("pesan",$where)->result();
         $this->req();
         $this->load->view('admin/req/sidebar');
         $this->load->view('admin/req/right-panel-open');

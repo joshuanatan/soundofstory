@@ -9,7 +9,7 @@
                     </div>
                     <div class="card-body card-block">
                         <?php foreach($faq as $list) { ?>
-                        <form action="<?php echo base_url().'c_edit/updateFaq/' ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form action="<?php echo base_url().'admin/c_edit/updateFaq/' ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">ID FAQ</label></div>
                                 <div class="col-12 col-md-9"><input type="text" name="id" class="form-control" value="<?php echo $list->id_faq ?>" readonly></div>

@@ -14,15 +14,15 @@ if($this->session->userdata("id_user") == "") {
                     <div class="section_title"></div>
                     <div class="section_subtitle"></div>
                     <div class="contact_form_container">
-                        <form action="#" id="contact_form" class="contact_form">
+                        <form action="<?php echo base_url();?>lounge/message/insertAsk" method = "POST" id="contact_form" class="contact_form">
                             <div>
                                 <!-- Subject -->
                                 <label for="contact_company">Subject</label>
-                                <input type = "text" name="sub" placeholder="Subject" id="contact_company" class="contact_input">
+                                <input type = "text" name="subject" placeholder="Subject" id="contact_company" class="contact_input">
                             </div>
                             <div>
                                 <label for="contact_textarea">Message*</label>
-                                <textarea name="isi" placeholder="Message for Us" id="contact_textarea" class="contact_input contact_textarea" required="required"></textarea>
+                                <textarea name="konten" placeholder="Message for Us" id="contact_textarea" class="contact_input contact_textarea" required="required"></textarea>
                             </div>
                             <button class="button contact_button"><span>Send Message</span></button>
                         </form>

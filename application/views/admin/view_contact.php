@@ -46,12 +46,12 @@
                                 <?php
                                     foreach($contact as $list) { ?>
                                     <tr>
-                                        <td><?php echo $list->id_contact ?></td>
-                                        <td><?php echo $list->subject_contact ?></td>
-                                        <td><?php echo $list->nama_contact ?></td>
-                                        <td><?php echo $list->email_contact ?></td>
-                                        <td><?php echo $list->isi_contact ?></td>
-                                        <td><?php echo $list->hp_contact ?></td>
+                                        <td><?php echo $list->id_pesan ?></td>
+                                        <td><?php echo $list->subject?></td>
+                                        <td><?php echo $list->nama_user ?></td>
+                                        <td><?php echo $list->email_user ?></td>
+                                        <td><textarea class ="form-control" readonly><?php echo $list->konten ?></textarea></td>
+                                        <td><?php echo $list->nohp_user ?></td>
                                     </tr>
                                     <?php } ?>
                             </tbody>

@@ -493,7 +493,7 @@ class C_add extends CI_Controller {
                 "id_faq" => 0,
                 "question_faq" => $getQuestion,
                 "answer_faq" => $getAnswer,
-                "status_faq" => 1
+                "status_faq" => 0
             );
 
             $this->M_crud->insertData($data, 'faq');

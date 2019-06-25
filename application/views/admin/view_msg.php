@@ -13,7 +13,7 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="<?php echo base_url().'admin/welcome/user' ?>">Dashboard</a></li>
-                            <li>Message</li>
+                            <li>Buddy</li>
                         </ol>
                     </div>
                 </div>
@@ -21,17 +21,13 @@
         </div>
     </div>
 </div>
-    
 <div class="content">
     <div class="animated fadeIn">
         <div class="row">
-            <div class="col-md-12">
+             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Message</strong>
-                        <div class="float-right">
-                            <a href="<?php echo base_url().'admin/welcome/tmbhMsg' ?>"><button class="btn">Add Message</button></a>
-                        </div>
+                        <strong class="card-title">Buddy Message</strong>
                         
                     </div>
                     <div class="card-body">
@@ -39,27 +35,23 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                        <th>From</th>
-                                        <th>To</th>
-                                        <th>Content</th>
-                                        <th>Status</th>
-                                        <th>Date</th>
-                                        <th>Time</th>
-                                        <th>Action</th>
+                                    <th>Subject</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Content</th>
+                                    <th>Phone Number</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                    foreach($msg as $list) { ?>
+                                    foreach($contact as $list) { ?>
                                     <tr>
-                                        <td><?php echo $list->id_message ?></td>
-                                        <td><?php echo $list->id_user_dari ?></td>
-                                        <td><?php echo $list->id_user_tujuan ?></td>
-                                        <td><?php echo $list->konten ?></td>
-                                        <td><?php echo "Active" ?></td>
-                                        <td><?php echo $list->tgl_submit_message ?></td>
-                                        <td><?php echo $list->jam_submit_message ?></td>
-                                        <td><a href="<?php echo base_url().'admin/c_edit/msg/'.$list->id_message ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a><a href="<?php echo base_url().'admin/c_delete/msg/'.$list->id_message ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
+                                        <td><?php echo $list->id_pesan ?></td>
+                                        <td><?php echo $list->subject?></td>
+                                        <td><?php echo $list->nama_user ?></td>
+                                        <td><?php echo $list->email_user ?></td>
+                                        <td><textarea class ="form-control" readonly><?php echo $list->konten ?></textarea></td>
+                                        <td><?php echo $list->nohp_user ?></td>
                                     </tr>
                                     <?php } ?>
                             </tbody>
