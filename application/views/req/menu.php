@@ -12,6 +12,7 @@
                                 <li>
                                     <a href="<?php echo base_url();?>lounge/explore" style = "font-size:14px">Explore</a>
                                 </li>
+                                <?php if($this->session->premium == 1):?>
                                 <li class="hassubs">
                                     <a href="#" style = "font-size:14px">Stories</a>
                                     <ul style = "width:200px">
@@ -19,6 +20,7 @@
                                         <li><a href="<?php echo base_url();?>lounge/favourites" style = "font-size:14px">Favourites</a></li>
                                     </ul>
                                 </li>
+                                <?php endif;?>
                                 <li>
                                     <a href="<?php echo base_url();?>lounge/buddy" style = "font-size:14px">Buddy</a>
                                 </li>
@@ -26,7 +28,6 @@
                                     <a href="#" style = "font-size:14px"><?php echo $this->session->nama_user;?></a>
                                     <ul style = "width:200px">
                                         <li><a href="<?php echo base_url();?>lounge/profile">Profile</a></li>
-                                        <li><a href="<?php echo base_url();?>lounge/chatroom">Live Chat</a></li>
                                         <li><a href="<?php echo base_url();?>lounge/profile/logout">Logout</a></li>
                                     </ul>
                                 </li>

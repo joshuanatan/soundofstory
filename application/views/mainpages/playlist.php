@@ -9,6 +9,7 @@ if($this->session->userdata("id_user") == "") {
             <div class = "col">
             </div>
         </div>
+        <?php if($this->session->premium == 1):?>
         <div class="row">
             <div class="col">
                 <br/>
@@ -23,6 +24,7 @@ if($this->session->userdata("id_user") == "") {
                 </form>
             </div>
         </div>
+        <?php endif;?>
         <br/><br/>
         <div class = "row">
             <table class = "table table-stripped">

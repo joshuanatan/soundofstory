@@ -32,6 +32,7 @@ class Welcome extends CI_Controller{
                 $this->session->nama_user = $a->nama_user;
                 $this->session->email_user = $a->email_user;
                 $this->session->foto_profile_user = $a->foto_profile_user;
+                $this->Session->premium = $a->premium;
             }
             redirect("lounge/welcome");
         }   
