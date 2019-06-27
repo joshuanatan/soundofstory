@@ -88,8 +88,8 @@ class C_add extends CI_Controller {
             'premium' => 1
         );
         
-        $this->m_crud->update_data($where, $data, 'user');
-        redirect('admin/welcome');
+        $this->M_crud->update_data($where, $data, 'user');
+        redirect('admin/welcome/user');
     }
     
     function cate()
