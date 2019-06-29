@@ -2,7 +2,7 @@
     <header id="header" class="header">
         <div class="top-left">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">SOUND OF STORY</a>
+                <a class="navbar-brand" href="#"><?php echo strtoupper($this->session->nama);?> - SoS</a>
                 <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
             </div>
         </div>
@@ -21,7 +21,7 @@
 
                         <!--<a class="nav-link" href="#"><i class="fa fa-cog"></i>Settings</a>-->
 
-                        <a class="nav-link" href="<?php echo base_url().'admin/c_edit/password' ?>"><i class="fa fa-power-off"></i>Change Password</a>
+                        <a class="nav-link" href="<?php echo base_url().'admin/c_edit/password' ?>"><i class="fa fa-lock"></i>Change Password</a>
                         <a class="nav-link" href="<?php echo base_url().'admin/welcome/logout/' ?>"><i class="fa fa-power-off"></i>Logout</a>
                     </div>
                 </div>

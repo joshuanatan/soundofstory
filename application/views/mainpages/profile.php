@@ -53,7 +53,9 @@ foreach($profile as $list) { ?>
                 </div>
             </div>
             <div class="col-md-2">
-                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                <input type="submit" class="btn btn-light btn-sm" name="btnAddMore" value="Edit Profile"/>
+                <button type = "button" class = "btn btn-light btn-sm" data-toggle = "modal" data-target = "#ubahPass">Change Password</button>
+                
             </div>
         </div>
         <div class="row">
@@ -110,3 +112,23 @@ foreach($profile as $list) { ?>
     </form>           
     </div>
 <?php } ?>
+<div class = "modal fade" id = "ubahPass">
+    <div class = "modal-dialog">
+        <div class = "modal-content">
+            <div class = "modal-header">
+                <h4 class = "modal-title">CHANGE PASSWORD</h4>
+            </div>
+            <form action = "<?php echo base_url();?>lounge/profile/changePass" method = "POST">
+                <div class = "modal-body">
+                    <div class = "form-group">
+                        <h5 style = "opacity:0.5; color:black">New Password</h5>
+                        <input type = "password" name = "password" class = "form-control">
+                    </div>
+                    <div class = "form-group">
+                        <button type = "submit" class = "btn btn-primary btn-sm">SUBMIT</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

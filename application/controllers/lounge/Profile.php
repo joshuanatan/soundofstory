@@ -99,5 +99,15 @@ class Profile extends CI_Controller{
             redirect("lounge/profile");
         }
     }
+    public function changePass(){
+        $where = array(
+            'user.id_user' => $this->session->userdata("id_user")
+        );
+        $data = array(
+            "password_user" => md5($this->input->post("password"))
+        );
+        $this->m_crud->update_data($where, $data, 'user');
+        redirect("lounge/profile");
+    }
     
 }
