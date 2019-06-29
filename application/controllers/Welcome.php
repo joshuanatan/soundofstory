@@ -24,7 +24,7 @@ class Welcome extends CI_Controller{
         $where = array(
             "email_user" => $this->input->post("email_user"),
             "password_user" => md5($this->input->post("password_user")),
-            "status_user" => 0
+            "status_user" => 1
         );
         $result = $this->M_crud->selectData($where,"user");
         if($result->num_rows() > 0 ){
