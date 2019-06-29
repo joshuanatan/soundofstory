@@ -25,3 +25,4 @@ application/config/database.php
 tests/
 .vscode
 .htaccess
+.sql
