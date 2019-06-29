@@ -1,8 +1,8 @@
 template-main/
 user_guide/
-assets/images/story/
-assets/recording/
-assets/profiles/
+assets/images/story/*
+assets/recording/*
+assets/profiles/*
 *.zip
 application/config/config.php
 application/config/database.php
