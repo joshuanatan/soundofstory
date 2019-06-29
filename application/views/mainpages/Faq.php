@@ -5,28 +5,23 @@ if($this->session->userdata("id_user") == "") {
 ?>
 <div class="cart_info">
     <div class="container">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <?php foreach($faq->result() as $a):?>
         <div class = "row" style = "margin-bottom:50px">
-            <div class = "col">
-            </div>
+            <h2>
+                Frequently Asked Questions</h2>
         </div>
         <br/><br/>
         <div class = "row">
-            <table class = "table table-stripped">
-                <thead>
-                    <tr>
-                        <th style = "width:45%">Question</th>
-                        <th style = "width:45%">Answer</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($faq as $list) { ?>
-                    <tr>
-                        <Td class = "align-middle"><h4><?php echo $list->question;?></h4></Td>
-                        <Td class = "align-middle"><h4><?php echo $list->answer;?></h4></Td>
-                    </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+            <div class = "form-group">
+                <h5><strong>Question: <?php echo $a->question_faq; ?></strong></h5>
+                <h4>Answer: <?php echo $a->answer_faq; ?></h4>
+            </div>
         </div>
+        <hr/>
+        <?php endforeach;?>
     </div>		
 </div>
