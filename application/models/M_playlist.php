@@ -23,5 +23,9 @@ class M_playlist extends CI_Model {
         $this->db->order_by("tgl_submit_playlist",'DESC');
         return $this->db->get_where("playlist",$where);
     }
+    function selectPremium($where){
+        $this->db->where("status_premium",1);
+        return $this->db->get_where("playlist",$where);
+    }
 }
 ?>
