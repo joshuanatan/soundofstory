@@ -23,7 +23,8 @@ class Welcome extends CI_Controller{
     public function signin(){
         $where = array(
             "email_user" => $this->input->post("email_user"),
-            "password_user" => md5($this->input->post("password_user"))
+            "password_user" => md5($this->input->post("password_user")),
+            "status_user" => 0
         );
         $result = $this->M_crud->selectData($where,"user");
         if($result->num_rows() > 0 ){
