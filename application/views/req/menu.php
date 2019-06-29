@@ -32,9 +32,6 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url();?>lounge/contact/" style = "font-size:14px">Contact Us</a>
-                                </li>
-                                <li>
                                     <a href="<?php echo base_url();?>lounge/faq/" style = "font-size:14px">FAQ</a>
                                 </li>
                             </ul>

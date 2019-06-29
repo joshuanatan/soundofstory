@@ -2,9 +2,9 @@
 class M_recording extends CI_Model {
     function selectLast($where) {
         $this->db->select('*')
-            ->from('recording')
+            ->from('recording')->join("recording_playlist","recording_playlist.id_recording = recording.id_recording","inner")->join("playlist","playlist.id_playlist = recording_playlist.id_playlist","inner")
             ->order_by("tgl_submit_recording", "desc")
-            ->where($where);
+            ->where($where)->where("playlist.status_premium <=", $this->session->premium)->group_by("recording.id_recording");
         $query = $this->db->get();
         return $query;
     }
@@ -114,7 +114,7 @@ class M_recording extends CI_Model {
             ->join('user', 'recording.id_user = user.id_user', 'inner')
             ->join('recording_playlist', 'recording_playlist.id_recording = recording.id_recording', 'inner')
             ->join('playlist', 'recording_playlist.id_playlist = playlist.id_playlist', 'inner')
-            ->join('category', 'category.id_category = playlist.id_category', 'inner')
+            ->join('category', 'category.id_category = playlist.id_category', 'inner')->where("playlist.status_premium <=", $this->session->premium)->group_by("recording.id_recording")
             ->like($where);
         $query = $this->db->get();
         return $query;

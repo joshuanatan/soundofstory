@@ -27,10 +27,6 @@
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">Description</label></div>
                                 <div class="col-12 col-md-9"><input type="text" name="desc" class="form-control" placeholder="Enter Description" required><small class="form-text text-muted">Please enter the description</small></div>
                             </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Duration</label></div>
-                                <div class="col-12 col-md-9"><input type="text" name="duration" class="form-control" placeholder="Enter Duration of Recording" required><small class="form-text text-muted">Please enter the duration</small></div>
-                            </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary btn-sm">
                                     <i class="fa fa-dot-circle-o"></i> Submit

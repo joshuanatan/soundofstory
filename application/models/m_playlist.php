@@ -6,7 +6,7 @@ class M_playlist extends CI_Model {
             ->from('playlist')
             ->join('category', 'playlist.id_category = category.id_category', 'inner')
             ->join('user', 'user.id_user = playlist.id_user', 'inner')
-            ->where($where);
+            ->where($where)->where("status_premium <=", $this->session->premium);
         $query = $this->db->get();
         return $query;
     }
@@ -19,6 +19,7 @@ class M_playlist extends CI_Model {
         }
     }
     function selectLastToNow($where){
+        $this->db->where("status_premium <=", $this->session->premium);
         $this->db->order_by("tgl_submit_playlist",'DESC');
         return $this->db->get_where("playlist",$where);
     }

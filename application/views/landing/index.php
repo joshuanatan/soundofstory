@@ -79,7 +79,7 @@
 															<!-- Share -->
 															<div style = "margin-top:20px">
 																<audio controls style = "width: 100%">
-																	<source src="<?php echo base_url().'assets/audio/'.$list->file_recording ?>" type="audio/mpeg">
+																	<source src="<?php echo base_url().'assets/recording/'.$list->file_recording ?>" type="audio/mpeg">
 																</audio>
 															</div>
 														</div>

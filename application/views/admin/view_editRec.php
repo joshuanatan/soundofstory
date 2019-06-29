@@ -9,7 +9,7 @@
                     </div>
                     <div class="card-body card-block">
                         <?php foreach($rec as $list) { ?>
-                        <form action="<?php echo base_url().'c_edit/updateRec/' ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form action="<?php echo base_url().'admin/c_edit/updateRec/' ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">ID Recording</label></div>
                                 <div class="col-12 col-md-9"><input type="text" name="idr" class="form-control" value="<?php echo $list->id_recording ?>" readonly></div>
@@ -27,8 +27,12 @@
                                 <div class="col-12 col-md-9"><input type="text" name="desc" class="form-control" value="<?php echo $list->description_recording ?>"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Duration</label></div>
-                                <div class="col-12 col-md-9"><input type="text" name="duration" class="form-control" value="<?php echo $list->duration_recording ?>"></div>
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Recording</label></div>
+                                <div class="col-12 col-md-9"><input type="file" class="form-control" name = "recording" readonly></div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cover</label></div>
+                                <div class="col-12 col-md-9"><input type="file" class="form-control" name = "cover" readonly></div>
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary btn-sm">

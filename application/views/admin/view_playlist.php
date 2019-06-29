@@ -44,6 +44,7 @@
                                     <th>User</th>
                                     <th>Status</th>
                                     <th>Join Date</th>
+                                    <th>Premium</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -58,7 +59,16 @@
                                         <td><?php echo $list->nama_user ?></td>
                                         <td><?php echo "Active" ?></td>
                                         <td><?php echo $list->tgl_submit_playlist ?></td>
-                                        <td><a href="<?php echo base_url().'admin/c_edit/play/'.$list->id_playlist ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a><a href="<?php echo base_url().'admin/c_delete/play/'.$list->id_playlist ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
+                                        <td><?php if($list->status_premium == 1) echo "PREMIUM"; else echo "REGULAR"; ?></td>
+                                        <td>
+                                            <a href="<?php echo base_url().'admin/c_edit/play/'.$list->id_playlist ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a>
+                                            <a href="<?php echo base_url().'admin/c_delete/play/'.$list->id_playlist ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a><br/><br/>
+                                            <?php if($list->status_premium == 0):?>
+                                            <a href = "<?php echo base_url();?>admin/c_edit/premium_playlist/<?php echo $list->id_playlist;?>"><button class="btn btn-primary btn-outline">Set Premium</button></a>
+                                            <?php else:?>
+                                            <a href = "<?php echo base_url();?>admin/c_edit/undo_premium_playlist/<?php echo $list->id_playlist;?>"><button class="btn btn-danger btn-outline">Set Regular</button></a>
+                                            <?php endif;?>
+                                        </td>
                                     </tr>
                                     <?php } ?>
                             </tbody>

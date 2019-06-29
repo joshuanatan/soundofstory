@@ -32,7 +32,7 @@ class Welcome extends CI_Controller{
                 $this->session->nama_user = $a->nama_user;
                 $this->session->email_user = $a->email_user;
                 $this->session->foto_profile_user = $a->foto_profile_user;
-                $this->Session->premium = $a->premium;
+                $this->session->premium = $a->premium;
             }
             redirect("lounge/welcome");
         }   
@@ -58,11 +58,21 @@ class Welcome extends CI_Controller{
                 $name[2] => $this->input->post($name[2]),
                 $name[3] => $this->input->post($name[3]),
                 $name[4] => $this->input->post($name[4]),
-                $name[5] => "defaultprofile.png",
+                $name[5] => "default.png",
                 $name[6] => 1,
                 $name[7] => date("Y-m-d")
             );
-            $this->M_crud->insertData($data,"user");
+            $id_user = $this->M_crud->insertData($data,"user");
+
+            $data = array(
+                "id_user" => $id_user,
+                "alamat_user" =>  "-",
+                "description_user" =>  "-",
+                "tgl_lahir_user" =>  "-",
+                "profesi_user" => "-"
+            );
+            
+            $this->M_crud->insertData($data,"profile");
             redirect("welcome/login");
         }
     }

@@ -63,6 +63,21 @@ class Profile extends CI_Controller{
             $this->load->view("req/close");
         }
         else {
+            $where = array(
+                'id_user' => $this->session->userdata("id_user")
+            );
+            $config = array(
+                "upload_path" => "./assets/profiles/images/",
+                "allowed_types" => "jpg|png|jpeg|gif"
+            );
+            $this->load->library("upload",$config);
+            if($this->upload->do_upload("file")){
+                $fileData = $this->upload->data();
+                $data = array(
+                    "foto_profile_user" => $fileData["file_name"]
+                );
+                $this->m_crud->update_data($where, $data, 'user');
+            }
             $data = array(
                 'nama_user' => $getName,
                 'nohp_user' => $getPhone,
@@ -72,9 +87,6 @@ class Profile extends CI_Controller{
                 'profesi_user' => $getProf
             );
             
-            $where = array(
-                'id_user' => $this->session->userdata("id_user")
-            );
             
             $this->m_crud->update_data($where, $data, 'user');
             $this->m_crud->update_data($where, $data2, 'profile');
@@ -84,16 +96,7 @@ class Profile extends CI_Controller{
             );
             
             $data['profile'] = $this->m_profile->selectData($where)->result();
-            $this->load->view("req/head-open");
-            $this->load->view("req/styles/cart-css");
-            $this->load->view("req/styles/profile-css");
-            $this->load->view("req/head-close");
-            $this->load->view("req/menu");
-            $this->load->view("req/audio");
-            /*--------------------------------------*/
-            $this->load->view("mainpages/profile", $data);
-            /*--------------------------------------*/
-            $this->load->view("req/close");
+            redirect("lounge/profile");
         }
     }
     

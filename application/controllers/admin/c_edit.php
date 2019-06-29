@@ -116,7 +116,7 @@ class C_edit extends CI_Controller {
         $getName = $this->input->post("name");
         if($getID == "" || $getIDC == "" || $getName == "") {
             $where = array(
-                "id_category" => $id
+                "id_category" => $getIDC
             );
             $data['cat'] = $this->M_crud->edit($where, 'category')->result();
             $this->req();
@@ -140,6 +140,26 @@ class C_edit extends CI_Controller {
             redirect('admin/welcome/cate');
         }
     }
+    function premium_playlist($id_playlist){
+        $where = array(
+            "id_playlist" => $id_playlist
+        );
+        $data = array(
+            "status_premium" => 1
+        );
+        $this->M_crud->update_data($where,$data,'playlist');
+        redirect('admin/welcome/playlist');
+    }
+    function undo_premium_playlist($id_playlist){
+        $where = array(
+            "id_playlist" => $id_playlist
+        );
+        $data = array(
+            "status_premium" => 0
+        );
+        $this->M_crud->update_data($where,$data,'playlist');
+        redirect('admin/welcome/playlist');
+    }
     function rec($id){
         $where = array(
             "id_recording" => $id
@@ -159,9 +179,8 @@ class C_edit extends CI_Controller {
         $getIDR = $this->input->post("idr");
         $getTitle = $this->input->post("title");
         $getDesc = $this->input->post("desc");
-        $getDuration = $this->input->post("duration");
         
-        if($getID == "" || $getIDR == "" || $getTitle == "" || $getDesc == "" || $getDuration == "") {
+        if($getID == "" || $getIDR == "" || $getTitle == "" || $getDesc == "") {
             $where = array(
                 "id_recording" => $getID
             );
@@ -174,12 +193,44 @@ class C_edit extends CI_Controller {
             $this->close();
         }
         else {
-            $data = array(
-                "judul_recording" => $getTitle,
-                "id_user" => $getID,
-                "description_recording" => $getDesc,
-                "duration_recording" => $getDuration
+            $config = array(
+                "upload_path" => "./assets/recording/",
+                "allowed_types" => "*"
             );
+            $recording_data = array();
+            $this->load->library("upload",$config);
+            if($this->upload->do_upload("recording")){
+                $recordfile = $this->upload->data('file_name');
+                $params = array(
+                    "filename" => base_url()."assets/recording/".$recordfile
+                );
+                $this->load->library("mp3",$params);
+                $duration2 = $this->mp3->getDuration();
+                $getDuration = $this->mp3->formatTime($duration2);
+                $recording_data = $this->upload->data();
+                $data = array(
+                    "judul_recording" => $getTitle,
+                    "id_user" => $getID,
+                    "description_recording" => $getDesc,
+                    "file_recording" => $recording_data["file_name"],
+                    "duration_recording" => $getDuration
+                );
+            }
+            else{
+                $data = array(
+                    "judul_recording" => $getTitle,
+                    "id_user" => $getID,
+                    "description_recording" => $getDesc,
+                );
+            }
+            $cover_data = array();
+            if($this->upload->do_upload("cover")){
+                $cover_data = $this->upload->data();
+                $data += ["foto_recording" => $cover_data["file_name"]];
+            }
+            else{
+                echo print_r($this->upload->display_errors());
+            }
 
             $where = array(
                 "id_recording" => $getIDR
@@ -212,8 +263,8 @@ class C_edit extends CI_Controller {
         $getID = $this->input->post("id");
         $getIDP = $this->input->post("idp");
         $getName = $this->input->post("name");
-        
-        if($getID == "" || $getIDP == "" || $getName == "") {
+        $getDescription = $this->input->post("description");
+        if($getID == "" || $getIDP == "" || $getName == "" || $getDescription == "") {
             $where = array(
                 "id_playlist" => $getID
             );
@@ -226,10 +277,30 @@ class C_edit extends CI_Controller {
             $this->close();
         }
         else {
-            $data = array(
-                "nama_playlist" => $getName,
-                "id_user" => $getID
+            
+            $config = array(
+                "upload_path" => "./assets/images/story/",
+                "allowed_types" => "*"
             );
+            $this->load->library("upload",$config);
+            $cover_data = array();
+            if($this->upload->do_upload("cover")){
+                $cover_data = $this->upload->data();
+                $data = array(
+                    "nama_playlist" => $getName,
+                    "id_user" => $getID,
+                    "foto_playlist" => $cover_data["file_name"],
+                    "description_playlist"=> $getDescription
+                );
+            }
+            else {
+                $data = array(
+                    "nama_playlist" => $getName,
+                    "id_user" => $getID,
+                    "description_playlist"=> $getDescription
+                );
+            }
+            print_r($data);
 
             $where = array(
                 "id_playlist" => $getIDP

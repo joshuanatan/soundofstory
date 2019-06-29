@@ -22,14 +22,14 @@ foreach($profile as $list) { ?>
 </div>
 <!-- Contact -->
 <div class="container emp-profile">
-    <form action="<?php echo base_url().'lounge/Profile/save/' ?>" method="post">
+    <form action="<?php echo base_url().'lounge/Profile/save/' ?>" method="post" enctype = "multipart/form-data">
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-img">
                     <!-- FORM DALAM FORM<form method="post" enctype="multipart/form-data">-->
                         <img src="<?php echo base_url()."assets/profiles/images/".$list->foto_profile_user ?>" alt=""/>
                     
-                        <input type="file" name="file" class="file btn btn-lg btn-primary">
+                        <input type="file" name="file" class="file btn btn-lg btn-primary" style = "z-index:100">
                     <!--</form>-->
                     <!--<div class="file btn btn-lg btn-primary">
                         Change Photo

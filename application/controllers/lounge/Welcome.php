@@ -7,6 +7,7 @@ class Welcome extends CI_Controller{
     public function req(){
         $this->load->view("req/head-open");
         $this->load->view("req/styles/main-css");
+        $this->load->view("req/styles/contact-css");
         $this->load->view("req/head-close");
         $this->load->view("req/menu");
         $this->load->view("req/audio");
@@ -16,7 +17,7 @@ class Welcome extends CI_Controller{
             'status_recording' => 1
         );
         $where2 = array(
-            'status_playlist' => 1
+            'status_playlist' => 1,
         );
         $where3 = array(
             'recording.status_recording' => 1,

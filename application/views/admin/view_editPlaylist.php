@@ -9,7 +9,7 @@
                     </div>
                     <div class="card-body card-block">
                         <?php foreach($play as $list) { ?>
-                        <form action="<?php echo base_url().'c_edit/updatePlay/' ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form action="<?php echo base_url().'admin/c_edit/updatePlay/' ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">ID Playlist</label></div>
                                 <div class="col-12 col-md-9"><input type="text" name="idp" class="form-control" value="<?php echo $list->id_playlist ?>" readonly></div>
@@ -20,7 +20,7 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="email-input" class=" form-control-label">ID User</label></div>
-                                <div class="col-12 col-md-9"><input type="email" name="id" value="<?php echo $list->id_user ?>" class="form-control"></div>
+                                <div class="col-12 col-md-9"><input type="text" name="id" value="<?php echo $list->id_user ?>" class="form-control" readonly></div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="select" class=" form-control-label">Category</label></div>
@@ -35,14 +35,12 @@
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Recording</label></div>
-                                <div class="col-12 col-md-9">
-                                    <?php foreach($rec as $list) {
-                                    ?>
-                                    <input type="checkbox" name="rec[]" value="<?php echo $list->id_recording ?>"><?php echo $list->judul_recording ?><br>
-                                    <?php } ?>
-                                    <small class="form-text text-muted">Please select recording</small>
-                                </div>
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Description</label></div>
+                                <div class="col-12 col-md-9"><textarea name="description" class="form-control"><?php echo $list->description_playlist;?></textarea></div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="email-input" class=" form-control-label">Cover</label></div>
+                                <div class="col-12 col-md-9"><input type="file" name="cover" class="form-control"></div>
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary btn-sm">

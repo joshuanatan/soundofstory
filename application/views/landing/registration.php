@@ -27,7 +27,7 @@
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/landing/css/bootstrap.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/landing/css/main.css">
 	</head>
-	<body>
+	<body style = "overflow:auto">
 	<div class="oz-body-wrap">
 		<!-- Start Header Area -->
 		<header class="default-header">

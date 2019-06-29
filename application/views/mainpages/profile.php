@@ -26,14 +26,7 @@ foreach($profile as $list) { ?>
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-img">
-                    <form method="post" enctype="multipart/form-data">
-                        <img src="<?php echo base_url()."assets/profiles/images/".$list->foto_profile_user ?>" alt=""/>
-                    
-                        <input type="file" name="file" class="file btn btn-lg btn-primary">
-                    </form>
-                    <!--<div class="file btn btn-lg btn-primary">
-                        Change Photo
-                    </div>-->
+                    <img src="<?php echo base_url()."assets/profiles/images/".$list->foto_profile_user ?>" alt=""/>
                 </div>
             </div>
             <div class="col-md-6">
@@ -75,8 +68,7 @@ foreach($profile as $list) { ?>
                             <div class="col-md-6">
                             </div>
                             <div class="col-md-6">
-                                <p>ID USER = <?php echo $list->id_user ?>(kita belom ada username)</p>
-                                <input type="text" name="id" value="<?php echo $list->id_user ?>" hidden>
+                                <input type="hidden" name="id" value="<?php echo $list->id_user ?>">
                             </div>
                         </div>
                         <div class="row">

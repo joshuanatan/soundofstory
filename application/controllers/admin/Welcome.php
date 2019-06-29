@@ -55,7 +55,7 @@ class Welcome extends CI_Controller {
                 $this->session->set_userdata("nama", $nama);
                 $this->session->set_userdata("foto", $foto);
                 $this->session->set_userdata("email", $email);
-                
+                $this->session->premium = 1;
                 redirect('admin/welcome/user');
             }
         }

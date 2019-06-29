@@ -126,10 +126,9 @@ class C_add extends CI_Controller {
         $getID = "";
         $getName = $this->input->post('title');
         $getDesc = $this->input->post('desc');
-        $getDuration = $this->input->post('duration');
         $date = date("Y-m-d");
         
-        if($getName == "" || $getDesc == "" || $getDuration == "") {
+        if($getName == "" || $getDesc == "") {
             $this->req();
             $this->load->view('admin/req/sidebar');
             $this->load->view('admin/req/right-panel-open');
@@ -139,7 +138,7 @@ class C_add extends CI_Controller {
         }
         
         else {
-            $config['upload_path'] ="./assets/recording";
+            $config['upload_path'] ="./assets/recording/";
             $config['allowed_types'] = '*';
             $config['max_size'] = 2048000;
             $config['overwrite'] = TRUE;
@@ -173,7 +172,6 @@ class C_add extends CI_Controller {
                 "file_recording" => $recordfile,
                 "foto_recording" => $imagefile,
                 "description_recording" => $getDesc,
-                "duration_recording" => $getDuration,
                 "id_user" => $this->session->userdata("id"),
                 "status_recording" => 1,
                 "tgl_submit_recording" => $date
