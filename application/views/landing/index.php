@@ -94,8 +94,9 @@
 								}
 								?>
 							</div>
+							<br/>
 							<div class = "row">
-								<a href = "<?php echo base_url();?>welcome/login" class = "btn btn-outline btn-light" style = "margin:auto">LAUNCH</a>
+								<a href = "<?php echo base_url();?>welcome/login" class = "btn btn-outline btn-light" style = "margin:auto">LOUNGE</a>
 							</div>
 						</div>
 					</div>

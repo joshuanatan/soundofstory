@@ -44,6 +44,7 @@
                                     <th>Phone Number</th>
                                     <th>Photo</th>
                                     <th>Status</th>
+                                    <th>Admin</th>
                                     <th>Join Date</th>
                                     <th>Action</th>
                                 </tr>
@@ -65,15 +66,25 @@
                                         <td><?php echo $jk ?></td>
                                         <td><?php echo $listUser->email_user ?></td>
                                         <td><?php echo $listUser->nohp_user ?></td>
-                                        <td><img style = "height:40%" src='<?php echo base_url().'assets/profiles/images/'.$listUser->foto_profile_user; ?>'></td>
-                                        <td><?php echo "Active" ?></td>
+                                        <td><img style = "width:100%" src='<?php echo base_url().'assets/profiles/images/'.$listUser->foto_profile_user; ?>'></td>
+                                        <td><?php if($listUser->premium == 1) echo "PREMIUM"; else echo "REGULAR" ?></td>
+                                        <td><?php if($listUser->role == 1) echo "ADMIN"; else echo "AUDIENCE" ?></td>
                                         <td><?php echo $listUser->tgl_submit_user ?></td>
                                         <td>
+                                            <?php if($listUser->premium == 0):?>
                                             <a href="<?php echo base_url().'admin/c_add/premium/'.$listUser->id_user ?>">
                                                 <button class="btn btn-primary btn-outline">
-                                                    Premium
+                                                    Make Premium
                                                 </button>
                                             </a>
+                                            <?php else:?>
+                                            <a href="<?php echo base_url().'admin/c_add/undopremium/'.$listUser->id_user ?>">
+                                                <button class="btn btn-danger btn-outline">
+                                                    Make Regular
+                                                </button>
+                                            </a>
+                                            <?php endif;?>
+                                            <br/><br/>
                                             <a href="<?php echo base_url().'admin/c_edit/editUser/'.$listUser->id_user ?>">
                                                 <button class="btn btn-primary btn-outline">
                                                     <i class = "fa fa-edit"></i>

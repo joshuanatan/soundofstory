@@ -34,14 +34,6 @@
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">Phone Number</label></div>
                                 <div class="col-12 col-md-9"><input type="text" name="phone" class="form-control" placeholder="Enter Phone Number" required><small class="form-text text-muted">Please enter your phone number</small></div>
                             </div>
-                            <!--<div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Address</label></div>
-                                <div class="col-12 col-md-9"><input type="text" name="address" class="form-control" placeholder="Enter Address" required><small class="form-text text-muted">Please enter your address</small></div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Description</label></div>
-                                <div class="col-12 col-md-9"><input type="text" name="desc" class="form-control" placeholder="Enter Description" required><small class="form-text text-muted">Please enter your description</small></div>
-                            </div>-->
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">Photo</label></div>
                                 <div class="col-12 col-md-9"><input type="file" name="pic1" class="form-control"></div>

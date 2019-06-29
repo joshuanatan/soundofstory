@@ -42,7 +42,6 @@ class C_add extends CI_Controller {
 
         $config['upload_path'] = "./assets/profiles/images/";
         $config['allowed_types'] = 'gif|jpg|png'; 
-        $config['max_size'] = 0;
         $config['max_width'] = 2048;
         $config['max_height'] = 2048;
         $this->load->library('upload', $config);
@@ -64,7 +63,9 @@ class C_add extends CI_Controller {
             "nohp_user" => $getPhone,
             "foto_profile_user" => $datafile,
             "status_user" => 1,
-            "tgl_submit_user" => $date
+            "tgl_submit_user" => $date,
+            "role" => 1,
+            "premium" => 1
         );
         
         
@@ -77,7 +78,7 @@ class C_add extends CI_Controller {
         );
         $this->M_crud->insertData($data2, 'profile');
         
-        //redirect('admin/welcome/user');
+        redirect('admin/welcome/user');
     }
     
     function premium($id) {
@@ -86,6 +87,17 @@ class C_add extends CI_Controller {
         );
         $data = array(
             'premium' => 1
+        );
+        
+        $this->M_crud->update_data($where, $data, 'user');
+        redirect('admin/welcome/user');
+    }
+    function undopremium($id) {
+        $where = array(
+            'id_user' => $id
+        );
+        $data = array(
+            'premium' => 0
         );
         
         $this->M_crud->update_data($where, $data, 'user');
