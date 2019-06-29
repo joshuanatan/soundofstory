@@ -23,6 +23,6 @@ assets/profiles/images/*.jpeg
 application/config/config.php
 application/config/database.php
 tests/
-.vscode
-.htaccess
-.sql
+*.vscode
+*.htaccess
+*.sql
