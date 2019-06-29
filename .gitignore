@@ -26,3 +26,6 @@ tests/
 *.vscode
 *.htaccess
 *.sql
+live-document/
+.htaccess
+hosting.txt
