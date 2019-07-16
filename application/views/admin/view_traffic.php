@@ -57,7 +57,7 @@
                             <h3 class="mb-0 fw-r">
                                 <span class="count"><?php echo $visitHour;?></span>
                             </h3>
-                            <p class="text-light mt-1 m-0"><?php echo date("H");?> Visitor</p>
+                            <p class="text-light mt-1 m-0">Hourly Visitor</p>
                         </div><!-- /.card-left -->
 
                         <div class="card-right float-right text-right">
