@@ -21,7 +21,6 @@ class Welcome extends CI_Controller{
         );
         $where3 = array(
             'status_playlist' => 1,
-            "status_recording" => 1
         );
         $data['episode'] = $this->M_recording->selectLast($where)->result();
         $data['play'] = $this->M_recording->selectLast2($where2)->result();
