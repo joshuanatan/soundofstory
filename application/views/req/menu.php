@@ -3,7 +3,7 @@
 			<div class="container">
 				<div class="row">
                     <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                        <div class="logo" style = "margin-left:10px;width:20%;margin:10px"><a href="<?php echo base_url();?>lounge/welcome"><img style = "width:100%" src = "<?php echo base_url();?>assets/images/logosos.png"></a></div>
+                        <div class="logo" style = "margin-left:10px;width:20%;margin:10px;margin-right:180px"><a href="<?php echo base_url();?>lounge/welcome"><img style = "width:100%" src = "<?php echo base_url();?>assets/images/logosos.png"></a></div>
                         <nav class="main_nav">
                             <ul>
                                 <li>

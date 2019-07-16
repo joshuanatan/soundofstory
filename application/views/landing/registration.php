@@ -13,7 +13,7 @@
 	<!-- meta character set -->
 	<meta charset="UTF-8">
 	<!-- Site Title -->
-	<title>CellOn</title>
+	<title>SOUND OF STORY</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,300,500" rel="stylesheet">
 		<!--
@@ -83,6 +83,10 @@
                         <input type = "number" class = "form-control" placeholder="Mobile Number ex: 0896xxxxxx" name = "nohp_user">
                     </div>
                     <div class = "form-group">
+                        <h6 style = "color:black">Birth Date</h6>
+                        <input type = "date" class = "form-control" placeholder="Let's celebrate your birthday together!" name = "dob">
+                    </div>
+                    <div class = "form-group">
                         <h6 style = "color:black">Gender</h6>
                         <Br/>
                         <div class="radio">
@@ -92,8 +96,15 @@
                             <label><input type="radio" name="gender_user"><span style = " color:black"> Male</span></label>
                         </div>
                     </div>
+                    <div class = "form-group">
+						<Br/>
+						<fieldset id = "agreements">
+							<input type="checkbox" name = "agree[]" onclick = "checkAgreement()" checked><span style = "color:black">Agreement to user terms and policy</span><br/>
+							<input type="checkbox" name = "agree[]" onclick = "checkAgreement()" checked><span style = "color:black">Subscribed to newsletter, promotions, events, and giveaways</span>
+						</fieldset>
+                    </div>
                     <div class = "form-group" style = "margin-top:20px">
-                        <button type = "submit" class = "col-lg-2 btn btn-primary">REGISTER</button>
+                        <button type = "submit" class = "col-lg-2 btn btn-primary" id = "registButton">REGISTER</button>
                         <a type = "button" href = "<?php echo base_url();?>welcome" class = "col-lg-2 btn btn-primary">BACK</a>
                     </div>
 				</form>
@@ -125,3 +136,15 @@
 		<script src="<?php echo base_url();?>assets/landing/js/main.js"></script>
 	</body>
 </html>
+<script>
+function checkAgreement(){
+	var checked = $("input[name='agree[]']:checked").length == 2; //true false
+	console.log(checked);
+	if(checked){
+		$("#registButton").show();
+	}
+	else{
+		$("#registButton").hide();
+	}
+}
+</script>

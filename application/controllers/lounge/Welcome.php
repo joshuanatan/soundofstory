@@ -7,6 +7,7 @@ class Welcome extends CI_Controller{
     public function req(){
         $this->load->view("req/head-open");
         $this->load->view("req/styles/main-css");
+        $this->load->view("req/styles/product-css");
         $this->load->view("req/styles/contact-css");
         $this->load->view("req/head-close");
         $this->load->view("req/menu");

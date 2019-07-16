@@ -1,7 +1,8 @@
 -cek fungsi delete
 -traffic web (yang visit hari ini dan jam ini)
--letter spacing
-Category di form registration juga pake ini aja:
+
+-letter spacing (done)
+Category di form registration juga pake ini aja: (done)
 Full Name
 Username
 Gender
@@ -10,10 +11,10 @@ E-mail
 Password
 Mobile Number
 
-*checkboxes:
+*checkboxes: (done)
 1. Agreement to user terms and policy
 2. Subscribed to newsletter, promotions, events, and giveaways
 
-warna button pake warna theme
-menu geser ke kanan
+warna button pake warna theme (done)
+menu geser ke kanan (done)
 sample landing page (entah di buat random)

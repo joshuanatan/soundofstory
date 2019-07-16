@@ -69,7 +69,7 @@ class Welcome extends CI_Controller{
                 "id_user" => $id_user,
                 "alamat_user" =>  "-",
                 "description_user" =>  "-",
-                "tgl_lahir_user" =>  "-",
+                "tgl_lahir_user" =>  $this->input->post("dob"),
                 "profesi_user" => "-"
             );
             
