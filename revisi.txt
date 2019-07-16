@@ -1,0 +1,19 @@
+-cek fungsi delete
+-traffic web (yang visit hari ini dan jam ini)
+-letter spacing
+Category di form registration juga pake ini aja:
+Full Name
+Username
+Gender
+Birth Date
+E-mail
+Password
+Mobile Number
+
+*checkboxes:
+1. Agreement to user terms and policy
+2. Subscribed to newsletter, promotions, events, and giveaways
+
+warna button pake warna theme
+menu geser ke kanan
+sample landing page (entah di buat random)
