@@ -85,6 +85,36 @@ class Welcome extends CI_Controller {
         $this->load->view('admin/view_contact', $data);
         $this->load->view('admin/req/right-panel-close');
         $this->close();
+    }
+    
+    function traffic(){
+        $where = array(
+            "audience" => array(
+                "role" => 0,
+                "status_user" => 1
+            ),
+            "visitMonth" => array(
+                "month(tgl_visit)" => date("m"),
+            ),
+            "visitDate" => array(
+                "day(tgl_visit)" => date("d"),
+            ),
+            "visitHour" => array(
+                "hour(tgl_visit)" => date("H"),
+            ),
+        );
+        $data = array(
+            "audience" => getAmount("user","id_user",$where["audience"]),
+            "visitMonth" => getAmount("visitor","id_visitor",$where["visitMonth"]),
+            "visitDate" => getAmount("visitor","id_visitor",$where["visitDate"]),
+            "visitHour" => getAmount("visitor","id_visitor",$where["visitHour"]),
+        );
+        $this->req();
+        $this->load->view('admin/req/sidebar');
+        $this->load->view('admin/req/right-panel-open');
+        $this->load->view('admin/view_traffic',$data);
+        $this->load->view('admin/req/right-panel-close');
+        $this->close();
 	}
     
     function faq(){

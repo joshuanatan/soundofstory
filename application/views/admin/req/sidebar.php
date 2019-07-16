@@ -25,13 +25,13 @@
                     </li>
                     <li>
                         <a href="<?php echo base_url().'admin/welcome/Playlist'; ?>">
-                            <i class="menu-icon fa fa-folder-o"></i><span>Playlist</span>
+                            <i class="menu-icon fa fa-folder-o"></i><span>Stories</span>
                         </a>
                     </li>
                     <li>
                     <a href="<?php echo base_url().'admin/welcome/RecPlay'; ?>">
                         <i class="menu-icon fa fa-play"></i>
-                        <span>Recording Playlist</span>
+                        <span>Episodes</span>
                         </a>
                     </li>
                     <li>
@@ -51,6 +51,12 @@
                     <a href="<?php echo base_url().'admin/welcome/contact'; ?>">
                         <i class="menu-icon ti-email"></i>
                         <span>Contact Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url().'admin/welcome/traffic'; ?>">
+                            <i class="menu-icon fa fa-male"></i>
+                            Traffic
                         </a>
                     </li>
                 </ul>

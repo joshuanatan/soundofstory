@@ -6,6 +6,12 @@ class Welcome extends CI_Controller{
         $this->load->model("M_crud");
     }
     public function index(){
+        if($this->session->id_user == ""){
+            $visit = array(
+                "tgl_visit" => date("Y-m-d H:i:S")
+            );
+            insertRow("visitor",$visit);
+        }
         $this->session->sess_destroy();
         $where = array(
             'recording.status_recording' => 1
