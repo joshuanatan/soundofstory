@@ -30,32 +30,6 @@ if($this->session->userdata("id_user") == "") {
 						</div>
 					</div>
 				</div>
-
-				<!-- Contact Info -->
-				
-			</div>
-			<div class="row map_row">
-				<div class="col">
-
-					<!-- Google Map -->
-					<div class="map">
-						<div id="google_map" class="google_map">
-							<div class="map_container">
-								<div id="map"></div>
-							</div>
-							<div>
-								<!-- Subject -->
-								<label for="contact_company">Subject</label>
-								<input type="text" id="contact_company" class="contact_input">
-							</div>
-							<div>
-								<label for="contact_textarea">Message*</label>
-								<textarea id="contact_textarea" class="contact_input contact_textarea" required="required"></textarea>
-							</div>
-							<button class="button contact_button"><span>Send Message</span></button>
-						</form>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
