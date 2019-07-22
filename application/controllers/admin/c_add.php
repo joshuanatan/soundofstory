@@ -308,7 +308,7 @@ class C_add extends CI_Controller {
                 "id_recording" => $getIDR,
                 "status_playlist" => 1,
             );
-            $max = $this->M_playlist->getMaxChapter($where);
+            $max = getMaxId("recording_playlist","chapter_playlist",array("id_playlist" => $getIDP, "status_playlist" => 1));
             $data = array(
                 "id_recording_playlist" => 0,
                 "id_user" => $this->session->id,

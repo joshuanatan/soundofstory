@@ -39,7 +39,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Playlist</th>
+                                    <th>Story</th>
                                     <th>Recording</th>
                                     <th>Chapter</th>
                                     <th>Add Date</th>
@@ -56,7 +56,8 @@
                                         <td><?php echo $list->judul_recording ?></td>
                                         <td><?php echo $list->chapter_playlist ?></td>
                                         <td><?php echo $list->tgl_submit_playlist ?></td>
-                                        <td><a href="<?php echo base_url().'admin/c_edit/rep/'.$list->id_recording_playlist ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a><a href="<?php echo base_url().'admin/c_delete/rep/'.$list->id_recording_playlist ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
+                                        <td>
+                                            <a href="<?php echo base_url().'admin/c_delete/rep/'.$list->id_recording_playlist ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
                                     </tr>
                                     <?php } ?>
                             </tbody>

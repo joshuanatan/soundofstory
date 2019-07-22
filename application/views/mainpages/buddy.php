@@ -11,18 +11,13 @@ if($this->session->userdata("id_user") == "") {
 				<div class="col-lg-12 contact_col">
 					<div class="get_in_touch">
 						<div class="section_title">Get in Touch</div>
-						<div class="section_subtitle col-lg-12">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+						<div class="section_subtitle col-lg-12" style = "font-size:20px">Hello,<br/><br/>Are you looking for volunteer experience? And, do you have piles of short stories unpublished? Talent for story telling? Skills for audio editing? Or even creative ideas for design? We will gladly welcome you to joing our BUDDY Program!<br/><br/>You can register down below. <br/>Benefits of the program:<br/>- Exposure and recognition for your work by our audiences and visitors<br/>- Chance to develop your passion and talent<br/>- Certificate of Completion *by request Cheers!</div>
 						<div class="contact_form_container">
 							<form action="<?= base_url('lounge/message/insertBuddy')?>" method="post" id="contact_form" class="contact_form">
 								<div class="col-lg-6">
 									<!-- Subject -->
 									<label for="contact_company">I Want to Be Your..</label>
-									<select name="subject" class="contact_input" id="subject">
-										<option value="Story Teller Applicants">Story Teller</option>
-										<option value="Designer Applicants">Designer</option>
-										<option value="Audio Experts Applicants">Audio Experts</option>
-										<option value="Story Creator Applicants">Story Creator</option>
-									</select>
+									<input type ="text" placeholder = "Tell us your expertise! ex: Designer, Sound Designer, etc" name="subject" class="contact_input" required>
 								</div>
 								<div class="col-lg-12">
 									<label for="contact_textarea">Message*</label>
