@@ -5,7 +5,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong>Add</strong> Recording Play
+                        <strong>Add</strong> Manage Episodes
                     </div>
                     <div class="card-body card-block">
                         <div class="row form-group">
