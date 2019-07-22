@@ -34,6 +34,7 @@ if($this->session->userdata("id_user") == "") {
                         <th style = "width:15%">Duration</th>
                         <th style = "width:20%">Genre</th>
                         <th style = "width:20%">Story</th>
+                        <th style = "width:20%">Played</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,15 +46,16 @@ if($this->session->userdata("id_user") == "") {
                                     <div><img src="<?php echo base_url();?>assets/recording/<?php echo $list->foto_recording ?>" alt=""></div>
                                 </div>
                                 <div class="cart_item_name_container">
-                                    <div class="cart_item_name"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->judul_recording ?></a></div>
-                                    <div class="cart_item_edit"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>">Chapter <?php echo $list->chapter_playlist ?></a></div><br/>
-                                    <div class="cart_item_edit"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->description_recording ?></a></div>
+                                    <div class="cart_item_name"><a href="<?php echo base_url();?>lounge/stories/listen/<?php echo $list->idrecording;?>"><?php echo $list->judul_recording ?></a></div>
+                                    <div class="cart_item_edit"><a href="<?php echo base_url();?>lounge/stories/listen/<?php echo $list->idrecording;?>">Chapter <?php echo $list->chapter_playlist ?></a></div><br/>
+                                    <div class="cart_item_edit"><a href="<?php echo base_url();?>lounge/stories/listen/<?php echo $list->idrecording;?>"><?php echo $list->description_recording ?></a></div>
                                 </div>
                             </div>
                         </td>
                         <Td class = "align-middle"><h4><?php echo $list->duration_recording;?></h4></Td>
                         <Td class = "align-middle"><h4><?php echo $list->nama_category;?></h4></Td>
                         <Td class = "align-middle"><h4><strong><?php echo $list->nama_playlist ?></strong></h4></Td>
+                        <Td class = "align-middle"><h4><strong><?php echo $list->a ?> Times</strong></h4></Td>
                     </tr>
                     <?php } ?>
                 </tbody>

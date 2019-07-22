@@ -23,10 +23,10 @@ class Welcome extends CI_Controller{
         $where3 = array(
             'status_playlist' => 1,
         );
-        $data['episode'] = $this->M_recording->selectLast($where)->result();
-        $data['play'] = $this->M_recording->selectLast2($where2)->result();
-        $data['story'] = $this->M_playlist->selectLastToNow($where2)->result();
         $data['favourite'] = $this->M_playlist->selectLastToNow($where3)->result();
+        $data['story'] = $this->M_playlist->selectLastToNow($where2)->result();
+        $data['episode'] = $this->M_recording->selectFavourites($where)->result();
+        $data['list_story'] = $this->M_recording->selectLast($where)->result();
         $this->req();
         $this->load->view("mainpages/index", $data);
         $this->close();

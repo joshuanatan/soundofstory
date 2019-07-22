@@ -20,7 +20,7 @@ class M_playlist extends CI_Model {
     }
     function selectLastToNow($where){
         $this->db->where("status_premium <=", $this->session->premium);
-        $this->db->order_by("tgl_submit_playlist",'DESC');
+        $this->db->order_by("id_playlist",'DESC');
         return $this->db->get_where("playlist",$where);
     }
     function selectPremium($where){

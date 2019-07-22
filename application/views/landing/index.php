@@ -65,7 +65,7 @@
 												<div class="row">
 													<div class="col-lg-12">
 														<div class="details_content">
-															<div class="details_name"><strong>Chapter <?php echo $list->chapter_playlist ?></strong></div>
+															<div class="details_name"><strong>Chapter <?php echo $list->chapter_playlist ?></strong><br/><?php echo $list->judul_recording;?></div>
 															<div class="details_text">
 																<p><?php echo $list->description_recording ?></p>
 															</div>

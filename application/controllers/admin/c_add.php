@@ -167,12 +167,12 @@ class C_add extends CI_Controller {
 
             if ($this->upload->do_upload('file')) {
                 $recordfile = $this->upload->data('file_name');
-                $params = array(
+                /*$params = array(
                     "filename" => base_url()."assets/recording/".$recordfile
-                );
-                $this->load->library("mp3",$params);
-                $duration2 = $this->mp3->getDuration();
-                $getDuration = $this->mp3->formatTime($duration2);
+                );*/
+                //$this->load->library("mp3",$params);
+                //$duration2 = $this->mp3->getDuration();
+                //$getDuration = $this->mp3->formatTime($duration2);
             }
             else{
                 echo $this->upload->display_errors();
@@ -186,6 +186,7 @@ class C_add extends CI_Controller {
                 "description_recording" => $getDesc,
                 "id_user" => $this->session->userdata("id"),
                 "status_recording" => 1,
+                "duration_recording" => $this->input->post("duration"),
                 "tgl_submit_recording" => $date
             );
 

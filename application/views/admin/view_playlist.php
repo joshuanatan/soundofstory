@@ -42,7 +42,7 @@
                                     <th>Description</th>
                                     <th>Category</th>
                                     <th>User</th>
-                                    <th>Status</th>
+                                    <th>Status</th><th>Cover</th>
                                     <th>Join Date</th>
                                     <th>Premium</th>
                                     <th>Action</th>
@@ -57,7 +57,7 @@
                                         <td><?php echo $list->description_playlist ?></td>
                                         <td><?php echo $list->nama_category ?></td>
                                         <td><?php echo $list->nama_user ?></td>
-                                        <td><?php echo "Active" ?></td>
+                                        <td><?php echo "Active" ?></td><td><a href = "<?php echo base_url();?>assets/images/story/<?php echo $list->foto_playlist;?>" class = "btn btn-primary" target = "_blank">IMAGE</a></td>
                                         <td><?php echo $list->tgl_submit_playlist ?></td>
                                         <td><?php if($list->status_premium == 1) echo "PREMIUM"; else echo "REGULAR"; ?></td>
                                         <td>

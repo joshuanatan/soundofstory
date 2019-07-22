@@ -24,7 +24,11 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">Description</label></div>
-                                <div class="col-12 col-md-9"><input type="text" name="desc" class="form-control" value="<?php echo $list->description_recording ?>"></div>
+                                <div class="col-12 col-md-9"><textarea name="desc" class="form-control" value=""><?php echo $list->description_recording ?></textarea></div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Duration</label></div>
+                                <div class="col-12 col-md-9"><input type="text" name="duration" class="form-control" value="<?php echo $list->duration_recording ?>"></div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">Recording</label></div>

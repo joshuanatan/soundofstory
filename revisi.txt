@@ -1,5 +1,5 @@
--cek fungsi delete
--traffic web (yang visit hari ini dan jam ini)
+-cek fungsi delete (done)
+-traffic web (yang visit hari ini dan jam ini) (done)
 
 -letter spacing (done)
 Category di form registration juga pake ini aja: (done)

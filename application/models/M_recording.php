@@ -3,12 +3,16 @@ class M_recording extends CI_Model {
     function selectLast($where) {
         $this->db->select('*')
             ->from('recording')->join("recording_playlist","recording_playlist.id_recording = recording.id_recording","inner")->join("playlist","playlist.id_playlist = recording_playlist.id_playlist","inner")
-            ->order_by("tgl_submit_recording", "desc")
-            ->where($where)->where("playlist.status_premium <=", $this->session->premium)->group_by("recording.id_recording");
+            ->order_by("recording.id_recording", "desc")
+            ->where($where)->where("playlist.status_premium <=", $this->session->premium)->group_by("recording.id_recording")->where("playlist.status_playlist",1);
         $query = $this->db->get();
         return $query;
     }
-    
+    function selectFavourites($where){ /*hanya untuk yang di index aja pakenya karena harus munculin dari yang top sampe yang tercupu*/
+        
+        $query = $this->db->query("SELECT *, count(history_recording.id_history) as a FROM recording INNER JOIN recording_playlist ON recording_playlist.id_recording = recording.id_recording INNER JOIN playlist ON playlist.id_playlist = recording_playlist.id_playlist left outer join history_recording on history_recording.id_recording = recording.id_recording WHERE status_recording = 1 AND playlist.status_premium <= 1 AND playlist.status_playlist = 1 group by history_recording.id_recording ORDER BY a DESC");
+        return $query;
+    }
     function selectLast2($where) {
         $this->db->select('*')
             ->from('playlist')
@@ -102,20 +106,20 @@ class M_recording extends CI_Model {
         $this->db->join('user', 'recording.id_user = user.id_user', 'inner');
         $this->db->join('recording_playlist', 'recording_playlist.id_recording = recording.id_recording', 'inner');
         $this->db->group_by("recording.id_recording");
-        $this->db->order_by("tgl_submit_recording","DESC");
+        $this->db->order_by("recording.id_recording","DESC");
         $this->db->join('playlist', 'recording_playlist.id_playlist = playlist.id_playlist', 'inner');
        
         return $this->db->get_where("recording",$where);
     }
     
     function search($where) {
-        $this->db->select('*')
+        $this->db->select('*,count(id_history) as a,recording.id_recording as idrecording')
             ->from('recording')
             ->join('user', 'recording.id_user = user.id_user', 'inner')
             ->join('recording_playlist', 'recording_playlist.id_recording = recording.id_recording', 'inner')
-            ->join('playlist', 'recording_playlist.id_playlist = playlist.id_playlist', 'inner')
-            ->join('category', 'category.id_category = playlist.id_category', 'inner')->where("playlist.status_premium <=", $this->session->premium)->group_by("recording.id_recording")
-            ->like($where);
+            ->join('playlist', 'recording_playlist.id_playlist = playlist.id_playlist', 'inner')->join("history_recording","history_recording.id_recording = recording.id_recording","left outer")
+            ->join('category', 'category.id_category = playlist.id_category', 'inner')->where("playlist.status_premium <=", $this->session->premium)->where("recording.status_recording",1)->where("playlist.status_playlist",1)->group_by("recording.id_recording")
+            ->like($where)->order_by('recording.id_recording','DESC');
         $query = $this->db->get();
         return $query;
     }

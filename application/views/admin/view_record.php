@@ -38,12 +38,13 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                        <th>Title</th>
-                                        <th>File Name</th>
-                                        <th>User</th>
-                                        <th>Status</th>
-                                        <th>Join Date</th>
-                                        <th>Action</th>
+                                    <th>Title</th>
+                                    <th>File Name</th>
+                                    <th>User</th>
+                                    <th>Status</th>
+                                    <th>Cover</th>
+                                    <th>Join Date</th>
+                                    <th style = "width:15%">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,11 +54,50 @@
                                         <td><?php echo $list->id_recording ?></td>
                                         <td><?php echo $list->judul_recording ?></td>
                                         <td><?php echo $list->file_recording ?></td>
-                                        <td><?php echo $list->nama_user ?></td>
+                                        <td><?php echo $list->nama_user ?></td> 
                                         <td><?php echo "Active" ?></td>
+                                        <td><a href = "<?php echo base_url();?>assets/recording/<?php echo $list->foto_recording;?>" class = "btn btn-primary" target = "_blank">IMAGE</a></td>
                                         <td><?php echo $list->tgl_submit_recording ?></td>
-                                        <td><a href="<?php echo base_url().'admin/c_edit/rec/'.$list->id_recording ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a><a href="<?php echo base_url().'admin/c_delete/rec/'.$list->id_recording ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a></td>
+                                        <td>
+                                            <a href="<?php echo base_url().'admin/c_edit/rec/'.$list->id_recording ?>"><button class="btn btn-primary btn-outline"><i class = "fa fa-edit"></i></button></a>
+                                            <a href="<?php echo base_url().'admin/c_delete/rec/'.$list->id_recording ?>"><button class="btn btn-danger btn-outline"><i class = "fa fa-trash"></i></button></a>
+                                            <button class = "btn btn-primary btn-outline" data-toggle = "modal" data-target = "#songs<?php echo $list->id_recording;?>"><i class = "fa fa-play"></i></i></button>
+                                        </td>
                                     </tr>
+                                    
+                                    <div class="modal fade" id="songs<?php echo $list->id_recording;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                
+                                                <div class="modal-body">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="details_content">
+                                                                <div class="details_text">
+                                                                    <p><?php echo $list->description_recording ?></p>
+                                                                </div>
+                                                                <!-- In Stock -->
+                                                                <div class="in_stock_container">
+                                                                    <div class="availability"><strong>Duration:</strong></div>
+                                                                    <span><?php echo $list->duration_recording.' minutes' ?></span>
+                                                                </div>
+                                                                
+
+                                                                <!-- Share -->
+                                                                <div style = "margin-top:20px">
+                                                                    <audio controls style = "width: 100%">
+                                                                        <source src="<?php echo base_url().'assets/recording/'.$list->file_recording ?>" type="audio/mpeg">
+                                                                    </audio>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <?php } ?>
                             </tbody>
                         </table>
@@ -67,3 +107,4 @@
         </div>
     </div><!-- .animated -->
 </div><!-- .content -->
+

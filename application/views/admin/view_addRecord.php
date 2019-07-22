@@ -25,7 +25,12 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">Description</label></div>
-                                <div class="col-12 col-md-9"><input type="text" name="desc" class="form-control" placeholder="Enter Description" required><small class="form-text text-muted">Please enter the description</small></div>
+                                <div class="col-12 col-md-9"><textarea name="desc" class="form-control" placeholder="Enter Description" required></textarea><small class="form-text text-muted">Please enter the description</small></div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Duration</label></div>
+                                <div class="col-12 col-md-9"><input type="text" placeholder = "hh:mm:ss" name="duration" class="form-control" required>
+                                    <small class="form-text text-muted">Please Input Duration</small></div>
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary btn-sm">

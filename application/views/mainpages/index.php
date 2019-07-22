@@ -127,7 +127,7 @@
                         <!-- Product -->
                         <?php 
                         $counter = 0;
-                        foreach($episode as $list) {
+                        foreach($list_story as $list) {
                             if($counter == 8) {
                                 //tampilin 8 terakhir
                                 break;

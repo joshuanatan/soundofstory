@@ -200,20 +200,13 @@ class C_edit extends CI_Controller {
             $recording_data = array();
             $this->load->library("upload",$config);
             if($this->upload->do_upload("recording")){
-                $recordfile = $this->upload->data('file_name');
-                $params = array(
-                    "filename" => base_url()."assets/recording/".$recordfile
-                );
-                $this->load->library("mp3",$params);
-                $duration2 = $this->mp3->getDuration();
-                $getDuration = $this->mp3->formatTime($duration2);
                 $recording_data = $this->upload->data();
                 $data = array(
                     "judul_recording" => $getTitle,
                     "id_user" => $getID,
                     "description_recording" => $getDesc,
                     "file_recording" => $recording_data["file_name"],
-                    "duration_recording" => $getDuration
+                    "duration_recording" => $this->input->post("duration")
                 );
             }
             else{
@@ -221,6 +214,7 @@ class C_edit extends CI_Controller {
                     "judul_recording" => $getTitle,
                     "id_user" => $getID,
                     "description_recording" => $getDesc,
+                    "duration_recording" => $this->input->post("duration")
                 );
             }
             $cover_data = array();
