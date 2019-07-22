@@ -10,7 +10,7 @@ class M_recording extends CI_Model {
     }
     function selectFavourites($where){ /*hanya untuk yang di index aja pakenya karena harus munculin dari yang top sampe yang tercupu*/
         
-        $query = $this->db->query("SELECT *, count(history_recording.id_history) as a,,recording.id_recording as idrecording FROM recording INNER JOIN recording_playlist ON recording_playlist.id_recording = recording.id_recording INNER JOIN playlist ON playlist.id_playlist = recording_playlist.id_playlist left outer join history_recording on history_recording.id_recording = recording.id_recording WHERE status_recording = 1 AND playlist.status_premium <= 1 AND playlist.status_playlist = 1 group by history_recording.id_recording ORDER BY a DESC");
+        $query = $this->db->query("SELECT *, count(history_recording.id_history) as a,recording.id_recording as idrecording FROM recording INNER JOIN recording_playlist ON recording_playlist.id_recording = recording.id_recording INNER JOIN playlist ON playlist.id_playlist = recording_playlist.id_playlist left outer join history_recording on history_recording.id_recording = recording.id_recording WHERE status_recording = 1 AND playlist.status_premium <= 1 AND playlist.status_playlist = 1 group by history_recording.id_recording ORDER BY a DESC");
         return $query;
     }
     function selectLast2($where) {
