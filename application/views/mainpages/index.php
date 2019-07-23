@@ -116,7 +116,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     
-                    <h3 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">OUR STORIES</h3>
+                    <h2 style = "font-weight:bolder;color:black; opacity:0.7" align = "left">OUR STORIES</h2>
                     <a href = "<?php echo base_url();?>lounge/explore">
                         <span style = "font-size:13px;">SEE MORE</span>
                     </a>
