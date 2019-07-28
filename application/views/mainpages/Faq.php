@@ -9,12 +9,12 @@ if($this->session->userdata("id_user") == "") {
         <br/>
         <br/>
         <br/>
-        <?php foreach($faq->result() as $a):?>
         <div class = "row" style = "margin-bottom:50px">
             <h2>
                 Frequently Asked Questions</h2>
         </div>
         <br/><br/>
+        <?php foreach($faq->result() as $a):?>
         <div class = "row">
             <div class = "form-group">
                 <h5><strong>Question: <?php echo $a->question_faq; ?></strong></h5>

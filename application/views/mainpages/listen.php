@@ -13,7 +13,7 @@ foreach($episode as $list) { ?>
                     <div class="col">
                         <div class="home_content">
                             <div class="home_title" style = "color:#545454"><?php echo $list->nama_playlist ?><span>.</span></div>
-                            <div class="home_text"><h2 style = "color:#545454"><?php echo $list->description_playlist ?></h2></div>
+                            
                         </div>
                     </div>
                 </div>
@@ -29,9 +29,11 @@ foreach($episode as $list) { ?>
             <!-- Product Content -->
             <div class="col-lg-12">
                 <div class="details_content">
+                    <div class="home_text"><h3 style = "color:#545454"><?php echo nl2br($list->description_playlist);?></h3></div>
+                    <br/>
                     <div class="details_name">Chapter <?php echo $list->chapter_playlist;?> - <?php echo $list->judul_recording;?></div>
                     <div class="details_text">
-                        <h3><?php echo $list->description_recording ?></h3>
+                        <h4><?php echo nl2br($list->description_recording);?></h4>
                     </div>
                     <!-- In Stock -->
                     <div class="in_stock_container">
@@ -44,14 +46,26 @@ foreach($episode as $list) { ?>
 
                     <!-- Share -->
                     <div style = "margin-top:20px">
-                        <audio controls style = "width: 100%">
+                        <audio controls style = "width: 100%" controlsList="nodownload">
                             <source src="<?php echo base_url().'assets/recording/'.$list->file_recording ?>" type="audio/mpeg">
                         </audio>
                     </div>
                 </div>
             </div>
         </div>
-        <hr/><br/>
+        <hr/>
+        <?php if(isExistsInTable("like",array("id_user" => $this->session->id_user,"id_recording" => $id_recording)) == 1):?>
+        <a href = "<?php echo base_url();?>lounge/stories/like/<?php echo $id_recording;?>" class = "btn btn-primary" style = "background-color:grey; border:none"><i class = "fa fa-heart"></i> LIKE</a>
+        <?php else:?>
+        <a href = "<?php echo base_url();?>lounge/stories/dislike/<?php echo $id_recording;?>" class = "btn btn-primary" style = "background-color:red; border:none">LIKED</a>
+        <?php endif;?>
+
+        <?php if(isExistsInTable("user_playlist",array("id_user" => $this->session->id_user,"id_recording" => $id_recording)) == 1):?>
+        <a href = "<?php echo base_url();?>lounge/stories/addToPlaylist/<?php echo $id_recording;?>" class = "btn btn-primary" style = "background-color:grey; border:none"><i class = "fa fa-plus"></i> ADD TO PLAYLIST</a>
+        <?php else:?>
+        <a href = "<?php echo base_url();?>lounge/stories/removeFromPlaylist/<?php echo $id_recording;?>" class = "btn btn-primary" style = "background-color:red; border:none">ADDED TO PLAYLIST</a>
+        <?php endif;?>
+        <br/>
         <div class="row description_row" style = "margin-bottom:20px; margin-top:20px">
             <div class="col">
                 <div class="description_title_container">

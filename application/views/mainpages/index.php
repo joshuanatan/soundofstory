@@ -27,7 +27,6 @@
                             <div class="product_image" style = "height:150px; overflow:hidden;"><img src="<?php echo base_url();?>assets/images/story/<?php echo $list->foto_playlist ?>" alt=""></div>
                             <div class="product_content">
                                 <div class="product_title"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->nama_playlist ?></a></div>
-                                <div class="product_price"><?php echo $list->description_playlist ?></div>
                             </div>
                         </div>
                         <?php } ?>
@@ -57,7 +56,6 @@
                             <div class="product_image" style = "height:150px; overflow:hidden;"><img src="<?php echo base_url();?>assets/images/story/<?php echo $list->foto_playlist ?>" alt=""></div>
                             <div class="product_content">
                                 <div class="product_title"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->nama_playlist ?></a></div>
-                                <div class="product_price"><?php echo $list->description_playlist ?></div>
                             </div>
                         </div>
                         
@@ -98,7 +96,6 @@
                             
                             <div class="product_content">
                                 <div class="product_title"><a href="<?php echo base_url();?>lounge/stories/listen/<?php echo $list->idrecording ?>"><?php echo $list->judul_recording ?></a></div>
-                                <div class="product_price"><?php echo $list->description_recording ?></div>
                             </div>
                         </div>
                         <?php 
@@ -140,7 +137,6 @@
                             
                             <div class="product_content">
                                 <div class="product_title"><a href="<?php echo base_url();?>lounge/stories/listen/<?php echo $list->id_recording ?>"><?php echo $list->judul_recording ?></a></div>
-                                <div class="product_price"><?php echo $list->description_recording ?></div>
                             </div>
                         </div>
                         <?php 

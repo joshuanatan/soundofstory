@@ -15,7 +15,7 @@ if($this->session->userdata("id_user") == "") {
                             <!--<div class="home_title" style = "color:#545454"><?php echo $list->nama_category ?><span>.</span></div><div class="home_text" style = "color:#545454"><p><?php echo $list->description_category ?></p></div>-->
                             <div class="home_title" style = "color:#545454"><?php echo $list->nama_playlist ?><span>.</span></div>
                             <br/>
-                            <div class="home_text"><h3 style = "color:#545454"><?php echo $list->description_playlist ?></h3></div>
+                            <div class="home_text"><h4 style = "color:#545454"><?php echo nl2br($list->description_playlist);?></h4></div>
                             <?php } ?>
                         </div>
                     </div>
@@ -39,7 +39,14 @@ if($this->session->userdata("id_user") == "") {
                 </div>
             </div>
         </div>
-        <BR/><BR/>
+        <BR/>
+        <?php if(isExistsInTable("user_favourite",array("id_user" => $this->session->id_user,"id_playlist" => $id_playlist)) == 1):?>
+        <a href = "<?php echo base_url();?>lounge/stories/addToFavourite/<?php echo $id_playlist;?>" class = "btn btn-primary" style = "background-color:grey; border:none"><i class = "fa fa-plus"></i> ADD TO FAVORITE</a>
+        <?php else:?>
+        <a href = "<?php echo base_url();?>lounge/stories/removeFromFavourite/<?php echo $id_playlist;?>" class = "btn btn-primary" style = "border:none;color:black"> ADDED TO FAVORITE</a>
+        <?php endif;?>
+        <br/>
+        <BR/>
         <h3 style = "color:black">EPISODES</h3>
         <div class="row">
             <div class="col">

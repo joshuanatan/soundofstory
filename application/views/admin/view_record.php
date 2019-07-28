@@ -37,11 +37,11 @@
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
                                     <th>Title</th>
                                     <th>File Name</th>
                                     <th>User</th>
-                                    <th>Status</th>
+                                    <th>Views</th>
+                                    <th>Likes</th>
                                     <th>Cover</th>
                                     <th>Join Date</th>
                                     <th style = "width:15%">Action</th>
@@ -51,11 +51,11 @@
                                 <?php
                                     foreach($rec as $list) { ?>
                                     <tr>
-                                        <td><?php echo $list->id_recording ?></td>
                                         <td><?php echo $list->judul_recording ?></td>
                                         <td><?php echo $list->file_recording ?></td>
                                         <td><?php echo $list->nama_user ?></td> 
-                                        <td><?php echo "Active" ?></td>
+                                        <td><?php echo getAmount("history_recording","id_history",array("id_recording" => $list->id_recording));?></td>
+                                        <td><?php echo getAmount("like","id_like",array("id_recording" => $list->id_recording));//like ?></td>
                                         <td><a href = "<?php echo base_url();?>assets/recording/<?php echo $list->foto_recording;?>" class = "btn btn-primary" target = "_blank">IMAGE</a></td>
                                         <td><?php echo $list->tgl_submit_recording ?></td>
                                         <td>

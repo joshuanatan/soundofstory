@@ -29,6 +29,8 @@
                                     <ul style = "width:200px">
                                         <li><a href="<?php echo base_url();?>lounge/profile">Profile</a></li>
                                         <li><a href="<?php echo base_url();?>lounge/profile/logout">Logout</a></li>
+                                        <li><a href="<?php echo base_url();?>lounge/stories/showPlaylist">Playlist</a></li>
+                                        <li><a href="<?php echo base_url();?>lounge/stories/showFavorites">Favorites</a></li>
                                     </ul>
                                 </li>
                                 <li>

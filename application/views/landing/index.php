@@ -67,7 +67,7 @@
 														<div class="details_content">
 															<div class="details_name"><strong>Chapter <?php echo $list->chapter_playlist ?></strong><br/><?php echo $list->judul_recording;?></div>
 															<div class="details_text">
-																<p><?php echo $list->description_recording ?></p>
+																<p></p>
 															</div>
 															<!-- In Stock -->
 															<div class="in_stock_container">
