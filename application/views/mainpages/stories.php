@@ -45,7 +45,7 @@ if($this->session->userdata("id_user") == "") {
                                 <div class="cart_item_name_container col-lg-9">
                                     <div class="cart_item_name"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->judul_recording ?></a></div>
                                     <div class="cart_item_edit"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>">Chapter <?php echo $list->chapter_playlist ?></a></div><br/>
-                                    <div class="cart_item_edit"><a href="<?php echo base_url();?>lounge/stories/detail/<?php echo $list->id_playlist ?>"><?php echo $list->description_recording ?></a></div>
+                                    
                                 </div>
                             </div>
                         </td>

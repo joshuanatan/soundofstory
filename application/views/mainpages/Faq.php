@@ -10,8 +10,7 @@ if($this->session->userdata("id_user") == "") {
         <br/>
         <br/>
         <div class = "row" style = "margin-bottom:50px">
-            <h2>
-                Frequently Asked Questions</h2>
+            <h2>Frequently Asked Questions</h2>
         </div>
         <br/><br/>
         <?php foreach($faq->result() as $a):?>
